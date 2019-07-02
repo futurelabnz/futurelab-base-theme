@@ -34,6 +34,9 @@
 /* This is the swiper.css required for our sliders, galleries and carousels */
 @import "../swiper/css/swiper.css";
 
+/* Normalize */
+@import "woocommerce";
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1295,7 +1298,6 @@ Sidebar menu styling
     @include box-shadow-below;
   }
 }
-
 .lp-button{
 
 }
