@@ -1,0 +1,125 @@
+/*
+Color codes. There are four colours with each theme
+ */
+
+/*Grey palette*/
+$dark-grey: #5780a9;
+$mid-grey: #93b9e1;
+$light-grey: #dde9f6;
+
+/* Blue Palette */
+$dark-blue: #007bff;
+$mid-blue: #54a6ff;
+$light-blue: #d2e9ff;
+
+/* Green Palette */
+$dark-green: #52b462;
+$mid-green: #70d775;
+$light-green: #e7f8e8;
+
+/* Teal palette */
+$dark-teal: #00b380;
+$mid-teal: #00d498;
+$light-teal: #d8f3eb;
+
+/* Purple palette */
+$dark-purple: #7b2cff;
+$mid-purple: #a570ff;
+$light-purple: #f3ebff;
+
+/* Red Palette */
+$dark-red: #d14f5f;
+$mid-red: #ff8796;
+$light-red: #f9ebec;
+
+/* Common colors */
+$text-gray: #e8eef1;
+$text-black: #222222;
+
+/* Palette for this theme */
+$dark: var(--palettedark);
+$mid: var(--palettemid);
+$light: var(--palettelight);
+
+$bgcdark: var(--palettebgcdark);
+$bgcmid: var(--palettebgcmid);
+$bgclight: var(--palettebgclight);
+
+/*
+Fonts
+ */
+$body-font: "Montserrat", sans-serif;
+
+/*Border shadows */
+// $box-shadow: 8px 8px 15px var(--palettelight);
+// $box-shadow-top: 0px -15px 15px var(--palettelight);
+// $box-shadow-right: 15px 0px 15px var(--palettelight);
+// $box-shadow-bottom: -1px 15px 15px -10px var(--palettelight);
+// $box-shadow-left: -15px 0px 15px var(--palettelight);
+$box-shadow: 8px 8px 15px $text-gray;
+$box-shadow-top: 0px -15px 15px $text-gray;
+$box-shadow-right: 15px 0px 15px $text-gray;
+$box-shadow-bottom: -1px 15px 15px -10px $text-gray;
+$box-shadow-left: -15px 0px 15px $text-gray;
+
+$vertical-spacing: 1.5em;
+
+@mixin shadow-around {
+  -webkit-box-shadow: 0px 0px 17px 5px rgba(154, 165, 171, 1);
+  -moz-box-shadow: 0px 0px 17px 5px rgba(154, 165, 171, 1);
+  box-shadow: 0px 0px 17px 5px rgba(154, 165, 171, 1);
+}
+
+// shadow below div
+@mixin box-shadow-below {
+  box-shadow: 0 20px 50px -5px rgba(154, 165, 171, 1);
+  -webkit-box-shadow: 0 20px 50px -5px rgba(154, 165, 171, 1);
+  -moz-box-shadow: 0 20px 50px -5px rgba(154, 165, 171, 1);
+}
+
+// border-radius
+@mixin box-border-radius-top {
+  border-radius: 0 0 15px 15px;
+}
+
+// border-radius
+@mixin box-border-radius-bottom {
+  border-radius: 0 0 15px 15px;
+}
+
+// border-radius
+@mixin box-border-radius {
+  border-radius: 15px;
+}
+
+// button style
+@mixin button-primary {
+  font-weight: 600;
+  background-color: $dark;
+  border: none;
+  border-radius: 28px;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  margin: 0;
+  // padding: 12px 24px;
+  padding: 16px 56px;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  box-shadow: $box-shadow;
+}
+
+// button style
+@mixin banner-inset-shadow {
+  box-shadow: inset 0px 5px 6px -6px;
+}
+
+// button style
+@mixin banner-overlay {
+  background: linear-gradient(to right, $light 35%, rgba(231, 56, 39, 0) 60%);
+}

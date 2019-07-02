@@ -1,0 +1,102 @@
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #222222;
+  font-family: $body-font;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0.53px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: $body-font;
+}
+
+h1,
+h2{
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  margin-bottom: $vertical-spacing;
+
+}
+
+h3{
+  font-size: 14px;
+}
+
+p {
+  margin-bottom: $vertical-spacing;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 $vertical-spacing;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: $vertical-spacing;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 18px;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+.tiny-text{
+  font-size: 12px;
+  font-weight:300;
+  line-height:28px;
+  color:#222222;
+}

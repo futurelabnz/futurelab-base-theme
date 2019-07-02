@@ -1,0 +1,332 @@
+/*--------------------------------------------------------------
+>>> BLOCK SPECIFIC STYLING FOR FUTUTRELAB BASE BLOCKS
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Carousel and Swipers
+# Gutenburg default button blocks
+#
+
+--------------------------------------------------------------*/
+/* Theme variables */
+@import "mixins";
+
+/* Carousel */
+.wp-block-futurelab-block-fl-content-carousel {
+  height: 100%;
+  background-color: $bgcdark;
+  padding: $vertical-spacing 30px;
+
+  /* todo replace media query with proper foundation mixin */
+  @media screen and (max-width: 39.9375em) {
+    padding: $vertical-spacing 0;
+  }
+
+  // move swiper button closer to middle
+  .swiper-button-prev {
+    left: 12%;
+    /* todo replace media query with proper foundation mixin */
+    @media screen and (max-width: 39.9375em) {
+      left: 0;
+      width: 38px;
+      height: 38px;
+      background-size: 30px;
+    }
+
+    @media only screen and (min-width: 40.063em) {
+      left: 5%;
+    }
+  }
+
+  .swiper-button-next {
+    right: 12%;
+    /* todo replace media query with proper foundation mixin */
+    @media screen and (max-width: 39.9375em) {
+      right: 0;
+      width: 38px;
+      height: 38px;
+      background-size: 30px;
+    }
+
+    @media only screen and (min-width: 40.063em) {
+      right: 5%;
+    }
+  }
+
+  h3 {
+    color: $dark;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+
+  img {
+    border-radius: 5%;
+    box-shadow: $box-shadow;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  .swiper-pagination {
+    clear: both;
+    margin: 5px;
+    position: absolute;
+    left: 20%;
+    bottom: -10px;
+    right: auto !important;
+    width: auto !important;
+  }
+
+  .swiper-pagination-bullet {
+    background: $dark;
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+  }
+}
+
+/* All swiper navigation is the smae colour */
+.swiper-pagination-bullet-active {
+  background: $dark;
+}
+
+/* Styling for Gutenberg default buttons */
+.wp-block-button__link {
+  font-weight: 600;
+  background-color: $dark;
+  border: none;
+  border-radius: 28px;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  margin: 0;
+  // padding: 12px 24px;
+  padding: 16px 56px;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  box-shadow: $box-shadow;
+
+  @media screen {
+  }
+}
+
+.wp-block-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wp-block-media-text > figure > img,
+.wp-block-media-text__media,
+.wp-block-media-text__media figure img {
+  border-radius: 5%;
+  object-fit: none;
+}
+
+.wp-block-button .alignleft,
+.wp-block-button .alignright,
+.wp-block-button {
+  /*todo replace media query with foundation mixin */
+  @media screen and (max-width: 39.9375em) {
+    margin: $vertical-spacing auto;
+  }
+}
+
+/* Styling for Gutenberg default tables */
+.entry .entry-content .wp-block-table th,
+.entry .entry-content .wp-block-table td {
+  border-color: #e8eef1;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+  padding: 0.5em;
+  border: 1px solid #e8eef1;
+  word-break: break-all;
+}
+
+.wp-block-table {
+  overflow: hidden;
+  @include box-border-radius;
+  @include box-shadow-below;
+}
+
+.wp-block-table th {
+  color: $dark;
+  text-align: center;
+}
+
+thead {
+  background: #fff;
+}
+
+tbody tr {
+  border-bottom: 0;
+  background-color: #f1f1f1;
+}
+tbody tr:nth-child(2n) {
+  border-bottom: 0;
+  background-color: #fff;
+}
+
+.wp-block-table td {
+  text-align: center;
+}
+
+.wp-block-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  padding-left: 1rem;
+}
+
+/* styling for gutenberg default image */
+.wp-block-image {
+  // border-radius: 15px;
+  // overflow: hidden;
+  // box-shadow: $box-shadow;
+  margin-right: 48px !important;
+
+  img {
+    border-radius: 15px 15px 0 0;
+  }
+
+  figcaption {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0 0 15px 15px;
+    // box-shadow: 8px 8px 15px #e8eef1;
+    // border-radius: 0 0 15px;
+    @include box-shadow-below;
+    // margin-top: 0em;
+    // font-weight: 400;
+    // color: $mid;
+    // line-height: 20px;
+    // margin-bottom: $vertical-spacing;
+    // font-size: 18px;
+
+    strong {
+      color: $dark;
+      // margin-top: $vertical-spacing;
+      // // color: $dark;
+      // font-weight: 900;
+      // margin-bottom: 0em;
+      // line-height: 20px;
+      // font-size: 20px;
+    }
+  }
+
+  // .aligncenter > figcaption {
+  //   border-radius: 0 0 15px;
+  //   box-shadow: 8px 8px 15px #e8eef1;
+  // }
+}
+
+/*
+SLIDER STYLING
+ */
+.slide-title {
+  font-size: 40px;
+  line-height: 56px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.slide-content {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+.wp-block-futurelab-block-fl-block-slider2
+  .swiper-container
+  .swiper-wrapper
+  .swiper-slide
+  .slide-btn-container
+  .fl-button {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+figcaption {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #222222;
+  text-transform: none;
+  background-color: #fff;
+  margin-top: 0px;
+}
+
+figcaption strong {
+  font-weight: 600;
+  color: $dark;
+  text-transform: uppercase;
+}
+
+// styles for latest news
+@media (min-width: 600px) {
+  // news width when user choose to display 3 columns
+  .wp-block-latest-posts.columns-3 li {
+    width: calc(33.33333% - 48px);
+  }
+
+  // news width when user choose to display 2 columns
+  .wp-block-latest-posts.columns-2 li {
+    width: calc(50% - 48px);
+  }
+
+  // overwrite general margin according to design
+  .wp-block-latest-posts.is-grid li {
+    margin: 0 24px 48px 24px;
+  }
+}
+
+// mobile margin
+@media (max-width: 600px) {
+  .wp-block-latest-posts.is-grid li {
+    margin: 0 16px 16px 16px;
+    width: 100%;
+  }
+}
+
+// hide slider on mobile
+@media (max-width: 629px) {
+}
+
+// /* Custom separator shadow*/
+// hr.is-style-fl-customized-separator-shadow-bottom {
+//   border: 10px solid white;
+//   height: 10px;
+//   background-color: transparent;
+//   box-shadow: $box-shadow-bottom;
+// }
+
+// /* Custom separator shadow*/
+// hr.is-style-fl-customized-separator-shadow-above {
+//   border: 10px solid white;
+//   height: 10px;
+//   background-color: transparent;
+//   box-shadow: $box-shadow-top;
+// }
+
+// /* Custom separator no shadow*/
+// hr.is-style-fl-customized-separator-line {
+//   background-color: $text-gray;
+//   border: 0;
+//   height: 1px;
+//   // margin-bottom: 1.5em;
+//   margin: 0 auto;
+// }
+
+.fl-vertical-space {
+  padding: 3em 0;
+}

@@ -1,0 +1,29 @@
+/*!
+Theme Name: FutureLab Base
+Theme URI: https://futurelab.co.nz
+Author: FutureLab
+Author URI:  https://futurelab.co.nz
+Description: We make digital solutions that work, packaged in beautiful, intuitive web design. This theme, along with our Base Gutenberg Blocks plugin, is a solid base for beautiful, intuitive web design.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: futurelab-base
+Tags: FutureLab
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+FutureLab Base is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*
+
+@import "assets/dist/theme.style.min.css?v1";
+/* Here are our glyphs */
+
+@import "assets/dist/style.min.css?v43";
+
+
+/*@import "assets/scss/theme.style.scss?v2";*
