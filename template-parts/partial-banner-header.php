@@ -5,9 +5,8 @@
  */
 
 $thumbnail_url = '';
-if ( has_post_thumbnail() ) {
-	$thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'full' );
-} ?>
+if ( has_post_thumbnail() ):
+	$thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'full' ); ?>
 <div class="banner-header-image hide-for-small-only" style="background-image: url('<?php echo $thumbnail_url; ?>');">
     <div class="banner-header-overlay">
         <div class="alignwide">
@@ -32,3 +31,4 @@ if ( has_post_thumbnail() ) {
 
 <?php include( 'mobile-banner-header.php' ); ?>
 
+<?php endif; ?>
