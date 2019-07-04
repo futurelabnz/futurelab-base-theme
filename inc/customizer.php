@@ -43,6 +43,23 @@ function futurelab_base_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'additional_navigation_button_target', array(
+			'type' => 'theme_mod'
+		)
+	);
+
+	$wp_customize->add_control( 'additional_navigation_button_target', array(
+			'type'     => 'select',
+			'section'  => 'title_tagline',
+			'priority' => 10,
+			'label'    => __( 'Button should open', 'futurelab-base' ),
+			'choices'  => array(
+				'_blank'  => 'New page',
+				'_self' => 'Same tab'
+			)
+		)
+	);
+
 	/*
 	 * Choose font
 	 */

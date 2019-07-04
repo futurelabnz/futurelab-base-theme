@@ -94,16 +94,17 @@
                             <div>
 								<?php
 								/* Optional button added through customizer */
-								$book_button = '';
-								$button     = get_theme_mod( 'additional_navigation_button' );
-								$button_url = get_theme_mod( 'additional_navigation_button_url' );
+								$book_button   = '';
+								$button        = get_theme_mod( 'additional_navigation_button' );
+								$button_url    = get_theme_mod( 'additional_navigation_button_url' );
+								$button_target = get_theme_mod( 'additional_navigation_button_target' );
 								if ( ! empty( $button ) ) :
-                                    $book_button = '
+									$book_button = '
                                     <div class="wp-block-button aligncenter">';
-                                        $book_button .= '<a title="' .  esc_attr( $button ) . '" target="_blank"
+									$book_button .= '<a title="' . esc_attr( $button ) . '" target="' . esc_attr( $button_target ) . '"
                                                             href="' . $button_url . '" class="wp-block-button__link">';
-                                            $book_button .= esc_html( $button ) . '</a></div>';
-			                    endif;
+									$book_button .= esc_html( $button ) . '</a></div>';
+								endif;
 								/* Optional button added through customizer */
 								$phone_number = esc_html( get_theme_mod( 'business_number' ) );
 								//$cleaned_number = ereg_replace( "[^0 - 9]", '', $phone_number);
@@ -132,11 +133,13 @@
                     <div class="show-for-large large-2 flex-child-shrink small-margin alignleft">
 						<?php
 						/* Optional button added through customizer */
-						$button     = get_theme_mod( 'additional_navigation_button' );
-						$button_url = get_theme_mod( 'additional_navigation_button_url' );
+						$button        = get_theme_mod( 'additional_navigation_button' );
+						$button_url    = get_theme_mod( 'additional_navigation_button_url' );
+						$button_target = get_theme_mod( 'additional_navigation_button_target' );
 						if ( ! empty( $button ) ) : ?>
                             <div class="wp-block-button alignleft">
-                                <a title="<?php echo esc_attr( $button ); ?>" target="_blank"
+                                <a title="<?php echo esc_attr( $button ); ?>"
+                                   target="<?php echo esc_attr( $button_target ); ?>"
                                    href="<?php echo $button_url; ?>" class="wp-block-button__link">
 									<?php echo esc_html( $button ); ?>
                                 </a>
