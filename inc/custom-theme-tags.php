@@ -111,7 +111,7 @@ function get_futurelab_header_h3( $post ) {
 
 	$h3 = '';
 
-	if( is_single() ) {
+	if( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
 
 
