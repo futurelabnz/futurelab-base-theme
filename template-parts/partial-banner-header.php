@@ -31,6 +31,6 @@ if ( has_post_thumbnail() ):
     </div>
 </div>
 
-<?php include( 'mobile-banner-header.php' ); ?>
+<?php include( get_template_directory() . '/template-parts/mobile-banner-header.php' ); ?>
 
 <?php endif; ?>
