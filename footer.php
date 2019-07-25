@@ -95,10 +95,6 @@
 
 <?php wp_footer(); ?>
 
-<!-- SCRIPTS AFTER BODY -->
-<script>
-</script>
-
 
 </body>
 
