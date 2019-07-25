@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -72,7 +73,7 @@
                                     </a>
                                     &nbsp;
                                 <?php endforeach;
-                        endif; ?>
+                            endif; ?>
                         </div>
                     </div>
                 </div>
@@ -93,91 +94,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
-<!-- SCRIPTS AFTER BODY -->
-<script>
-    var swiperSliders = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-    });
-
-    var swiperCarousels = new Swiper('.swiper-carousel-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-    });
-
-    var swiperGalleries = new Swiper('.swiper-gallery-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
-    // foundation instance for Sticky header
-    // jQuery(document).foundation();
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {
-        myFunction()
-    };
-
-    // Get the header
-    var header = document.getElementById("masthead");
-
-    // Get the offset position of the navbar
-    var sticky = header.offsetTop;
-
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky-header");
-        } else {
-            header.classList.remove("sticky-header");
-        }
-    }
-
-    // scolldown arrow for header event listener
-    (function() {
-        'use strict';
-
-        try {
-            const btnScrollDown = document.querySelector('.down-arrow-container');
-            const scrollDownHeight = document.querySelector(
-                '.banner-header-image'
-            ).clientHeight;
-
-            // console.log('scrollDownHeight', scrollDownHeight);
-
-            function scrollDown() {
-                (function scroll() {
-                    // window.scrollTo desnot support IE
-                    window.scrollTo({
-                        top: scrollDownHeight - 100,
-                        left: 0,
-                        behavior: 'smooth',
-                    });
-                }());
-            }
-            btnScrollDown.addEventListener('click', scrollDown);
-        } catch (error) {
-            console.log('slider frontend.js error', error);
-        }
-    }());
-</script>
 
 
 </body>
