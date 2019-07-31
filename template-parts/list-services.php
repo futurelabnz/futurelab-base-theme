@@ -29,7 +29,7 @@ if ( $services->have_posts() ) : ?>
 				 * title and excerpt right and clicks through to the relevant detail page
 				*/
 
-                include( 'list-inside-loop.php' );
+               get_template_part( 'template-parts/list', 'inside-loop' );
 
 			endwhile;
 
