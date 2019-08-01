@@ -11,14 +11,65 @@
 @import "mixins";
 
 /*
+**header 
+*/
+
+// mini cart
+.site-header {
+  .site-header-cart {
+    list-style: none;
+    .cart-contents-container {
+      float: right;
+    }
+    .header-mini-cart-container {
+      list-style: none;
+      display: none;
+      position: absolute;
+      margin-left: -200px;
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border: 1px solid #000000;
+      z-index: 99;
+    }
+
+    &:hover {
+      .header-mini-cart-container {
+        display: block;
+      }
+    }
+  }
+
+  .cart-contents:before {
+    font-family: WooCommerce;
+    content: "\e01d";
+    font-size: 28px;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    padding-right: 5px;
+    vertical-align: bottom;
+  }
+  .cart-contents:hover {
+    text-decoration: none;
+  }
+  .cart-contents-count {
+    color: #fff;
+    background-color: #2ecc71;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 1px 6px;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: top;
+  }
+}
+
+/*
 woocommerce styling
  */
 
 .woocommerce {
-  // padding-right: 0.9375rem;
-  // padding-left: 0.9375rem;
-  // max-width: 75rem;
-  // margin: 0 auto;
   input[type="color"],
   input[type="date"],
   input[type="datetime-local"],

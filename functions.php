@@ -1,4 +1,5 @@
 <?php
+
 /**
  * futurelab base functions and definitions
  *
@@ -350,37 +351,67 @@ function futurelab_base_add_woocommerce_support()
 
 add_action('after_setup_theme', 'futurelab_base_add_woocommerce_support');
 
-// /**
-//  * remove woocommerce theme color
-//  */
-// add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+/**
+ * Ensure cart contents update when products are added to the number via AJAX
+ */
+function futurelab_add_to_cart_fragment($fragments)
+{
 
+	ob_start();
+	$count = WC()->cart->cart_contents_count;
+	?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>"><?php
+																																	if ($count > 0) {
+																																		?>
+			<span class="cart-contents-count"><?php echo esc_html($count); ?></span>
+		<?php
+		}
+		?>
+	</a><?php
+		$fragments['a.cart-contents'] = ob_get_clean();
 
-/*
- * todo filter image sizes
- * /
+		return $fragments;
+	}
+	add_filter('woocommerce_add_to_cart_fragments', 'futurelab_add_to_cart_fragment');
 
-function futurelab_custom_responsive_image_sizes($sizes, $size) {
-  $width = $size[0];
-  // blog posts
-  if ( is_singular( 'post' ) ) {
-    // half width images - medium size
-    if ( $width === 600 ) {
-      return '(min-width: 768px) 322px, (min-width: 576px) 255px, calc( (100vw - 30px) / 2)';
-    }
-    // full width images - large size
-    if ( $width === 1024 ) {
-      return '(min-width: 768px) 642px, (min-width: 576px) 510px, calc(100vw - 30px)';
-    }
-    // default to return if condition is not met
-    return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
-  }
-  // default to return if condition is not met
-  return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
+	/**
+	 * Ensure cart contents update when products are added to the mini cart via AJAX
+	 */
+
+	function futurelab_hover_dropdown_fragment($fragments)
+	{
+
+		ob_start();
+		?>
+
+	<div class="header-mini-cart">
+		<?php woocommerce_mini_cart(); ?>
+	</div>
+
+	<?php $fragments['div.header-mini-cart'] = ob_get_clean();
+
+	return $fragments;
 }
-add_filter('wp_calculate_image_sizes', 'futurelab_custom_responsive_image_sizes', 10 , 2);
-*/
+add_filter('woocommerce_add_to_cart_fragments',  'futurelab_hover_dropdown_fragment');
 
+/**
+ * Add WooCommerce classes to the body tag
+ */
+function woocommerce_body_class($classes)
+{
+	// TODO: check if woocommerce active!!
+	$classes[] = 'woocommerce';
+
+	// Remove `no-wc-breadcrumb` body class.
+	$key = array_search('no-wc-breadcrumb', $classes, true);
+
+	if (false !== $key) {
+		unset($classes[$key]);
+	}
+
+	return $classes;
+}
+
+add_filter('body_class', 'woocommerce_body_class');
 
 /**
  * Implement the Custom Header feature.

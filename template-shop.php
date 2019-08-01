@@ -14,13 +14,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-		    // if( is_front_page() ){
-		    //     get_template_part( 'template-parts/content', 'home' );
-            // }
-		    // else{
-			//     get_template_part( 'template-parts/content', 'page' );
-            // }
-
             get_template_part( 'template-parts/content-home', 'page' );
 
 
