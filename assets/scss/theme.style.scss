@@ -1067,8 +1067,9 @@ Banner header for pages, services and teams
 .banner-header-titles {
   position: absolute;
   top: 80px;
-  width: 100%;
+  max-width: 450px;
   margin-bottom: $vertical-spacing;
+  overflow-wrap: break-word;
 
   h1 {
     font-size: 38px;
@@ -1245,6 +1246,7 @@ Sidebar menu styling
     width: fit-content;
     max-width: 50%;
     min-width: 420px;
+    margin-bottom: $vertical-spacing;
   }
 
   li {
