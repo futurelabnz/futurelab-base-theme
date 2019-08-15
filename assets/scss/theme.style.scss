@@ -1295,12 +1295,18 @@ Sidebar menu styling
   }
 
   .wp-block-table {
-    overflow: hidden;
+    overflow: auto;
     // @include box-border-radius;
     @include box-shadow-below;
   }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    min-width: 200px;
+  }
 }
 
-.shadow-box{
+.shadow-box {
   @include shadow-around;
 }
