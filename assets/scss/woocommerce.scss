@@ -15,10 +15,6 @@ woocommerce styling
  */
 
 .woocommerce {
-  // padding-right: 0.9375rem;
-  // padding-left: 0.9375rem;
-  // max-width: 75rem;
-  // margin: 0 auto;
   input[type="color"],
   input[type="date"],
   input[type="datetime-local"],
@@ -102,6 +98,19 @@ woocommerce styling
   }
 }
 
+// fix for button style issuse caused by woocommerce block update
+.wc-block-grid__product {
+  .wp-block-button__link {
+    @include mobiles-all {
+      padding: 16px 10px;
+    }
+  }
+}
+// wc-block-grid__product width issue caused by woocommerce block update
+.wc-block-grid.has-3-columns .wc-block-grid__product {
+  max-width: 50%;
+}
+
 .woocommerce div.product .woocommerce-tabs ul.tabs li::after,
 .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
   width: 0px;
@@ -158,4 +167,12 @@ mark {
 .woocommerce input.button:disabled,
 .woocommerce input.button:disabled[disabled] {
   color: $text-gray;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: $mid; 
+  color: #fff;
 }
