@@ -759,14 +759,6 @@ a:visited {
   color: $dark;
 }
 
-/* Header width */
-@media print, screen and (min-width: 40em) {
-  .grid-container:not(.full) > .grid-padding-x {
-    margin-right: -10.9375rem !important;
-    margin-left: -10.9375rem !important;
-  }
-}
-
 /*
 ---------------------------------------------------
 Masthead styling
