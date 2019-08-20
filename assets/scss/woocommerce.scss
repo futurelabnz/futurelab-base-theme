@@ -107,8 +107,11 @@ woocommerce styling
   }
 }
 // wc-block-grid__product width issue caused by woocommerce block update
-.wc-block-grid.has-3-columns .wc-block-grid__product {
-  max-width: 50%;
+@include mobiles-all { // fix for woocommerce mobile style
+  .wc-block-grid.has-3-columns .wc-block-grid__product {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li::after,
@@ -173,6 +176,6 @@ mark {
 .woocommerce a.button.alt:hover,
 .woocommerce button.button.alt:hover,
 .woocommerce input.button.alt:hover {
-  background-color: $mid; 
+  background-color: $mid;
   color: #fff;
 }
