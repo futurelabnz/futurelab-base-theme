@@ -243,17 +243,18 @@ SLIDER STYLING
   font-weight: 300;
 }
 
-.wp-block-futurelab-block-fl-block-slider2
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .slide-btn-container
-  .fl-button {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.wp-block-futurelab-block-fl-block-slider2 .swiper-container .swiper-wrapper {
+  .swiper-slide .slide-btn-container .fl-button {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .overlay-slider {
+    @include banner-overlay;
+  }
 }
 
 figcaption {
