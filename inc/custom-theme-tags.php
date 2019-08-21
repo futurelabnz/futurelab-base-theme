@@ -111,7 +111,7 @@ function get_futurelab_header_h3( $post ) {
 
 	$h3 = '';
 
-	if( is_single() ) {
+	if( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
 
 
@@ -179,7 +179,7 @@ function get_futurelab_header_h1( $post ) {
 
 	$h1 = '';
 
-	if( is_single() ) {
+	if( is_single() || is_page()  ) {
 		switch ( $post->post_type ) {
 
 			case 'fl_services':
@@ -220,7 +220,7 @@ function get_futurelab_header_h2( $post ) {
 
 	$h2 = '';
 
-	if( is_single() ) {
+	if( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
 
 			case 'fl_services':

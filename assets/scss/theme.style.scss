@@ -759,14 +759,6 @@ a:visited {
   color: $dark;
 }
 
-/* Header width */
-@media print, screen and (min-width: 40em) {
-  .grid-container:not(.full) > .grid-padding-x {
-    margin-right: -10.9375rem !important;
-    margin-left: -10.9375rem !important;
-  }
-}
-
 /*
 ---------------------------------------------------
 Masthead styling
@@ -1037,7 +1029,6 @@ Banner header for pages, services and teams
 .banner-header-image {
   position: relative;
   height: 550px;
-  background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
   background-position: right center;
@@ -1067,8 +1058,9 @@ Banner header for pages, services and teams
 .banner-header-titles {
   position: absolute;
   top: 80px;
-  width: 100%;
+  max-width: 450px;
   margin-bottom: $vertical-spacing;
+  overflow-wrap: break-word;
 
   h1 {
     font-size: 38px;
@@ -1232,6 +1224,7 @@ Post list styles
 Sidebar menu styling
  */
 .sidebar-menu-container {
+  overflow: hidden;
   ul {
     color: $dark;
     font-size: 16px;
@@ -1244,7 +1237,8 @@ Sidebar menu styling
     height: 100%;
     width: fit-content;
     max-width: 50%;
-    min-width: 420px;
+    min-width: 270px;
+    margin-bottom: $vertical-spacing;
   }
 
   li {
@@ -1293,12 +1287,18 @@ Sidebar menu styling
   }
 
   .wp-block-table {
-    overflow: hidden;
+    overflow: auto;
     // @include box-border-radius;
     @include box-shadow-below;
   }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    min-width: 200px;
+  }
 }
 
-.shadow-box{
+.shadow-box {
   @include shadow-around;
 }
