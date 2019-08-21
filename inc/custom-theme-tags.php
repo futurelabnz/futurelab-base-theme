@@ -113,22 +113,7 @@ function get_futurelab_header_h3( $post ) {
 
 	if( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
-
-
-			case 'fl_services':
-
-				$is_parent = false;
-
-				if ( $post->post_parent !== 0 ) {
-					$h3 = get_the_title( $post->post_parent );
-				}
-				if ( $post->post_parent === 0 ) {
-					$is_parent = true;
-					$h3        = get_the_title( $post->ID );
-				}
-
-				break;
-
+			
 			case 'post':
 
 				$term_links   = '';
@@ -184,11 +169,7 @@ function get_futurelab_header_h1( $post ) {
 
 			case 'fl_services':
 
-				if ( $post->post_parent == 0 ) {
-					$h1 = get_post_meta( $post->ID, 'fl_page_headline', true );
-				} else {
-					$h1 = get_the_title( $post->ID );
-				}
+				$h1 = get_the_title( $post->ID );
 
 				break;
 			case 'post':
