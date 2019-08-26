@@ -117,7 +117,7 @@ $vertical-spacing: 1.5em;
 
 // button style
 @mixin banner-overlay {
-  background: linear-gradient(to right, $light 35%, rgba(255, 255, 255, 0) 60%);
+  background: linear-gradient(to right, $light 50%, rgba(255, 255, 255, 0) 60%);
 }
 
 /**  media queries  **/
