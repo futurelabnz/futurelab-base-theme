@@ -34,7 +34,13 @@ function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 		}
 	}
 
-	if ( is_tax() || is_archive() ) {
+	if ( class_exists( 'WooCommerce' ) ) {
+		$is_shop = is_shop();
+	} else {
+		$is_shop = false;
+	}
+
+	if ( false === $is_shop && ( is_tax() || is_archive() ) ) {
 
 		$crumbs[0]['id']    = $object->term_id;
 		$crumbs[0]['link']  = get_term_link( $object->term_id );
