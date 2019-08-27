@@ -179,7 +179,7 @@ function get_futurelab_header_h1( $post ) {
 
 				break;
 			case 'post':
-				$h1 = esc_html( the_title() );
+				$h1 = esc_html( get_the_title() );
 				break;
 			case 'page':
 				$h1 = esc_html( get_post_meta( $post->ID, 'fl_page_headline', true ) );
