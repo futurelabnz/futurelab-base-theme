@@ -4,12 +4,14 @@
  */ ?>
 <div class="show-for-small-only grid-container grid-padding-x">
     <header class="small-12 mobile-banner-header-titles">
-		<?php the_title( '<h3>', '</h3>' ); ?>
+		<div class="meta-title">
+            <?php echo get_futurelab_title_meta( $post ); ?>
+        </div>
         <h1>
-			<?php echo esc_html( get_post_meta( $post->ID, 'fl_page_headline', true ) ); ?>
+			<?php echo get_futurelab_title( $post ); ?>
         </h1>
         <h2>
-			<?php echo esc_html( get_post_meta( $post->ID, 'fl_page_subheadline', true ) ); ?>
+			<?php echo get_futurelab_sub_title( $post ); ?>
         </h2>
     </header>
 </div>
