@@ -113,13 +113,13 @@ function get_futurelab_menu( $post_id, $key, $position ) {
 
 }
 
-function get_futurelab_header_h3( $post ) {
+function get_futurelab_title_meta( $post ) {
 
-	$h3 = '';
+	$title_meta = '';
 
-	if( is_single() || is_page() ) {
+	if ( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
-			
+
 			case 'post':
 
 				$term_links   = '';
@@ -144,76 +144,68 @@ function get_futurelab_header_h3( $post ) {
 
 				}
 
-				$h3 = $parent_links . $term_links;
+				$title_meta = $parent_links . $term_links;
 
 				break;
 			case 'page':
-				$h3 = get_the_title( $post->ID );
+
+				if( $post->parent > 0 ) {
+					$title_meta = '<a href="' . esc_url( get_the_permalink( $post->parent ) ) . '" title="Go to' . get_the_title( $post->parent ) . '">' . get_the_title( $post->parent ) . '</a>';
+				}
 				break;
 			default:
 				break;
-
-
 		}
 	}
 
 	if( is_archive() ){
 		$term = get_queried_object();
-		$h3 = $term->name;
+		$title_meta = get_term_field( 'name', $term->parent );
 	}
 
-	return $h3;
+	return $title_meta;
 
 }
 
-function get_futurelab_header_h1( $post ) {
-
-	$h1 = '';
-
-	if( is_single() || is_page()  ) {
-		switch ( $post->post_type ) {
-
-			case 'fl_services':
-
-				$h1 = get_the_title( $post->ID );
-
-				break;
-			case 'post':
-				$h1 = esc_html( get_the_title() );
-				break;
-			case 'page':
-				$h1 = esc_html( get_post_meta( $post->ID, 'fl_page_headline', true ) );
-				break;
-			default:
-				break;
-
-		}
-	}
-
-	if( is_archive() ){
-		$term = get_queried_object();
-		$h1 = term_description( $term->ID );
-	}
-
-	return $h1;
-
-}
-
-/*
- * Returns the contents of the h2 tag for the banner header, based on post type.
- * NB: Do NOT escape - this may contain HTML.
+/**
+ *
  */
-function get_futurelab_header_h2( $post ) {
+function get_futurelab_title( $post ) {
 
-	$h2 = '';
+	$title = '';
 
-	if( is_single() || is_page() ) {
+	if ( is_single() || is_page() ) {
+
+		$title = esc_html( get_the_title() );
+	}
+
+	if ( is_archive() ) {
+		$term = get_queried_object();
+		$title   = $term->name;
+	}
+
+	return $title;
+}
+
+/**
+ * Returns the subtitle for the banner header, based on post type.
+ * NB: Do NOT escape - this may contain HTML.
+ *
+ * @param $post
+ *
+ * @return string
+ */
+function get_futurelab_sub_title( $post ) {
+
+	$sub_title = '';
+
+	if ( is_single() || is_page() ) {
 		switch ( $post->post_type ) {
 
 			case 'fl_services':
 			case 'post':
 			case 'page':
-				$h2 = get_post_meta( $post->ID, 'fl_page_subheadline', true );
+				$sub_title = get_post_meta( $post->ID, 'fl_page_subheadline', true );
 				break;
 			default:
 				break;
@@ -221,13 +213,11 @@ function get_futurelab_header_h2( $post ) {
 		}
 	}
 
-	if( is_archive() ){
-
+	if ( is_archive() ) {
 		$term = get_queried_object();
-		$h2 = '';
-
+		$sub_title = $term->description;
 	}
 
-	return $h2;
+	return $sub_title;
 }
 
