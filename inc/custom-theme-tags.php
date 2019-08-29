@@ -127,6 +127,9 @@ function get_futurelab_title_meta( $post ) {
 
 		switch ( $post->post_type ) {
 
+			case 'fl_services':
+					$title_meta = 'Services';
+				break;
 			case 'post':
 
 				$term_links   = '';
