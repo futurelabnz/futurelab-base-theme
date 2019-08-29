@@ -118,6 +118,13 @@ function get_futurelab_title_meta( $post ) {
 	$title_meta = '';
 
 	if ( is_single() || is_page() ) {
+
+		$title_meta = get_post_meta( $post->ID, 'fl_page_meta_title', true );
+
+		if( ! empty( $title_meta ) ){
+			return $title_meta;
+		}
+
 		switch ( $post->post_type ) {
 
 			case 'post':
