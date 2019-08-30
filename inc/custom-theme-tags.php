@@ -139,14 +139,12 @@ function get_futurelab_title_meta( $post ) {
 				if ( ! empty( $terms ) ) {
 					$title_meta = $terms[0]->name;
 				}
-
 				break;
 			case 'page':
 
 				if( $post->parent > 0 ) {
-					$title_meta = get_the_title( $post->parent );
+					$title_meta = '<a href="' . esc_url( get_the_permalink( $post->parent ) ) . '" title="Go to' . get_the_title( $post->parent ) . '">' . get_the_title( $post->parent ) . '</a>';
 				}
-				
 				break;
 			default:
 				break;
@@ -155,7 +153,11 @@ function get_futurelab_title_meta( $post ) {
 
 	if( is_archive() ){
 		$term = get_queried_object();
-		$title_meta = get_term_field( 'name', $term->parent );
+		$title_meta = $term->name;
+	}
+
+	if( is_wp_error( $title_meta ) ){
+		$title_meta = '';
 	}
 
 	return $title_meta;
