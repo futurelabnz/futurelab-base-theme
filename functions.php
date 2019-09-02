@@ -288,9 +288,9 @@ function load_futurelab_frontend_assets()
 
 	wp_enqueue_style(
 		'futurelab-base-style',
-		get_template_directory_uri() . '/style.css',
+		get_template_directory_uri() . '/assets/dist/style.min.css',
 		array(),
-		filemtime(get_template_directory() . '/style.css'),
+		filemtime(get_template_directory() . '/assets/dist/style.min.css'),
 		false
 	);
 }

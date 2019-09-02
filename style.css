@@ -19,11 +19,3 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 *
-
-@import "assets/dist/theme.style.min.css?v1";
-/* Here are our glyphs */
-
-@import "assets/dist/style.min.css?v43";
-
-
-/*@import "assets/scss/theme.style.scss?v2";*
