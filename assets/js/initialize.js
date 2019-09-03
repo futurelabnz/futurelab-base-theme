@@ -1,7 +1,7 @@
 /* Initialize our various swiper blocks */
 
 // scolldown arrow for header event listener
-(function() {
+(function($) {
   "use strict";
 
   /**
@@ -10,21 +10,51 @@
 
   // init top slider
   var swiperContainer = document.querySelector(".swiper-container");
+
   // check if swiperContainer div exist
   if (typeof swiperContainer !== "undefined" && swiperContainer !== null) {
+    // If is autoSlide
+    var isSlide = $.parseJSON(
+      $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
+        "data-isslide"
+      )
+    );
+
+    // If is autoplaySpeed
+    var autoplaySpeed = $.parseJSON(
+      $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
+        "data-autoplayspeed"
+      )
+    );
+
+    // If is infiniteLoop
+    var infiniteLoop = $.parseJSON(
+      $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
+        "data-infiniteloop"
+      )
+    );
+
+    // If is show pagination
+    var isshowpagination = $.parseJSON(
+      $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
+        "data-isshowpagination"
+      )
+    );
+
+    // create slider instance
     var swiperSliders = new Swiper(".swiper-container", {
       slidesPerView: 1,
       autoplay: {
-        delay: 5000
+        delay: isSlide ? autoplaySpeed : 99999999 // is not autoslide, set delay for 99999999
       },
       spaceBetween: 30,
-      loop: true,
+      loop: infiniteLoop,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: isshowpagination ? ".swiper-pagination" : "",
         clickable: true
       }
     });
@@ -113,4 +143,4 @@
   } catch (error) {
     // console.log("slider frontend.js error", error);
   }
-})();
+})(jQuery);
