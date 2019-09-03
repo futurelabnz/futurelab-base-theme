@@ -254,6 +254,9 @@ SLIDER STYLING
 
   .overlay-slider {
     @include banner-overlay;
+    @include mobiles-portrait {
+      background: $light;
+    }
   }
 }
 
