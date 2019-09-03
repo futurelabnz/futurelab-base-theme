@@ -13,27 +13,25 @@
 
   // check if swiperContainer div exist
   if (typeof swiperContainer !== "undefined" && swiperContainer !== null) {
+    // get values for create instance
     // If is autoSlide
     var isSlide = $.parseJSON(
       $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
         "data-isslide"
       )
     );
-
     // If is autoplaySpeed
     var autoplaySpeed = $.parseJSON(
       $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
         "data-autoplayspeed"
       )
     );
-
     // If is infiniteLoop
     var infiniteLoop = $.parseJSON(
       $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
         "data-infiniteloop"
       )
     );
-
     // If is show pagination
     var isshowpagination = $.parseJSON(
       $(".wp-block-futurelab-block-fl-block-slider2 .swiper-wrapper").attr(
@@ -69,14 +67,40 @@
     typeof swiperCarouselContainer !== "undefined" &&
     swiperCarouselContainer !== null
   ) {
+    // get values for create instance
+    // If is autoSlide
+    var isSlide = $.parseJSON(
+      $(".swiper-carousel-container .swiper-wrapper").attr("data-isslide")
+    );
+    // If is autoplaySpeed
+    var autoplaySpeed = $.parseJSON(
+      $(".swiper-carousel-container .swiper-wrapper").attr("data-autoplayspeed")
+    );
+    // If is infiniteLoop
+    var infiniteLoop = $.parseJSON(
+      $(".swiper-carousel-container .swiper-wrapper").attr("data-infiniteloop")
+    );
+    // If is show pagination
+    var isshowpagination = $.parseJSON(
+      $(".swiper-carousel-container .swiper-wrapper").attr(
+        "data-isshowpagination"
+      )
+    );
+
+    console.log(isSlide, autoplaySpeed, infiniteLoop, isshowpagination);
     var swiperCarousels = new Swiper(".swiper-carousel-container", {
+      slidesPerView: 1,
+      autoplay: {
+        delay: isSlide ? autoplaySpeed : 99999999 // is not autoslide, set delay for 99999999
+      },
+      spaceBetween: 30,
+      loop: infiniteLoop,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
       },
-      loop: true,
       pagination: {
-        el: ".swiper-pagination",
+        el: isshowpagination ? ".swiper-pagination" : "",
         clickable: true
       }
     });
