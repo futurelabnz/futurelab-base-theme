@@ -118,8 +118,18 @@ function get_futurelab_title_meta( $post ) {
 	$title_meta = '';
 
 	if ( is_single() || is_page() ) {
+
+		$title_meta = get_post_meta( $post->ID, 'fl_page_meta_title', true );
+
+		if( ! empty( $title_meta ) ){
+			return $title_meta;
+		}
+
 		switch ( $post->post_type ) {
 
+			case 'fl_services':
+					$title_meta = 'Services';
+				break;
 			case 'post':
 
 				$term_links   = '';
@@ -127,25 +137,8 @@ function get_futurelab_title_meta( $post ) {
 				$terms        = get_the_terms( $post->ID, 'category' );
 
 				if ( ! empty( $terms ) ) {
-
-					foreach ( $terms as $term ) {
-						if ( $term->parent > 0 ) {
-							$term_parents[] = $term->parent;
-						}
-						$term_links .= '<a href="' . esc_url( get_term_link( $term->term_id ) ) . '" title="Go to' . $term->name . '">' . $term->name . '</a>&nbsp;';
-					}
-					if ( ! empty( $term_parents ) ) {
-
-						foreach ( $term_parents as $parent_id ) {
-							$term         = get_term( $parent_id );
-							$parent_links .= '<a href="' . esc_url( get_term_link( $term->id ) ) . '" title="Go to' . $term->name . '">' . $term->name . '</a>&nbsp;/&nbsp;';
-						}
-					}
-
+					$title_meta = $terms[0]->name;
 				}
-
-				$title_meta = $parent_links . $term_links;
-
 				break;
 			case 'page':
 
@@ -160,7 +153,11 @@ function get_futurelab_title_meta( $post ) {
 
 	if( is_archive() ){
 		$term = get_queried_object();
-		$title_meta = get_term_field( 'name', $term->parent );
+		$title_meta = $term->name;
+	}
+
+	if( is_wp_error( $title_meta ) ){
+		$title_meta = '';
 	}
 
 	return $title_meta;

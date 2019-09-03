@@ -5,13 +5,12 @@
  */
 
 $thumbnail_url = '';
-if ( has_post_thumbnail() ):
 	$thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'full' ); ?>
-    <div class="banner-header-image hide-for-small-only"
+    <div class="banner-header-image"
          style="background-image: url('<?php echo $thumbnail_url; ?>');">
         <div class="banner-header-overlay">
-            <div class="alignwide">
-                <header class="banner-header-titles">
+            <header class="grid-container grid-margin-x alignwide">
+                <div class="banner-header-titles">
 					<?php
 					$title_meta = get_futurelab_title_meta( $post );
 					$title      = get_futurelab_title( $post );
@@ -27,15 +26,13 @@ if ( has_post_thumbnail() ):
 					endif;
 					?>
 					<?php echo get_futurelab_menu( $post->ID, 'fl_banner_menu', 'banner-header-menu' ); ?>
-                </header>
-            </div>
+                </div>
+            </header>
         </div>
-        <div class="down-arrow-container"
+        <div class="down-arrow-container hide-for-small-only"
              style="background-image: url( '<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_arrow_scroll_down.svg'; ?>' );">
             <a href="#primary">&nbsp;</a>
         </div>
     </div>
 
-	<?php include( get_template_directory() . '/template-parts/mobile-banner-header.php' ); ?>
-
-<?php endif; ?>
+<div class="clearfix"></div>

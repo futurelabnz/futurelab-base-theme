@@ -43,10 +43,14 @@ class custom_meta_data {
 	);
 
 	/*
-	 * Text inputs for pages and services
+	 * Text inputs for pages and services and posts
+	 * Removed 29/8/2019 'fl_page_headline'    => 'Main page headline'
+	 *
+	 * fl_page_meta_title => displays in the partial-banner-header.php in a div styled the same as an h3
+	 * fl_page_subheadline => displays in the partial-banner-header.php as h2
 	 */
 	private $sp_text_fields = array(
-		'fl_page_headline'    => 'Main page headline',
+		'fl_page_meta_title'    => 'Page tag line',
 		'fl_page_subheadline' => 'Page subheadline'
 	);
 
@@ -142,6 +146,16 @@ class custom_meta_data {
 			);
 		}
 
+		foreach ( $this->sp_text_fields as $key => $value ) {
+
+			register_meta( 'post', $key, array(
+					'show_in_rest' => true,
+					'single'       => true,
+					'type'         => 'string',
+				)
+			);
+		}
+
 		foreach ( $this->fl_menu_options as $key => $vvalue ) {
 
 			register_meta( 'page', $key, array(
@@ -210,6 +224,15 @@ class custom_meta_data {
 			'high'
 		);
 
+		add_meta_box(
+			'fl_post_data',
+			esc_html__( 'Blog options', 'futurelab-base' ),
+			array( $this, 'render_post_meta_boxes' ),
+			'post',
+			'side',
+			'high'
+		);
+
 	}
 
 	function render_category_metaboxes( $term ) {
@@ -244,6 +267,46 @@ class custom_meta_data {
 	}
 
 	function render_page_meta_boxes( $post ) {
+
+		ob_start();
+
+		wp_nonce_field( basename( __FILE__ ), 'fl-page-nonce' );
+		?>
+
+        <div class="components-base-control editor-post-excerpt__textarea">
+
+			<?php foreach ( $this->page_fields as $key => $value ) : ?>
+                <div class="components-base-control__field">
+                    <label class="components-base-control__label"
+                           for="page-post-class"><?php echo $value; ?></label>
+                    <input type="checkbox" name="<?php echo $key; ?>" id="<?php echo $key; ?>"
+                           class="edit-page-post-schedule"
+                           value="1" <?php echo ( get_post_meta( $post->ID, $key, true ) == '1' ) ? ' checked ' : ''; ?>>
+                </div>
+			<?php endforeach; ?>
+
+			<?php foreach ( $this->sp_text_fields as $key => $value ) : ?>
+                <div class="components-base-control__field">
+                    <label class="components-base-control__label"
+                           for="page-post-class"><?php echo $value; ?></label>
+                    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>"
+                           class="edit-page-post-schedule"
+                           value="<?php echo( get_post_meta( $post->ID, $key, true ) ); ?>"
+                    >
+                </div>
+			<?php endforeach;
+
+			$this->render_menu_meta_boxes( $post );
+
+			?>
+
+        </div>
+		<?php
+		$html = ob_get_clean();
+		echo $html;
+	}
+
+	function render_post_meta_boxes( $post ) {
 
 		ob_start();
 

@@ -104,6 +104,11 @@ function futurelab_base_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'google_map_url', array(
+			'type' => 'theme_mod'
+		)
+	);
+
 	$wp_customize->add_section( 'contact_details',
 		array(
 			'title'       => __( 'Contact details', 'futurelab-base' ),
@@ -136,6 +141,15 @@ function futurelab_base_customize_register( $wp_customize ) {
 			'priority'    => 10,
 			'label'       => __( 'Business number', 'futurelab-base' ),
 			'description' => __( 'The telephone number of the business', 'futurelab-base' ),
+		)
+	);
+
+	$wp_customize->add_control( 'google_map_url', array(
+			'type'        => 'text',
+			'section'     => 'contact_details',
+			'priority'    => 10,
+			'label'       => __( 'On Google maps', 'futurelab-base' ),
+			'description' => __( 'The URL of the Google Maps image showing the business and details', 'futurelab-base' ),
 		)
 	);
 
