@@ -74,7 +74,7 @@
     margin: 5px;
     position: absolute;
     left: 20%;
-    bottom: -10px;
+    bottom: 40px;
     right: auto !important;
     width: auto !important;
   }
@@ -254,6 +254,9 @@ SLIDER STYLING
 
   .overlay-slider {
     @include banner-overlay;
+    @include mobiles-portrait {
+      background: $light;
+    }
   }
 }
 
