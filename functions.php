@@ -239,7 +239,7 @@ function load_futurelab_frontend_assets()
 	wp_enqueue_script(
 		'init-swiper-js',
 		get_template_directory_uri() . '/assets/js/initialize.js',
-		array('futurelab-swiper'),
+		array('futurelab-swiper, jquery'),
 		filemtime(get_template_directory() . '/assets/js/initialize.js'),
 		true
 	);
@@ -247,7 +247,7 @@ function load_futurelab_frontend_assets()
 	wp_enqueue_script(
 		'futurelab-frontend-js',
 		get_template_directory_uri() . '/assets/dist/themefrontend.min.js',
-		array('futurelab-swiper'),
+		array('init-swiper-js'),
 		filemtime(get_template_directory() . '/assets/dist/themefrontend.min.js'),
 		true
 	);
