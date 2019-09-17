@@ -239,7 +239,7 @@ function load_futurelab_frontend_assets()
 	wp_enqueue_script(
 		'init-swiper-js',
 		get_template_directory_uri() . '/assets/js/initialize.js',
-		array('futurelab-swiper, jquery'),
+		array('futurelab-swiper', 'jquery'),
 		filemtime(get_template_directory() . '/assets/js/initialize.js'),
 		true
 	);
