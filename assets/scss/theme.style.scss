@@ -61,7 +61,6 @@ body {
 
 hr {
   background-color: #ccc;
-  // background-color: $bgcdark;
   border: 0;
   height: 1px;
   margin-bottom: $vertical-spacing;
@@ -905,8 +904,6 @@ Header
 /* Styling for Gutenberg default buttons */
 .wp-block-button__link {
   color: #ffffff;
-  @media screen {
-  }
 }
 
 // styles for mailchimp subscribe
@@ -1336,4 +1333,9 @@ Sidebar menu styling
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+// make a margin right custom class, to avoid style apply to every image on website
+.col-margin-right {
+  margin-right: 48px;
 }
