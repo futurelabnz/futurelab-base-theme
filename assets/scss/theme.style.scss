@@ -334,7 +334,7 @@ a:active {
 .main-navigation.toggled ul {
   display: block;
   overflow: scroll;
-  height: 85vh;
+  max-height: 85vh;
 }
 
 @media screen and (min-width: 37.5em) {
