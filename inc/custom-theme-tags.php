@@ -10,6 +10,7 @@
 function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 
 	$html   = '<nav class="futurelab-breadcrumbs">';
+	$html = '<ol vocab="https://schema.org/" typeof="BreadcrumbList">';
 	$crumbs = array();
 
 	if ( is_singular( 'page' ) && ! is_front_page() && $object->post_parent !== 0 ) {
@@ -65,19 +66,22 @@ function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 
 	if ( ! empty( $crumbs ) ) {
 
+		$current_element_id = count( $crumbs );
 		$current = $crumbs[0]['title'];
-		$home    = '<a href="' . get_bloginfo( 'url' ) . '" rel="nofollow" title="Go to home">Home</a>&nbsp;' . $separator . '&nbsp;';
+		$home    = '<li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . get_bloginfo( 'url' ) . '" rel="nofollow" title="Go to home">Home</a><meta property="position" content="1"></li>&nbsp;' . $separator . '&nbsp;';
 		unset( $crumbs[0] );
 		$crumbs = array_reverse( $crumbs );
 
 		$html .= $home;
 
+		$i = 2;
 		foreach ( $crumbs as $crumb ) {
-			$html .= '<a href="' . $crumb['link'] . '" title="Go to ' . $crumb['title'] . '">' . $crumb['title'] . '</a>';
+			$html .= '<li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $crumb['link'] . '" title="Go to ' . $crumb['title'] . '">' . $crumb['title'] . '</a><meta property="position" content="' . $i . '"></li>';
 			$html .= '&nbsp;' . $separator . '&nbsp;';
 		}
 
-		$html .= $current;
+		$html .= '<li property="itemListElement" typeof="ListItem">' . $current . '<meta property="position" content="' . $current_element_id . '"></li>';
+		$html .= '</ol>';
 		$html .= '</nav>';
 	}
 
