@@ -15,7 +15,7 @@ $thumbnail_url = '';
 					$title_meta = get_futurelab_title_meta( $post );
 					$title      = get_futurelab_title( $post );
 					$sub_title  = get_futurelab_sub_title( $post );
-					if ( ! empty( $title_meta ) ):
+					if ( ! empty( $title_meta ) && ! is_wp_error( $title_meta ) ):
 						echo '<div class="title-meta">' . $title_meta . '</div>';
 					endif;
 					if ( ! empty( $title ) ):
