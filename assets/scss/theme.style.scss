@@ -61,7 +61,6 @@ body {
 
 hr {
   background-color: #ccc;
-  // background-color: $bgcdark;
   border: 0;
   height: 1px;
   margin-bottom: $vertical-spacing;
@@ -333,9 +332,11 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  overflow: scroll;
+  max-height: 85vh;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 40em) {
   .menu-toggle {
     display: none;
   }
@@ -903,8 +904,6 @@ Header
 /* Styling for Gutenberg default buttons */
 .wp-block-button__link {
   color: #ffffff;
-  @media screen {
-  }
 }
 
 // styles for mailchimp subscribe
@@ -956,26 +955,6 @@ Header
   }
 }
 
-// theme primary colour
-// h1 {
-//   color: $dark;
-// }
-// h2 {
-//   color: $dark;
-// }
-// h3 {
-//   color: $dark;
-// }
-// h4 {
-//   color: $dark;
-// }
-// h5 {
-//   color: $dark;
-// }
-// h6 {
-//   color: $dark;
-// }
-
 .has-small-font-size {
   color: $dark;
 }
@@ -987,13 +966,6 @@ Header
 .has-huge-font-size {
   color: $dark;
 }
-
-// // overwrite spacing between columns
-// @media (min-width: 782px) {
-//   .wp-block-column:not(:first-child) {
-//     margin-left: 80px;
-//   }
-// }
 
 /*
 todo
@@ -1043,10 +1015,10 @@ Banner header for pages, services and teams
   background-position: right center;
   margin: 0px auto 4em !important;
 
-  @include mobiles-all{
-    height:100%;
-    display:block;
-    float:left;
+  @include mobiles-all {
+    height: 100%;
+    display: block;
+    float: left;
   }
 
   .banner-header-overlay {
@@ -1057,13 +1029,13 @@ Banner header for pages, services and teams
     position: absolute;
     left: 0;
 
-    @include mobiles-all{
+    @include mobiles-all {
       display: block;
-      float:left;
-      position:relative;
+      float: left;
+      position: relative;
       height: 100%;
     }
-    }
+  }
 
   .down-arrow-container {
     width: 50px;
@@ -1086,11 +1058,11 @@ Banner header for pages, services and teams
   margin-bottom: $vertical-spacing;
   overflow-wrap: break-word;
 
-  @include mobiles-all{
-    position:relative;
-    display:block;
-    float:left;
-    height:100%;
+  @include mobiles-all {
+    position: relative;
+    display: block;
+    float: left;
+    height: 100%;
     top: 0;
     padding: 1rem;
   }
@@ -1102,7 +1074,6 @@ Banner header for pages, services and teams
     line-height: 50px;
     margin-bottom: 0.5em;
   }
-
 
   .title-meta {
     color: $dark;
@@ -1123,8 +1094,7 @@ Banner header for pages, services and teams
 }
 
 .banner-header-menu-container {
-
-  @include mobiles-all{
+  @include mobiles-all {
     display: block;
     float: left;
     height: 100%;
@@ -1145,10 +1115,10 @@ Banner header for pages, services and teams
     min-width: 420px;
     border-bottom: 1px solid #ffffff;
 
-    @include mobiles-all{
+    @include mobiles-all {
       display: block;
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -1354,4 +1324,18 @@ Sidebar menu styling
 
 .shadow-box {
   @include shadow-around;
+}
+
+// make everything not alignfull same width and centered.
+.entry-content {
+  > *:not(.alignfull) {
+    max-width: $max-wide-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// make a margin right custom class, to avoid style apply to every image on website
+.col-margin-right {
+  margin-right: 48px;
 }
