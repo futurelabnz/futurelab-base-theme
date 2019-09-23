@@ -1339,3 +1339,28 @@ Sidebar menu styling
 .col-margin-right {
   margin-right: 48px;
 }
+
+// make everything not alignfull same width and centered.
+.entry-content {
+  > *:not(.alignfull) {
+    max-width: $max-wide-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// make a margin right custom class, to avoid style apply to every image on website
+.col-margin-right {
+  margin-right: 48px;
+}
+
+// style breadcrumbs ordered list
+nav.futurelab-breadcrumbs{
+  ol{
+    list-style: none;
+    margin:0;
+    li{
+      display: inline-block;
+    }
+  }
+}
