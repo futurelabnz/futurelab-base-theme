@@ -12,7 +12,6 @@
 
 /* Carousel */
 .wp-block-futurelab-block-fl-content-carousel {
-  height: 100%;
   background-color: $bgcdark;
   padding: $vertical-spacing 30px;
 
@@ -35,6 +34,11 @@
     @media only screen and (min-width: 40.063em) {
       left: 5%;
     }
+
+    // to fix carousel arrow go over text
+    @media only screen and (max-width: 1340px) {
+      left: 0;
+    }
   }
 
   .swiper-button-next {
@@ -49,6 +53,11 @@
 
     @media only screen and (min-width: 40.063em) {
       right: 5%;
+    }
+
+    // to fix carousel arrow go over text
+    @media only screen and (max-width: 1340px) {
+      right: 0;
     }
   }
 
@@ -74,7 +83,7 @@
     margin: 5px;
     position: absolute;
     left: 20%;
-    bottom: -10px;
+    bottom: 40px;
     right: auto !important;
     width: auto !important;
   }
@@ -187,10 +196,6 @@ tbody tr:nth-child(2n) {
 
 /* styling for gutenberg default image */
 .wp-block-image {
-  // border-radius: 15px;
-  // overflow: hidden;
-  // box-shadow: $box-shadow;
-  margin-right: 48px !important;
 
   img {
     border-radius: 15px 15px 0 0;
@@ -200,31 +205,12 @@ tbody tr:nth-child(2n) {
     text-align: center;
     padding: 1rem;
     border-radius: 0 0 15px 15px;
-    // box-shadow: 8px 8px 15px #e8eef1;
-    // border-radius: 0 0 15px;
     @include box-shadow-below;
-    // margin-top: 0em;
-    // font-weight: 400;
-    // color: $mid;
-    // line-height: 20px;
-    // margin-bottom: $vertical-spacing;
-    // font-size: 18px;
 
     strong {
       color: $dark;
-      // margin-top: $vertical-spacing;
-      // // color: $dark;
-      // font-weight: 900;
-      // margin-bottom: 0em;
-      // line-height: 20px;
-      // font-size: 20px;
     }
   }
-
-  // .aligncenter > figcaption {
-  //   border-radius: 0 0 15px;
-  //   box-shadow: 8px 8px 15px #e8eef1;
-  // }
 }
 
 /*
@@ -254,6 +240,9 @@ SLIDER STYLING
 
   .overlay-slider {
     @include banner-overlay;
+    @include mobiles-all {
+      background: $light;
+    }
   }
 }
 
@@ -299,34 +288,6 @@ figcaption strong {
   }
 }
 
-// hide slider on mobile
-@media (max-width: 629px) {
-}
-
-// /* Custom separator shadow*/
-// hr.is-style-fl-customized-separator-shadow-bottom {
-//   border: 10px solid white;
-//   height: 10px;
-//   background-color: transparent;
-//   box-shadow: $box-shadow-bottom;
-// }
-
-// /* Custom separator shadow*/
-// hr.is-style-fl-customized-separator-shadow-above {
-//   border: 10px solid white;
-//   height: 10px;
-//   background-color: transparent;
-//   box-shadow: $box-shadow-top;
-// }
-
-// /* Custom separator no shadow*/
-// hr.is-style-fl-customized-separator-line {
-//   background-color: $text-gray;
-//   border: 0;
-//   height: 1px;
-//   // margin-bottom: 1.5em;
-//   margin: 0 auto;
-// }
 
 .fl-vertical-space {
   padding: 3em 0;
