@@ -60,6 +60,19 @@ function futurelab_base_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'futurelab_footer_tagline', array(
+			'type' => 'option'
+		)
+	);
+
+	$wp_customize->add_control( 'futurelab_footer_tagline', array(
+			'type'     => 'text',
+			'section'  => 'title_tagline',
+			'priority' => 10,
+			'label'    => __( 'Footer tagline', 'futurelab-base' ),
+		)
+	);
+
 	/*
 	 * Choose font
 	 */
