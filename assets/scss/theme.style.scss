@@ -27,6 +27,8 @@
 @import "mixins";
 /* Normalize */
 @import "normalize";
+/* Typography */
+@import "typography";
 /* Our awesomeness is loading from CDN - see funtions.php */
 /* This is the swiper.css required for our sliders, galleries and carousels */
 @import "../swiper/css/swiper.css";
@@ -138,8 +140,19 @@ h4 {
   letter-spacing: 1px;
 }
 
-/* Typography */
-@import "typography";
+h1,
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  margin-bottom: $vertical-spacing;
+}
+
+h3 {
+  font-size: 14px;
+}
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -799,12 +812,6 @@ movement (as the header gets a new position at the top of the page
 /*-----------------------------------------------------
 Footer styling
 */
-/* todo remove top border */
-
-#colophon {
-  // box-shadow: $box-shadow-top; // remove because not same as design
-}
-
 .site-info-container {
   background-image: linear-gradient(rgba(17, 17, 17, 0.2), rgba(0, 0, 0, 0));
   // background-color: $dark;
@@ -1005,7 +1012,7 @@ Banner header for pages, services and teams
   width: 100%;
   background-repeat: no-repeat;
   background-position: right center;
-  margin: 0px auto 4em !important;
+  margin: 0px auto 4em;
 
   @include mobiles-all {
     height: 100%;

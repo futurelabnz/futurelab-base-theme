@@ -84,8 +84,8 @@
     position: absolute;
     left: 20%;
     bottom: 40px;
-    right: auto !important;
-    width: auto !important;
+    right: auto;
+    width: auto;
   }
 
   .swiper-pagination-bullet {
@@ -115,15 +115,11 @@
   line-height: 18px;
   letter-spacing: 1px;
   margin: 0;
-  // padding: 12px 24px;
   padding: 16px 56px;
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
   box-shadow: $box-shadow;
-
-  @media screen {
-  }
 }
 
 .wp-block-button {
@@ -196,98 +192,82 @@ tbody tr:nth-child(2n) {
 
 /* styling for gutenberg default image */
 .wp-block-image {
-
+  // image style 
   img {
     border-radius: 15px 15px 0 0;
   }
 
+  // figcaption style
   figcaption {
     text-align: center;
     padding: 1rem;
     border-radius: 0 0 15px 15px;
     @include box-shadow-below;
-
-    strong {
-      color: $dark;
-    }
-  }
-}
-
-/*
-SLIDER STYLING
- */
-.slide-title {
-  font-size: 40px;
-  line-height: 56px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-.slide-content {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 300;
-}
-
-.wp-block-futurelab-block-fl-block-slider2 .swiper-container .swiper-wrapper {
-  .swiper-slide .slide-btn-container .fl-button {
     font-size: 14px;
+    font-weight: 300;
     line-height: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .overlay-slider {
-    @include banner-overlay;
-    @include mobiles-all {
-      background: $light;
+    color: #222222;
+    text-transform: none;
+    background-color: #fff;
+    margin-top: 0px;
+    strong {
+      font-weight: 600;
+      color: $dark;
+      text-transform: uppercase;
     }
   }
 }
 
-figcaption {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 18px;
-  color: #222222;
-  text-transform: none;
-  background-color: #fff;
-  margin-top: 0px;
-}
+/* SLIDER STYLING */
+.wp-block-futurelab-block-fl-block-slider2 .swiper-container .swiper-wrapper {
+  .swiper-slide {
+    .slide-title {
+      font-size: 40px;
+      line-height: 56px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+    .slide-content {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 300;
+    }
+    .slide-btn-container .fl-button {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-figcaption strong {
-  font-weight: 600;
-  color: $dark;
-  text-transform: uppercase;
+    .overlay-slider {
+      @include banner-overlay;
+      @include mobiles-all {
+        background: $light;
+      }
+    }
+  }
 }
 
 // styles for latest news
-@media (min-width: 600px) {
-  // news width when user choose to display 3 columns
-  .wp-block-latest-posts.columns-3 li {
+// news width when user choose to display 3 columns
+.wp-block-latest-posts {
+  .columns-3 li {
     width: calc(33.33333% - 48px);
   }
-
   // news width when user choose to display 2 columns
-  .wp-block-latest-posts.columns-2 li {
+  .columns-2 li {
     width: calc(50% - 48px);
   }
-
   // overwrite general margin according to design
-  .wp-block-latest-posts.is-grid li {
+  .is-grid li {
     margin: 0 24px 48px 24px;
   }
-}
-
-// mobile margin
-@media (max-width: 600px) {
-  .wp-block-latest-posts.is-grid li {
+  @include mobiles-all {
     margin: 0 16px 16px 16px;
     width: 100%;
   }
 }
-
 
 .fl-vertical-space {
   padding: 3em 0;
