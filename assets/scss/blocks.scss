@@ -169,31 +169,34 @@
   overflow: hidden;
   @include box-border-radius;
   @include box-shadow-below;
-  td,
-  th {
-    padding: 0.5em;
-    border: 1px solid #e8eef1;
-    word-break: break-all;
-  }
-
-  th {
-    color: $dark;
-    text-align: center;
-  }
-
-  td {
-    text-align: center;
-    &:first-child {
-      text-align: left;
-      font-weight: 600;
-      padding-left: 1rem;
+  table {
+    margin: 0px;
+    td,
+    th {
+      padding: 0.5em;
+      border: 1px solid #e8eef1;
+      word-break: break-all;
     }
-  }
 
-  thead {
-    background: #fff;
-  }
-  tbody {
+    th {
+      color: $dark;
+      text-align: center;
+    }
+
+    td {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+        font-weight: 600;
+        padding-left: 1rem;
+      }
+    }
+
+    thead {
+      background: #fff;
+    }
+    tbody {
+    }
     tr {
       border-bottom: 0;
       background-color: #f1f1f1;
