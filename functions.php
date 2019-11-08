@@ -72,6 +72,7 @@ if (!function_exists('futurelab_base_setup')) :
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
+		 * WP 5.3 fix W3C validation errors on scripts and css in HTML5
 		 */
 		add_theme_support('html5', array(
 			'search-form',
@@ -79,6 +80,8 @@ if (!function_exists('futurelab_base_setup')) :
 			'comment-list',
 			'gallery',
 			'caption',
+			'scripts',
+			'css'
 		));
 
 		// Set up the WordPress core custom background feature.
