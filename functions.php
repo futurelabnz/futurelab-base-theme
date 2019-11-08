@@ -80,7 +80,7 @@ if (!function_exists('futurelab_base_setup')) :
 			'comment-list',
 			'gallery',
 			'caption',
-			'scripts',
+			'script',
 			'css'
 		));
 
