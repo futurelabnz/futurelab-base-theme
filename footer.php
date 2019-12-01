@@ -68,7 +68,9 @@
                                 }
 
                                 foreach ($social_profiles as $key => $value) : ?>
-                                    <a href="<?php echo esc_url($value); ?>" title="Find us on <?php echo esc_attr(ucfirst(substr($key, 3))); ?>">
+                                    <a href="<?php echo esc_url($value); ?>"
+                                       aria-label="Find us on <?php echo esc_attr(ucfirst(substr($key, 3))); ?>"
+                                       title="Find us on <?php echo esc_attr(ucfirst(substr($key, 3))); ?>">
                                         <i class="fa <?php echo esc_attr($key); ?>"></i>&nbsp;
                                     </a>
                                     &nbsp;
