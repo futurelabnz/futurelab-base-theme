@@ -48,7 +48,10 @@
 				$button = get_theme_mod( 'additional_navigation_button' );
 				if ( ! empty( $button ) ) : ?>
                     <div class="wp-block-button alignleft">
-                        <a title="<?php echo esc_attr( $button ); ?>" class="wp-block-button__link">
+                        <a title="<?php echo esc_attr( $button ); ?>"
+                           class="wp-block-button__link"
+                           aria-label=" Click to <?php echo esc_attr( $button ); ?>"
+                        >
 							<?php echo esc_html( $button ); ?>
                         </a>
                     </div>
@@ -64,7 +67,10 @@
                                 <div class="show-for-small-only small-10 mobile-logo align-middle">
 									<?php if ( display_header_text() ) : ?>
                                         <h1 class="mobile-logo-text">
-                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                                               rel="home"
+                                               aria-label="Link to home"
+                                            >
 												<?php bloginfo( 'name' ); ?>
                                             </a>
                                         </h1>
@@ -101,7 +107,7 @@
 								if ( ! empty( $button ) ) :
 									$book_button = '
                                     <div class="wp-block-button aligncenter">';
-									$book_button .= '<a title="' . esc_attr( $button ) . '" target="' . esc_attr( $button_target ) . '"
+									$book_button .= '<a title="' . esc_attr( $button ) . '" aria-label="Click to ' . esc_attr( $button ) . '" target="' . esc_attr( $button_target ) . '"
                                                             href="' . $button_url . '" class="wp-block-button__link">';
 									$book_button .= esc_html( $button ) . '</a></div>';
 								endif;
@@ -115,7 +121,7 @@
 								$cleaned_number = $phone_number;
 								if ( ! empty( $phone_number ) ):
 									$number_button = '<div class="wp-block-button aligncenter">';
-									$number_button .= '<a title="' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link" style="color:#ffffff;">';
+									$number_button .= '<a aria-label="Click to call ' . esc_attr( $button ) . '" title="' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link" style="color:#ffffff;">';
 									$number_button .= 'CALL ' . $phone_number . ' NOW</a></div>';
 								endif; ?>
                             </div>
@@ -140,6 +146,7 @@
                             <div class="wp-block-button alignleft">
                                 <a title="<?php echo esc_attr( $button ); ?>"
                                    target="<?php echo esc_attr( $button_target ); ?>"
+                                   aria-label="Click to <?php echo esc_attr( $button ); ?>"
                                    href="<?php echo $button_url; ?>" class="wp-block-button__link">
 									<?php echo esc_html( $button ); ?>
                                 </a>
