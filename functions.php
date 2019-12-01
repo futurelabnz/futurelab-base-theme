@@ -5,7 +5,68 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package futurelab_base
+ *
  */
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Custom color palette
+ */
+require get_template_directory() . '/inc/custom_color_palette.php';
+
+/**
+ * Custom post types.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Custom taxonomies.
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
+
+/**
+ * Custom meta-data.
+ */
+require get_template_directory() . '/inc/custom-meta-data.php';
+
+/**
+ * Custom theme tags
+ */
+require get_template_directory() . '/inc/custom-theme-tags.php';
+
+/**
+ * Custom reusable blocks
+ */
+require get_template_directory() . '/widgets/reusable-blocks.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if (defined('JETPACK__VERSION')) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+
 
 if (!function_exists('futurelab_base_setup')) :
 	/**
@@ -122,9 +183,6 @@ add_action('after_setup_theme', 'futurelab_base_setup');
 if (!isset($content_width)) {
 	$content_width = 640;
 }
-
-function mytheme_adjust_content_width()
-{ }
 
 add_action('template_redirect', 'futurelab_base_content_width');
 function futurelab_base_content_width()
@@ -384,60 +442,3 @@ function futurelab_custom_responsive_image_sizes($sizes, $size) {
 add_filter('wp_calculate_image_sizes', 'futurelab_custom_responsive_image_sizes', 10 , 2);
 */
 
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Custom taxonomies.
- */
-require get_template_directory() . '/inc/custom_color_palette.php';
-
-/**
- * Custom post types.
- */
-require get_template_directory() . '/inc/custom-post-types.php';
-
-/**
- * Custom taxonomies.
- */
-require get_template_directory() . '/inc/custom-taxonomies.php';
-
-/**
- * Custom meta-data.
- */
-require get_template_directory() . '/inc/custom-meta-data.php';
-
-/**
- * Custom taxonomies.
- */
-require get_template_directory() . '/inc/custom-theme-tags.php';
-
-/**
- * Custom taxonomies.
- */
-require get_template_directory() . '/widgets/reusable-blocks.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if (defined('JETPACK__VERSION')) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
