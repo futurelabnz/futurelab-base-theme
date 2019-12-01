@@ -48,9 +48,8 @@
 				$button = get_theme_mod( 'additional_navigation_button' );
 				if ( ! empty( $button ) ) : ?>
                     <div class="wp-block-button alignleft">
-                        <a title="<?php echo esc_attr( $button ); ?>"
+                        <a title="Click to <?php echo esc_attr( $button ); ?>"
                            class="wp-block-button__link"
-                           aria-label=" Click to <?php echo esc_attr( $button ); ?>"
                         >
 							<?php echo esc_html( $button ); ?>
                         </a>
@@ -69,7 +68,7 @@
                                         <h1 class="mobile-logo-text">
                                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                                rel="home"
-                                               aria-label="Link to home"
+                                               title="Link to home"
                                             >
 												<?php bloginfo( 'name' ); ?>
                                             </a>
@@ -107,7 +106,7 @@
 								if ( ! empty( $button ) ) :
 									$book_button = '
                                     <div class="wp-block-button aligncenter">';
-									$book_button .= '<a title="' . esc_attr( $button ) . '" aria-label="Click to ' . esc_attr( $button ) . '" target="' . esc_attr( $button_target ) . '"
+									$book_button .= '<a title="' . esc_attr( $button ) . '" target="' . esc_attr( $button_target ) . '"
                                                             href="' . $button_url . '" class="wp-block-button__link">';
 									$book_button .= esc_html( $button ) . '</a></div>';
 								endif;
@@ -146,7 +145,6 @@
                             <div class="wp-block-button alignleft">
                                 <a title="<?php echo esc_attr( $button ); ?>"
                                    target="<?php echo esc_attr( $button_target ); ?>"
-                                   aria-label="Click to <?php echo esc_attr( $button ); ?>"
                                    href="<?php echo $button_url; ?>" class="wp-block-button__link">
 									<?php echo esc_html( $button ); ?>
                                 </a>
