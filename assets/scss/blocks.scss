@@ -14,44 +14,56 @@
 .wp-block-futurelab-block-fl-content-carousel {
   background-color: $bgcdark;
   padding: $vertical-spacing 30px;
-
-  /* todo replace media query with proper foundation mixin */
-  @media screen and (max-width: 39.9375em) {
+  @include tablets-all {
+    padding: $vertical-spacing 0;
+  }
+  @include mobiles-all {
     padding: $vertical-spacing 0;
   }
 
   // move swiper button closer to middle
   .swiper-button-prev {
-    left: 12%;
-    /* todo replace media query with proper foundation mixin */
-    @media screen and (max-width: 39.9375em) {
+    @include mobiles-all {
       left: 0;
       width: 38px;
       height: 38px;
       background-size: 30px;
     }
 
-    @media only screen and (min-width: 40.063em) {
+    @include tablets-all {
+      left: 0;
+      width: 38px;
+      height: 38px;
+      background-size: 30px;
+    }
+
+    @include desktops-all {
       left: 5%;
     }
 
-    // to fix carousel arrow go over text
+    // customized media query to fix carousel arrow go over text.
     @media only screen and (max-width: 1340px) {
       left: 0;
     }
   }
 
   .swiper-button-next {
-    right: 12%;
     /* todo replace media query with proper foundation mixin */
-    @media screen and (max-width: 39.9375em) {
+    @include mobiles-all {
       right: 0;
       width: 38px;
       height: 38px;
       background-size: 30px;
     }
 
-    @media only screen and (min-width: 40.063em) {
+    @include tablets-all {
+      right: 0;
+      width: 38px;
+      height: 38px;
+      background-size: 30px;
+    }
+
+    @include desktops-all {
       right: 5%;
     }
 
@@ -84,8 +96,8 @@
     position: absolute;
     left: 20%;
     bottom: 40px;
-    right: auto !important;
-    width: auto !important;
+    right: auto;
+    width: auto;
   }
 
   .swiper-pagination-bullet {
@@ -115,15 +127,11 @@
   line-height: 18px;
   letter-spacing: 1px;
   margin: 0;
-  // padding: 12px 24px;
   padding: 16px 56px;
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
   box-shadow: $box-shadow;
-
-  @media screen {
-  }
 }
 
 .wp-block-button {
@@ -131,6 +139,7 @@
   margin-bottom: 1rem;
 }
 
+// block image styling
 .wp-block-media-text > figure > img,
 .wp-block-media-text__media,
 .wp-block-media-text__media figure img {
@@ -142,7 +151,10 @@
 .wp-block-button .alignright,
 .wp-block-button {
   /*todo replace media query with foundation mixin */
-  @media screen and (max-width: 39.9375em) {
+  @include tablets-all {
+    margin: $vertical-spacing auto;
+  }
+  @include mobiles-all {
     margin: $vertical-spacing auto;
   }
 }
@@ -153,141 +165,168 @@
   border-color: #e8eef1;
 }
 
-.wp-block-table td,
-.wp-block-table th {
-  padding: 0.5em;
-  border: 1px solid #e8eef1;
-  word-break: break-all;
-}
-
+// gutenberg table styling
 .wp-block-table {
   overflow: hidden;
   @include box-border-radius;
   @include box-shadow-below;
-}
+  table {
+    margin: 0px;
+    td,
+    th {
+      padding: 0.5em;
+      border: 1px solid #e8eef1;
+      word-break: break-all;
+    }
 
-.wp-block-table th {
-  color: $dark;
-  text-align: center;
-}
+    th {
+      color: $dark;
+      text-align: center;
+    }
 
-thead {
-  background: #fff;
-}
+    td {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+        font-weight: 600;
+        padding-left: 1rem;
+      }
+    }
 
-tbody tr {
-  border-bottom: 0;
-  background-color: #f1f1f1;
-}
-tbody tr:nth-child(2n) {
-  border-bottom: 0;
-  background-color: #fff;
-}
+    thead {
+      background: #fff;
+    }
+    tbody {
+    }
+    tr {
+      border-bottom: 0;
+      background-color: #f1f1f1;
+      &:nth-child(2n) {
+        border-bottom: 0;
+        background-color: #fff;
+      }
+    }
+  }
+  // responsive table
+  @include mobiles-all {
+    overflow: auto;
+    // @include box-border-radius;
+    @include box-shadow-below;
+    table caption {
+      display: none;
+    }
+    h3 {
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1.9em;
+    }
 
-.wp-block-table td {
-  text-align: center;
-}
+    table {
+      width: 100%;
+      margin: 0;
+    }
 
-.wp-block-table td:first-child {
-  text-align: left;
-  font-weight: 600;
-  padding-left: 1rem;
+    table caption {
+      font-size: 0.9em;
+      padding: 0.5em 0;
+    }
+
+    table caption,
+    table tfoot tr td {
+      font-weight: normal;
+    }
+    .p {
+      text-align: center;
+      padding-top: 140px;
+      font-size: 14px;
+    }
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      min-width: 200px;
+    }
+  }
 }
 
 /* styling for gutenberg default image */
 .wp-block-image {
-
+  // image style
   img {
     border-radius: 15px 15px 0 0;
   }
 
+  // figcaption style
   figcaption {
     text-align: center;
     padding: 1rem;
     border-radius: 0 0 15px 15px;
     @include box-shadow-below;
-
-    strong {
-      color: $dark;
-    }
-  }
-}
-
-/*
-SLIDER STYLING
- */
-.slide-title {
-  font-size: 40px;
-  line-height: 56px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-.slide-content {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 300;
-}
-
-.wp-block-futurelab-block-fl-block-slider2 .swiper-container .swiper-wrapper {
-  .swiper-slide .slide-btn-container .fl-button {
     font-size: 14px;
+    font-weight: 300;
     line-height: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .overlay-slider {
-    @include banner-overlay;
-    @include mobiles-all {
-      background: $light;
+    color: #222222;
+    text-transform: none;
+    background-color: #fff;
+    margin-top: 0px;
+    strong {
+      font-weight: 600;
+      color: $dark;
+      text-transform: uppercase;
     }
   }
 }
 
-figcaption {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 18px;
-  color: #222222;
-  text-transform: none;
-  background-color: #fff;
-  margin-top: 0px;
-}
+/* SLIDER STYLING */
+.wp-block-futurelab-block-fl-block-slider2 .swiper-container .swiper-wrapper {
+  .swiper-slide {
+    .slide-title {
+      font-size: 40px;
+      line-height: 56px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+    .slide-content {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 300;
+    }
+    .slide-btn-container .fl-button {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-figcaption strong {
-  font-weight: 600;
-  color: $dark;
-  text-transform: uppercase;
+    .overlay-slider {
+      @include banner-overlay;
+      @include mobiles-all {
+        background: $light;
+      }
+    }
+  }
 }
 
 // styles for latest news
-@media (min-width: 600px) {
-  // news width when user choose to display 3 columns
-  .wp-block-latest-posts.columns-3 li {
+// news width when user choose to display 3 columns
+.wp-block-latest-posts {
+  .columns-3 li {
     width: calc(33.33333% - 48px);
   }
-
   // news width when user choose to display 2 columns
-  .wp-block-latest-posts.columns-2 li {
+  .columns-2 li {
     width: calc(50% - 48px);
   }
-
   // overwrite general margin according to design
-  .wp-block-latest-posts.is-grid li {
+  .is-grid li {
     margin: 0 24px 48px 24px;
   }
-}
-
-// mobile margin
-@media (max-width: 600px) {
-  .wp-block-latest-posts.is-grid li {
+  @include mobiles-all {
     margin: 0 16px 16px 16px;
     width: 100%;
   }
 }
-
 
 .fl-vertical-space {
   padding: 3em 0;
