@@ -11,35 +11,35 @@ get_header();
 ?>
 
     <div id="primary" class="content-area">
-    <main id="main" class="site-main">
+        <main id="main" class="site-main">
 
-<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-    <?php get_template_part( 'template-parts/partial-banner-header'); ?>
+				<?php get_template_part( 'template-parts/partial-banner-header' ); ?>
 
-	<?php
-	/* Start the Loop */
-	while ( have_posts() ) :
-		the_post();
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
 
-		/*
-		 * Content list displays a list of posts, in single column format, image left,
-		 * title and excerpt right and clicks through to the relevant detail page
-		*/
+					/*
+					 * Content list displays a list of posts, in single column format, image left,
+					 * title and excerpt right and clicks through to the relevant detail page
+					*/
 
-		get_template_part( 'template-parts/list-inside-loop' );
+					get_template_part( 'template-parts/list-inside-loop' );
 
-	endwhile;
+				endwhile;
 
-	wp_reset_postdata();
-	wp_reset_query();
+				wp_reset_postdata();
+				wp_reset_query();
 
-	?>
+				?>
 
-<?php endif; ?>
+			<?php endif; ?>
 
-    </main><!-- #main -->
+        </main><!-- #main -->
     </div><!-- #primary -->
 
 <?php
