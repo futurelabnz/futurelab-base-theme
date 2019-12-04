@@ -10,7 +10,7 @@
 function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 
 	$html   = '<nav class="futurelab-breadcrumbs">';
-	$html = '<ol vocab="https://schema.org/" typeof="BreadcrumbList">';
+	$html   = '<ol vocab="https://schema.org/" typeof="BreadcrumbList">';
 	$crumbs = array();
 
 	if ( is_singular( 'page' ) && ! is_front_page() && $object->post_parent !== 0 ) {
@@ -67,8 +67,8 @@ function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 	if ( ! empty( $crumbs ) ) {
 
 		$current_element_id = count( $crumbs );
-		$current = $crumbs[0]['title'];
-		$home    = '<li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . get_bloginfo( 'url' ) . '" rel="nofollow" title="Go to home">Home</a><meta property="position" content="1"></li>&nbsp;' . $separator . '&nbsp;';
+		$current            = $crumbs[0]['title'];
+		$home               = '<li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . get_bloginfo( 'url' ) . '" rel="nofollow" title="Go to home">Home</a><meta property="position" content="1"></li>&nbsp;' . $separator . '&nbsp;';
 		unset( $crumbs[0] );
 		$crumbs = array_reverse( $crumbs );
 
@@ -125,14 +125,14 @@ function get_futurelab_title_meta( $post ) {
 
 		$title_meta = get_post_meta( $post->ID, 'fl_page_meta_title', true );
 
-		if( ! empty( $title_meta ) ){
+		if ( ! empty( $title_meta ) ) {
 			return $title_meta;
 		}
 
 		switch ( $post->post_type ) {
 
 			case 'fl_services':
-					$title_meta = 'Services';
+				$title_meta = 'Services';
 				break;
 			case 'post':
 
@@ -146,7 +146,7 @@ function get_futurelab_title_meta( $post ) {
 				break;
 			case 'page':
 
-				if( $post->parent > 0 ) {
+				if ( $post->parent > 0 ) {
 					$title_meta = '<a href="' . esc_url( get_the_permalink( $post->parent ) ) . '" title="Go to' . get_the_title( $post->parent ) . '">' . get_the_title( $post->parent ) . '</a>';
 				}
 				break;
@@ -155,12 +155,12 @@ function get_futurelab_title_meta( $post ) {
 		}
 	}
 
-	if( is_archive() ){
-		$term = get_queried_object();
+	if ( is_archive() ) {
+		$term       = get_queried_object();
 		$title_meta = $term->name;
 	}
 
-	if( is_wp_error( $title_meta ) ){
+	if ( is_wp_error( $title_meta ) ) {
 		$title_meta = '';
 	}
 
@@ -181,8 +181,8 @@ function get_futurelab_title( $post ) {
 	}
 
 	if ( is_archive() ) {
-		$term = get_queried_object();
-		$title   = $term->name;
+		$term  = get_queried_object();
+		$title = $term->name;
 	}
 
 	return $title;
@@ -215,7 +215,7 @@ function get_futurelab_sub_title( $post ) {
 	}
 
 	if ( is_archive() ) {
-		$term = get_queried_object();
+		$term      = get_queried_object();
 		$sub_title = $term->description;
 	}
 
