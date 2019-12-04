@@ -41,8 +41,8 @@ function get_futurelab_breadcrumbs( $object, $separator = '&gt;' ) {
 		$is_shop = false;
 	}
 
-	if ( false === $is_shop && ( is_tax() || is_archive() ) ) {
-
+	if ( false === $is_shop && isset( $object->term_id ) && ( is_tax() || is_archive() ) ) {
+		
 		$crumbs[0]['id']    = $object->term_id;
 		$crumbs[0]['link']  = get_term_link( $object->term_id );
 		$crumbs[0]['title'] = $object->name;
