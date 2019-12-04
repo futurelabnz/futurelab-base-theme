@@ -79,7 +79,10 @@
 									<?php endif; ?>
                                 </div>
                                 <div class="small-2 align-middle">
-                                    <button id="mobile-menu" class="toggle-menu" aria-controls="mobile-menu"
+                                    <button id="mobile-menu" class="toggle-menu"
+                                            aria-controls="mobile-menu"
+                                            title="Click to navigate"
+                                            aria-label="Click to navigate"
                                             aria-expanded="false"
                                             style="border:0;background: none;font-size:24px;padding: 20px 10px;">
                                         <i class="fa fa-bars">&nbsp;</i>
