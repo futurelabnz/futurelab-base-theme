@@ -10,26 +10,26 @@
  */
 
 ?>
-    <!doctype html>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 
-    <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="https://gmpg.org/xfn/11">
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script>
-            WebFont.load({
-                google: {
-                    families: ['Montserrat:300,400,500,600']
-                }
-            });
-        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Montserrat:300,400,500,600']
+            }
+        });
+    </script>
 
-		<?php wp_head(); ?>
+	<?php wp_head(); ?>
 
-    </head>
+</head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
@@ -81,8 +81,8 @@
                                 <div class="small-2 align-middle">
                                     <button id="mobile-menu" class="toggle-menu"
                                             aria-controls="mobile-menu"
-                                            title="Click to navigate"
-                                            aria-label="Click to navigate"
+                                            title="Click for mobile menu"
+                                            aria-label="Click for mobile menu"
                                             aria-expanded="false"
                                             style="border:0;background: none;font-size:24px;padding: 20px 10px;">
                                         <i class="fa fa-bars">&nbsp;</i>
@@ -106,7 +106,7 @@
 								$button        = get_theme_mod( 'additional_navigation_button' );
 								$button_url    = get_theme_mod( 'additional_navigation_button_url' );
 								$button_target = get_theme_mod( 'additional_navigation_button_target' );
-								$button_target = (!empty( $button_target )) ? 'target="' . esc_attr( $button_target ) . '"' : '';
+								$button_target = ( ! empty( $button_target ) ) ? 'target="' . esc_attr( $button_target ) . '"' : '';
 								if ( ! empty( $button ) ) :
 									$book_button = '
                                     <div class="wp-block-button aligncenter">';
@@ -145,12 +145,12 @@
 						$button        = get_theme_mod( 'additional_navigation_button' );
 						$button_url    = get_theme_mod( 'additional_navigation_button_url' );
 						$button_target = get_theme_mod( 'additional_navigation_button_target' );
-						$button_target = (!empty( $button_target )) ? ' target="' . esc_attr( $button_target ) . '" ' : '';
+						$button_target = ( ! empty( $button_target ) ) ? ' target="' . esc_attr( $button_target ) . '" ' : '';
 						if ( ! empty( $button ) ) : ?>
                             <div class="wp-block-button alignleft">
                                 <a <?php echo $button_target; ?>
-                                   href="<?php echo $button_url; ?>"
-                                    class="wp-block-button__link">
+                                        href="<?php echo $button_url; ?>"
+                                        class="wp-block-button__link">
 									<?php echo esc_html( $button ); ?>
                                 </a>
                             </div>
@@ -161,9 +161,9 @@
         </div>
     </header><!-- #masthead -->
 
-<?php get_template_part( 'template-parts/header', 'secondary' ); ?>
+	<?php get_template_part( 'template-parts/header', 'secondary' ); ?>
 
     <div id="content" class="site-content">
 
 
-<?php echo get_futurelab_breadcrumbs( get_queried_object() ); ?>
+		<?php echo get_futurelab_breadcrumbs( get_queried_object() ); ?>
