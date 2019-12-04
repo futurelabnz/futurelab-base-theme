@@ -31,7 +31,7 @@ $thumbnail_url = '';
         </div>
         <div class="down-arrow-container hide-for-small-only"
              style="background-image: url( '<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_arrow_scroll_down.svg'; ?>' );">
-            <a href="#primary">&nbsp;</a>
+            <a href="#primary" title="Skip to primary content">&nbsp;</a>
         </div>
     </div>
 
