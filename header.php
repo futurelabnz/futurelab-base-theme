@@ -107,7 +107,7 @@
 								if ( ! empty( $button ) ) :
 									$book_button = '
                                     <div class="wp-block-button aligncenter">';
-									$book_button .= '<a title="' . esc_attr( $button ) . '" ' . esc_attr( $button_target ) . '
+									$book_button .= '<a title="' . esc_attr( $button ) . '" ' . $button_target . '
                                                             href="' . $button_url . '" class="wp-block-button__link">';
 									$book_button .= esc_html( $button ) . '</a></div>';
 								endif;
@@ -142,11 +142,12 @@
 						$button        = get_theme_mod( 'additional_navigation_button' );
 						$button_url    = get_theme_mod( 'additional_navigation_button_url' );
 						$button_target = get_theme_mod( 'additional_navigation_button_target' );
+						$button_target = (!empty( $button_target )) ? ' target="' . esc_attr( $button_target ) . '" ' : '';
 						if ( ! empty( $button ) ) : ?>
                             <div class="wp-block-button alignleft">
-                                <a title="<?php echo esc_attr( $button ); ?>"
-                                   target="<?php echo esc_attr( $button_target ); ?>"
-                                   href="<?php echo $button_url; ?>" class="wp-block-button__link">
+                                <a <?php echo $button_target; ?>
+                                   href="<?php echo $button_url; ?>"
+                                    class="wp-block-button__link">
 									<?php echo esc_html( $button ); ?>
                                 </a>
                             </div>
