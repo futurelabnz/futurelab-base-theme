@@ -1,4 +1,5 @@
 <?php
+
 /**
  * futurelab base functions and definitions
  *
@@ -211,8 +212,8 @@ function futurelab_base_widgets_init()
 			'description'   => esc_html__($sidebar['description'], 'futurelab-base'),
 			'before_widget' => '<section id = "%1$s" class="widget %2$s" > ',
 			'after_widget'  => '</section >',
-			'before_title'  => '',
-			'after_title'   => '',
+			'before_title'  => '<h4 class="title">',
+			'after_title'   => '</h4>',
 		));
 	}
 }
@@ -263,23 +264,31 @@ function load_futurelab_frontend_assets()
 	// 	true
 	// );
 
-	// wp_enqueue_script(
-	// 	'futurelab-responsive-tables-js',
-	// 	get_template_directory_uri() . '/assets/foundation/js/vendor/responsive-tables.js',
-	// 	array('jquery'),
-	// 	microtime(),
-	// 	true
-	// );
+	// This is the swiper.css required for our sliders, galleries and carousels 
+	wp_enqueue_style(
+		'futurelab-swiper-style',
+		get_template_directory_uri() . '/assets/swiper/css/swiper.css',
+		array(),
+		filemtime(get_template_directory() . '/assets/swiper/css/swiper.css'),
+		false
+	);
 
-	/*
+	// enqueue foundation css
 	wp_enqueue_style(
 		'futurelab-foundation-style',
 		get_template_directory_uri() . '/assets/foundation/css/foundation.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/foundation/css/foundation.css' ),
+		array('futurelab-swiper-style'),
+		filemtime(get_template_directory() . '/assets/foundation/css/foundation.css'),
 		false
 	);
-	*/
+
+	wp_enqueue_style(
+		'futurelab-base-style',
+		get_template_directory_uri('futurelab-foundation-style') . '/assets/dist/style.min.css',
+		array(),
+		filemtime(get_template_directory() . '/assets/dist/style.min.css'),
+		false
+	);
 
 	wp_enqueue_script(
 		'futurelab-fontawesome-style',
@@ -287,14 +296,6 @@ function load_futurelab_frontend_assets()
 		array(),
 		filemtime(get_template_directory() . '/assets/fontawesome/css/all.css'),
 		true
-	);
-
-	wp_enqueue_style(
-		'futurelab-base-style',
-		get_template_directory_uri() . '/assets/dist/style.min.css',
-		array(),
-		filemtime(get_template_directory() . '/assets/dist/style.min.css'),
-		false
 	);
 }
 

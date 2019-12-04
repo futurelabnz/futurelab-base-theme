@@ -1,0 +1,35 @@
+/*-----------------------------------------------------
+Footer styling
+*/
+.site-info-container {
+  background-image: linear-gradient(rgba(17, 17, 17, 0.2), rgba(0, 0, 0, 0));
+  // background-color: $dark;
+  background-color: $dark;
+  // box-shadow: $box-shadow-top;
+
+  .site-info {
+    // margin: 0;
+    padding: 1rem;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+.site-copyright {
+  padding: 8px 30px;
+}
+
+#colophon {
+  .site-info {
+    .menu-menu-container {
+      .menu {
+        .menu-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
