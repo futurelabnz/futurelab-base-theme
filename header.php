@@ -121,7 +121,7 @@
 								$cleaned_number = $phone_number;
 								if ( ! empty( $phone_number ) ):
 									$number_button = '<div class="wp-block-button aligncenter">';
-									$number_button .= '<a aria-label="Click to call ' . esc_attr( $button ) . '" title="' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link" style="color:#ffffff;">';
+									$number_button .= '<a title="Click to call ' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link" style="color:#ffffff;">';
 									$number_button .= 'CALL ' . $phone_number . ' NOW</a></div>';
 								endif; ?>
                             </div>
