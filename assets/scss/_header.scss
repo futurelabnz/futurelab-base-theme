@@ -78,6 +78,16 @@ html.larger-text-size {
     // make padding smaller to increase more font size
     padding: 5px 8px;
   }
+  .sub-menu {
+    a {
+      padding: 10px 8px;
+    }
+
+    max-height: 90vh;
+    overflow-y: scroll;
+    overflow-x: visible;
+
+  }
 }
 
 /* Small menu. */
@@ -238,6 +248,7 @@ Masthead styling
         border: 1px solid $text-gray;
         padding: 5px;
         width: 120px;
+        z-index: 99;
       }
       &:hover {
         .normal-text-size-discription {
@@ -262,6 +273,7 @@ Masthead styling
         border: 1px solid $text-gray;
         padding: 5px;
         width: 120px;
+        z-index: 99;
       }
 
       &:hover {
