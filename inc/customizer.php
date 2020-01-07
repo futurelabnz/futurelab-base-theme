@@ -60,6 +60,20 @@ function futurelab_base_customize_register( $wp_customize ) {
 		)
 	);
 
+	// adjust font-size
+	$wp_customize->add_setting( 'additional_navigation_addjust_fontsize', array(
+			'type' => 'theme_mod'
+		)
+	);
+
+	$wp_customize->add_control( 'additional_navigation_addjust_fontsize', array(
+			'type'     => 'checkbox',
+			'section'  => 'title_tagline',
+			'priority' => 10,
+			'label'    => __( 'Show adjust font-size switcher', 'futurelab-base' )
+		)
+	);
+
 	/*
 	 * Choose font
 	 */

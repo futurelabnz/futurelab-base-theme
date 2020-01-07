@@ -11,7 +11,7 @@
 
 ?>
     <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="font-size:100%">
 
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -55,10 +55,10 @@
 				<?php endif; ?>
             </div>
 
-            <div class="large-9 medium-12 small-12 align-self-middle align-right">
-                <div class="grid-x grid-padding-x align-right">
+            <div class="grid-x large-8 medium-12 small-12 align-self-middle align-right">
+                <div class="grid-x large-12 grid-padding-x align-right">
                     <nav id="site-navigation"
-                         class="main-navigation large-9 medium-12 small-12 flex-child-grow alignright align-self-middle">
+                         class="main-navigation grid-x large-9 medium-12 small-12 flex-child-grow align-self-middle align-spaced">
                         <div class="small-12 text-center align-middle show-for-small-only">
                             <div class="grid-x">
                                 <div class="show-for-small-only small-10 mobile-logo align-middle">
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hide-for-small-only align-right alignright" style="padding-right:20px;">
+                        <div class="hide-for-small-only align-right" style="padding-right:20px;">
 							<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',
@@ -90,7 +90,7 @@
 							) );
 							?>
                         </div>
-                        <div class="show-for-small-only small-12">
+                        <div class="show-for-small-only small-12 grid-x">
                             <div>
 								<?php
 								/* Optional button added through customizer */
@@ -130,7 +130,31 @@
                             </div>
                         </div>
                     </nav>
-                    <div class="show-for-large large-2 flex-child-shrink small-margin alignleft">
+
+                    <?php 
+                        $is_show_adjust_fontsize = get_theme_mod( 'additional_navigation_addjust_fontsize' );
+                        if ( $is_show_adjust_fontsize) {
+                            ?>
+                            <div class="adjust-fontsize large-1 align-self-middle">
+                                <div class="adjust">
+                                    <div class="normal-text-size-container">
+                                        <span class="normal-text-size">A</span>
+                                        <span class="normal-text-size-discription">Normal font size</span>
+                                    </div>
+                                    <span class='divider'>
+                                        | 
+                                    </span>
+                                     <div class="larger-text-size-container">
+                                         <span class="larger-text-size">A+</span>
+                                         <span class="larger-text-size-discription">Larger font size</span>
+                                     </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    ?>
+
+                    <div class="show-for-large large-1 flex-child-shrink small-margin alignright">
 						<?php
 						/* Optional button added through customizer */
 						$button        = get_theme_mod( 'additional_navigation_button' );

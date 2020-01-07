@@ -180,4 +180,14 @@
   } catch (error) {
     // console.log("slider frontend.js error", error);
   }
+
+  // font-size switcher
+  if ($('.adjust-fontsize')) {
+    $('.normal-text-size').on('click', function () {
+      $('html').css('font-size', '100%').removeClass('larger-text-size');
+    })
+    $('.larger-text-size').on('click', function () {
+      $('html').css('font-size', '150%').addClass('larger-text-size');
+    })
+  }
 })(jQuery);

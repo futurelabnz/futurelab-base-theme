@@ -55,18 +55,28 @@
   float: left;
   position: relative;
 }
-
-.main-navigation a {
+ .main-navigation a {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
   color: $text-black;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 	0.875rem;
   letter-spacing: 1px;
   line-height: 1.2;
+  padding: 10px 16px;
   &:visited {
     color: $text-black;
+  }
+}
+
+// style for larger text size
+html.larger-text-size {
+  .main-navigation a {
+    font-size: 	0.8rem;
+    letter-spacing: 0px;
+    // make padding smaller to increase more font size
+    padding: 5px 8px;
   }
 }
 
@@ -203,4 +213,62 @@ Masthead styling
   (position:fixed and top:0) */
 .sticky-header + .sit-content {
   padding-top: 102px;
+}
+
+// font-size adjust
+.adjust-fontsize {
+  font-size: 0.75rem;
+  position: relative;
+  background-color: #fff;
+
+  cursor: pointer;
+  .adjust {
+    display: block;
+
+    .normal-text-size-container {
+      display: inline;
+      .normal-text-size{
+        font-size: 16px; // use px for show correct font size
+      }
+      .normal-text-size-discription {
+        position:absolute;
+        left: -30px; 
+        display:none;
+        background-color: #fff;
+        border: 1px solid $text-gray;
+        padding: 5px;
+        width: 120px;
+      }
+      &:hover {
+        .normal-text-size-discription {
+          display:block;
+
+        }
+      }
+    }
+    .divider {
+      display: inline;
+    }
+    .larger-text-size-container {
+      display: inline;
+      .larger-text-size{
+        font-size: 24px; // use px for show correct font size
+      }
+      .larger-text-size-discription {
+        position:absolute; 
+        left: -30px; 
+        display:none;
+        background-color: #fff;
+        border: 1px solid $text-gray;
+        padding: 5px;
+        width: 120px;
+      }
+
+      &:hover {
+        .larger-text-size-discription {
+          display:block;
+        }
+      }
+    }
+  }
 }
