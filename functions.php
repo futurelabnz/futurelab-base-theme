@@ -443,3 +443,7 @@ function futurelab_custom_responsive_image_sizes($sizes, $size) {
 add_filter('wp_calculate_image_sizes', 'futurelab_custom_responsive_image_sizes', 10 , 2);
 */
 
+/**
+ * Reset large image handling
+ */
+add_filter( 'big_image_size_threshold', '__return_false' );
