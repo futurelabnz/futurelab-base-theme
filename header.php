@@ -138,14 +138,14 @@
                             <div class="adjust-fontsize large-1 align-self-middle">
                                 <div class="adjust">
                                     <div class="normal-text-size-container">
-                                        <span class="normal-text-size">A</span>
+                                        <span class="normal-text-size" tabindex="0" role="button" aria-label="Normal font size">A</span>
                                         <span class="normal-text-size-discription">Normal font size</span>
                                     </div>
                                     <span class='divider'>
                                         | 
                                     </span>
                                      <div class="larger-text-size-container">
-                                         <span class="larger-text-size">A+</span>
+                                         <span class="larger-text-size" tabindex="0" role="button" aria-label="Larger font size">A+</span>
                                          <span class="larger-text-size-discription">Larger font size</span>
                                      </div>
                                 </div>
