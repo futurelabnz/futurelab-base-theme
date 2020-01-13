@@ -116,8 +116,7 @@
 								endif;
 								/* Optional button added through customizer */
 								$phone_number = esc_html( get_theme_mod( 'business_number' ) );
-								//$cleaned_number = ereg_replace( "[^0 - 9]", '', $phone_number);
-								//todo clean number
+								//todo clean number on save?
 								$cleaned_number = str_replace( '-', '', $phone_number );
 								$cleaned_number = str_replace( ' ', '', $cleaned_number );
 								$cleaned_number = str_replace( '+', '', $cleaned_number );
