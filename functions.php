@@ -340,10 +340,11 @@ function load_futurelab_frontend_assets()
 		false
 	);
 
+	// enqueue base theme css after foundation css to avoid overwrriten style by foundation
 	wp_enqueue_style(
 		'futurelab-base-style',
-		get_template_directory_uri('futurelab-foundation-style') . '/assets/dist/style.min.css',
-		array(),
+		get_template_directory_uri() . '/assets/dist/style.min.css',
+		array('futurelab-foundation-style'),
 		filemtime(get_template_directory() . '/assets/dist/style.min.css'),
 		false
 	);
