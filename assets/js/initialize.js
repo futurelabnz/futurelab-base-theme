@@ -1,7 +1,7 @@
 /* Initialize our various swiper blocks */
 
 // scolldown arrow for header event listener
-(function($) {
+(function ($) {
   "use strict";
 
   /**
@@ -15,7 +15,7 @@
   if (typeof swiperSliders !== "undefined" && swiperSliders !== null) {
     $.each(
       $(".wp-block-futurelab-block-fl-block-slider2 .swiper-container"),
-      function() {
+      function () {
         // get user configured value for create instance
         // If is autoSlide
         var isSlide = $(this)
@@ -55,6 +55,16 @@
         });
       }
     );
+
+    // hide swiper library duplicated slides from screen reader
+    if ($('.wp-block-futurelab-block-fl-block-slider2').length > 0) {
+      $.each($('.wp-block-futurelab-block-fl-block-slider2 .swiper-slide'), function (index, value) {
+        if ($(this).hasClass('swiper-slide-duplicate')) {
+          $(this).attr("aria-hidden", "true");
+          $(this).find('.slide-btn').attr("aria-hidden", "true");
+        }
+      });
+    }
   }
 
   // init swiperCarousel
@@ -67,7 +77,7 @@
       $(
         ".wp-block-futurelab-block-fl-content-carousel .swiper-carousel-container"
       ),
-      function() {
+      function () {
         // get user configured value for create instance
         // If is autoSlide
         var isSlide = $(this)
@@ -103,10 +113,24 @@
           pagination: {
             el: isshowpagination ? ".swiper-pagination" : "",
             clickable: true
-          }
+          },
+          a11y: {
+            prevSlideMessage: 'Previous slide',
+            nextSlideMessage: 'Next slide',
+          },
         });
       }
     );
+    
+    // hide swiper library duplicated slides from screen reader
+    if ($('.wp-block-futurelab-block-fl-content-carousel').length > 0) {
+      $.each($('.wp-block-futurelab-block-fl-content-carousel .swiper-slide'), function (index, value) {
+        if ($(this).hasClass('swiper-slide-duplicate')) {
+          $(this).attr("aria-hidden", "true");
+          $(this).find('.wp-block-button__link').attr("aria-hidden", "true");
+        }
+      });
+    }
   }
 
   // init swiperCarousel
@@ -122,7 +146,11 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true
-      }
+      },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      },
     });
   }
 
@@ -140,7 +168,7 @@
   var contentHeight = content.offsetHeight;
   var windowInnerHeight = window.innerHeight;
 
-  window.onscroll = function() {
+  window.onscroll = function () {
     // if content height greater than window height, if user scroll, add sticky header.
     if (headerHeight + contentHeight > windowInnerHeight) {
       addStickyClass();
