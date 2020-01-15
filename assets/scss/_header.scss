@@ -118,6 +118,8 @@ header#masthead {
     background-color: $bgclight;
     margin: 0 auto;
     width: 100%;
+    border-bottom: 1px solid $light-grey;
+    box-shadow: $box-shadow-bottom;
     @include mobiles-all {
         margin-bottom: $vertical-spacing;
     }
@@ -257,9 +259,9 @@ header#masthead {
                 .normal-size-primary-menu-container {
                     .menu-primary-menu-container {
                         ul.menu {
-                            li.menu-item {
+                            > li.menu-item {
                                 &:first-child {
-                                    a {
+                                    > a {
                                         padding-left: 0;
                                     }
                                 }
