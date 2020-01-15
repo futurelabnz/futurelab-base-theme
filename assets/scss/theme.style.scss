@@ -28,426 +28,29 @@
 /* Typography */
 @import "typography";
 /* Our awesomeness is loading from CDN - see funtions.php */
-/* header style */
+/* Navigation, header style */
 @import "header";
 /* footer style */
 @import "footer";
+/* Accessibility, Alignments, Clearings, Widgets, Content */
+@import "content";
 /* woocommerce style */
 @import "woocommerce";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-  color: $dark;
-  &:visited {
-    color: $dark;
-  }
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: $dark;
-}
-
-a:focus {
-  outline: none;
-}
-
-a:hover,
-a:active {
-  outline: 0;
-}
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  clip-path: none;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-  outline: 0;
-}
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.alignwide {
-  margin: 0 auto;
-  max-width: 1140px;
-  width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
-  display: table;
-  table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
-}
-
-.site-header {
-  border-bottom: 1px solid $light-grey;
-  box-shadow: $box-shadow-bottom;
-}
-
-.site-info .textwidget,
-.site-info .textwidget p {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 24px;
-}
-
-.site-footer-widget-container {
-  max-width: 1170px;
-  width: 100%;
-  margin: 63px auto;
-}
-
-.site-footer-widget-container .menu li.menu-item {
-  display: block;
-  clear: right;
-  float: left;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.site-footer-widget-container .menu {
-  display: block;
-  float: left;
-  height: 100%;
-  width: 100%;
-  clear: both;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-
-  ul li {
-    display: block;
-    clear: both;
-    float: left;
-    width: 100%;
-  }
-
-  a {
-    width: 100%;
-    display: block;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 24px;
-    padding: 0;
-  }
-
-  .site-info-container .widget .widget_text {
-    /* todo replace media query with proper foundation mixin */
-    @media screen and (max-width: 39.9375em) {
-      margin: $vertical-spacing 0;
-    }
-
-    @media only screen and (min-width: 40.063em) {
-      margin: $vertical-spacing 0;
-    }
-  }
-}
-
-.footer-find-out-more {
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.footer-find-out-more-button {
-  background-color: $dark;
-  border-radius: 28px;
-  border: 1px solid $dark;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 16px 76px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
-}
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-  margin: 0 0 $vertical-spacing;
-  /* Make sure select elements fit in widgets. */
-}
-
-.widget select {
-  max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-  display: block;
-}
-
-.updated:not(.published) {
-  display: none;
-}
-
-// add margin on post and standard pages
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 4em 0 0;
-}
-
-// remove margin on home page
-.home {
-  .page-content,
-  .entry-content,
-  .entry-summary {
-    margin: 0em 0 0;
-  }
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 $vertical-spacing;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-  word-wrap: break-word;
-}
-
-.bypostauthor {
-  display: block;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block;
-}
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-  display: inline-block;
-}
-
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-  margin-bottom: $vertical-spacing;
-  max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-  text-align: center;
-}
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-  margin-bottom: $vertical-spacing;
-}
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
-}
-
-.gallery-caption {
-  display: block;
-}
-
-/**
-*Overwrite foundation a tag style
-*/
-a {
-  text-decoration: underline;
-  color: $dark;
-}
-
-a:visited {
-  color: $dark;
-}
-
-/*
-MAKE THE STANDARD WORDPRESS GALLERY WORK FOR US
- */
 
 /*
 SECONDARY MENU
  */
 .secondary-menu {
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .menu-secondary-container {
-  text-align: center;
-  margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .menu-secondary-container li {
-  padding: 12px;
+    padding: 12px;
 }
 
 /* Blocks */
@@ -455,68 +58,68 @@ SECONDARY MENU
 
 /* Styling for Gutenberg default buttons */
 .wp-block-button__link {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 // styles for mailchimp subscribe
 .mc4wp-form-fields {
-  .subscribe-form {
-    display: flex;
-    width: 20rem;
-    margin-top: -10px;
+    .subscribe-form {
+        display: flex;
+        width: 20rem;
+        margin-top: -10px;
 
-    input {
-      border: none;
-      border-radius: 10px;
+        input {
+            border: none;
+            border-radius: 10px;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+        }
+
+        .subscribe-input {
+            flex: 3;
+            height: unset;
+            border-radius: 32px 0 0 32px;
+            margin: 0 0 0rem;
+            background-color: #fff;
+            box-shadow: none;
+            padding: 1rem 0 1rem 1rem;
+        }
+
+        .subscribe-button {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 0 32px 32px 0;
+            padding: 1rem 1rem 1rem 0;
+            text-align: right;
+            outline: none;
+
+            .fa,
+            .fas {
+                font-family: "FontAwesome";
+                font-size: 18px;
+                font-weight: 100;
+            }
+        }
+
+        .subscribe-button:focus {
+            border: none;
+        }
     }
-
-    button {
-      border: none;
-      border-radius: 10px;
-    }
-
-    .subscribe-input {
-      flex: 3;
-      height: unset;
-      border-radius: 32px 0 0 32px;
-      margin: 0 0 0rem;
-      background-color: #fff;
-      box-shadow: none;
-      padding: 1rem 0 1rem 1rem;
-    }
-
-    .subscribe-button {
-      flex: 1;
-      background-color: #fff;
-      border-radius: 0 32px 32px 0;
-      padding: 1rem 1rem 1rem 0;
-      text-align: right;
-      outline: none;
-
-      .fa,
-      .fas {
-        font-family: "FontAwesome";
-        font-size: 18px;
-        font-weight: 100;
-      }
-    }
-
-    .subscribe-button:focus {
-      border: none;
-    }
-  }
 }
 
 .has-small-font-size {
-  color: $dark;
+    color: $dark;
 }
 
 .has-large-font-size {
-  color: $dark;
+    color: $dark;
 }
 
 .has-huge-font-size {
-  color: $dark;
+    color: $dark;
 }
 
 /*
@@ -525,19 +128,19 @@ For when a paragraph is aligned right to go next to the subscribe MailChimp sign
 This is a hack for mobile and we will need to build our own block with our own styles.
  */
 .mailchimp-label {
-  text-align: right !important;
+    text-align: right !important;
 
-  /* todo replace media query with foundation mixin */
-  @media screen and (max-width: 39.9375em) {
-    text-align: center !important;
-  }
+    /* todo replace media query with foundation mixin */
+    @media screen and (max-width: 39.9375em) {
+        text-align: center !important;
+    }
 }
 
 .mc4wp-form-fields .subscribe-form {
-  /* todo replace media query with foundation mixin */
-  @media screen and (max-width: 39.9375em) {
-    margin: $vertical-spacing auto !important;
-  }
+    /* todo replace media query with foundation mixin */
+    @media screen and (max-width: 39.9375em) {
+        margin: $vertical-spacing auto !important;
+    }
 }
 
 /*
@@ -545,148 +148,148 @@ End of MailChimp subscribe hack
  */
 
 @media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 24px !important;
-  }
-  h2 {
-    font-size: 18px !important;
-  }
-  h3 {
-    font-size: 14px !important;
-  }
+    h1 {
+        font-size: 24px !important;
+    }
+    h2 {
+        font-size: 18px !important;
+    }
+    h3 {
+        font-size: 14px !important;
+    }
 }
 
 /*
 Banner header for pages, services and teams
  */
 .banner-header-image {
-  position: relative;
-  height: 550px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: right center;
-  margin: 0px auto 4em;
-
-  @include mobiles-all {
-    height: 100%;
-    display: block;
-    float: left;
-  }
-
-  .banner-header-overlay {
-    @include banner-inset-shadow;
-    @include banner-overlay;
+    position: relative;
+    height: 550px;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
+    background-repeat: no-repeat;
+    background-position: right center;
+    margin: 0px auto 4em;
 
     @include mobiles-all {
-      display: block;
-      float: left;
-      position: relative;
-      height: 100%;
+        height: 100%;
+        display: block;
+        float: left;
     }
-  }
 
-  .down-arrow-container {
-    width: 50px;
-    height: 50px;
-    background-color: $dark;
-    background-size: 16px;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: auto;
-    position: relative;
-    top: 525px;
-    border-radius: 50%;
-  }
+    .banner-header-overlay {
+        @include banner-inset-shadow;
+        @include banner-overlay;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+
+        @include mobiles-all {
+            display: block;
+            float: left;
+            position: relative;
+            height: 100%;
+        }
+    }
+
+    .down-arrow-container {
+        width: 50px;
+        height: 50px;
+        background-color: $dark;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: auto;
+        position: relative;
+        top: 525px;
+        border-radius: 50%;
+    }
 }
 
 .banner-header-titles {
-  position: absolute;
-  top: 80px;
-  max-width: 450px;
-  margin-bottom: $vertical-spacing;
-  overflow-wrap: break-word;
+    position: absolute;
+    top: 80px;
+    max-width: 450px;
+    margin-bottom: $vertical-spacing;
+    overflow-wrap: break-word;
 
-  @include mobiles-all {
-    position: relative;
-    display: block;
-    float: left;
-    height: 100%;
-    top: 0;
-    padding: 1rem;
-  }
+    @include mobiles-all {
+        position: relative;
+        display: block;
+        float: left;
+        height: 100%;
+        top: 0;
+        padding: 1rem;
+    }
 
-  h1 {
-    font-size: 38px;
-    font-weight: 600;
-    letter-spacing: -0.68px;
-    line-height: 50px;
-    margin-bottom: 0.5em;
-  }
+    h1 {
+        font-size: 38px;
+        font-weight: 600;
+        letter-spacing: -0.68px;
+        line-height: 50px;
+        margin-bottom: 0.5em;
+    }
 
-  .title-meta {
-    color: $dark;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 35px;
-    text-transform: uppercase;
-  }
+    .title-meta {
+        color: $dark;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 35px;
+        text-transform: uppercase;
+    }
 }
 
 .banner-header-title {
-  height: 35px;
-  color: $dark;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 35px;
+    height: 35px;
+    color: $dark;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 35px;
 }
 
 .banner-header-menu-container {
-  @include mobiles-all {
-    display: block;
-    float: left;
-    height: 100%;
-  }
-
-  ul {
-    color: $dark;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
-    list-style: none;
-    text-transform: none;
-    margin: 0;
-    float: left;
-    height: 100%;
-    width: fit-content;
-    max-width: 50%;
-    min-width: 420px;
-    border-bottom: 1px solid #ffffff;
-
     @include mobiles-all {
-      display: block;
-      width: 100%;
-      height: 100%;
+        display: block;
+        float: left;
+        height: 100%;
     }
-  }
 
-  li {
-    border-top: 1px solid #ffffff;
-    display: block;
-    vertical-align: center;
-    max-width: 100%;
-    padding: 5px 0;
+    ul {
+        color: $dark;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        list-style: none;
+        text-transform: none;
+        margin: 0;
+        float: left;
+        height: 100%;
+        width: fit-content;
+        max-width: 50%;
+        min-width: 420px;
+        border-bottom: 1px solid #ffffff;
 
-    a {
-      color: $dark;
-      text-transform: none;
-      text-decoration: none;
+        @include mobiles-all {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
-  }
+
+    li {
+        border-top: 1px solid #ffffff;
+        display: block;
+        vertical-align: center;
+        max-width: 100%;
+        padding: 5px 0;
+
+        a {
+            color: $dark;
+            text-transform: none;
+            text-decoration: none;
+        }
+    }
 }
 
 /*
@@ -697,48 +300,38 @@ End banner header
 Over write gravity form style
  */
 .gform_wrapper
-  input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-  width: 100%;
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
+    width: 100%;
 }
 
 .gfield_label {
-  font-size: 14px !important;
-  color: $dark;
+    font-size: 14px !important;
+    color: $dark;
 }
 
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type="submit"],
 .gform_wrapper .gform_page_footer input.button,
 .gform_wrapper .gform_page_footer input[type="submit"] {
-  @include button-primary;
-  color: #ffffff;
+    @include button-primary;
+    color: #ffffff;
 }
 
-.gform_wrapper.gf_browser_chrome
-  ul.gform_fields
-  li.gfield
-  div.ginput_complex
-  span.ginput_left
-  select,
-.gform_wrapper.gf_browser_chrome
-  ul.gform_fields
-  li.gfield
-  div.ginput_complex
-  span.ginput_right
-  select,
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield div.ginput_complex span.ginput_right select,
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield input[type="radio"],
 .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield select {
-  margin-left: 1px;
-  width: 100%;
+    margin-left: 1px;
+    width: 100%;
 }
 
 @media only screen and (min-width: 641px) {
-  .gform_wrapper .gform_footer input.button,
-  .gform_wrapper .gform_footer input[type="submit"],
-  .gform_wrapper .gform_page_footer input.button,
-  .gform_wrapper .gform_page_footer input[type="submit"] {
-    font-size: 14px !important;
-  }
+    .gform_wrapper .gform_footer input.button,
+    .gform_wrapper .gform_footer input[type="submit"],
+    .gform_wrapper .gform_page_footer input.button,
+    .gform_wrapper .gform_page_footer input[type="submit"] {
+        font-size: 14px !important;
+    }
 }
 
 /*
@@ -747,102 +340,243 @@ Post list styles
 .post-list {
 }
 .post-list-thumbnail {
-  border-radius: 0;
-  border: 0;
+    border-radius: 0;
+    border: 0;
 }
 
 .post-list-thumbnail .wp-block-image img {
-  border-radius: 0;
-  border: 0;
+    border-radius: 0;
+    border: 0;
 }
 
 .post-list-thumbnail .image-placeholder {
-  display: block;
-  width: 100%;
-  height: 300px;
-  background-color: #eee;
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-color: #eee;
 }
 
 .post-list-title {
-  color: $text-black;
-  font-size: 22px;
-  font-weight: 600;
-
-  a {
     color: $text-black;
-    text-transform: none;
-    text-decoration: none;
-  }
+    font-size: 22px;
+    font-weight: 600;
 
-  a:visited {
-    color: $text-black;
-  }
+    a {
+        color: $text-black;
+        text-transform: none;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $text-black;
+    }
 }
 
 .post-list-content {
-  font-size: 16px;
-  line-height: 26px;
+    font-size: 16px;
+    line-height: 26px;
 }
 .post-list-read-more {
-  font-size: 14px;
-  font-weight: 600;
-  color: $dark;
+    font-size: 14px;
+    font-weight: 600;
+    color: $dark;
 
-  a {
-    text-transform: none;
-    text-decoration: none;
-  }
+    a {
+        text-transform: none;
+        text-decoration: none;
+    }
 }
 
 /*
 Sidebar menu styling
  */
 .sidebar-menu-container {
-  overflow: hidden;
-  ul {
-    color: $dark;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
-    list-style: none;
-    text-transform: none;
-    margin: 0;
-    float: left;
-    height: 100%;
-    width: fit-content;
-    max-width: 50%;
-    min-width: 270px;
-    margin-bottom: $vertical-spacing;
-  }
-
-  li {
-    display: block;
-    vertical-align: center;
-    max-width: 100%;
-    padding: 5px 0;
-
-    a {
-      color: $dark;
-      text-transform: none;
-      text-decoration: none;
+    overflow: hidden;
+    ul {
+        color: $dark;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        list-style: none;
+        text-transform: none;
+        margin: 0;
+        float: left;
+        height: 100%;
+        width: fit-content;
+        max-width: 50%;
+        min-width: 270px;
+        margin-bottom: $vertical-spacing;
     }
-  }
+
+    li {
+        display: block;
+        vertical-align: center;
+        max-width: 100%;
+        padding: 5px 0;
+
+        a {
+            color: $dark;
+            text-transform: none;
+            text-decoration: none;
+        }
+    }
 }
 
 .shadow-box {
-  @include shadow-around;
+    @include shadow-around;
 }
 
-// make everything not alignfull same width and centered.
+// content spacing
 .entry-content {
-  > *:not(.alignfull) {
-    max-width: $max-wide-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    // make everything not alignfull same width and centered.
+    > *:not(.alignfull) {
+        max-width: $max-wide-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // make padding left and right on mobile devices
+    > .alignfull,
+    > .alignwide,
+    > p,
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+        // padding on tablets
+        @include tablets-all {
+            padding-right: 0.9375rem;
+            padding-left: 0.9375rem;
+        }
+        // padding on mobiles phones
+        @include mobiles-all {
+            padding-right: 0.9375rem;
+            padding-left: 0.9375rem;
+        }
+    }
 }
 
 // make a margin right custom class, to avoid style apply to every image on website
 .col-margin-right {
-  margin-right: 48px;
+    margin-right: 48px;
+}
+
+// remove line-height
+.line-height-0 {
+    line-height: 0;
+}
+
+// add margin on post and standard pages
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 4em 0 0;
+}
+
+// remove margin on home page
+.home {
+    .page-content,
+    .entry-content,
+    .entry-summary {
+        margin: 0em 0 0;
+    }
+}
+
+.alignwide {
+    max-width: $max-wide-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignfull {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-header {
+    border-bottom: 1px solid $light-grey;
+    box-shadow: $box-shadow-bottom;
+}
+
+.site-info .textwidget,
+.site-info .textwidget p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.site-footer-widget-container {
+    max-width: $max-wide-width;
+    width: 100%;
+    margin: 63px auto;
+}
+
+.site-footer-widget-container .menu li.menu-item {
+    display: block;
+    clear: right;
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.site-footer-widget-container .menu {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 100%;
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    ul li {
+        display: block;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    a {
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 24px;
+        padding: 0;
+    }
+
+    .site-info-container .widget .widget_text {
+        /* todo replace media query with proper foundation mixin */
+        @media screen and (max-width: 39.9375em) {
+            margin: $vertical-spacing 0;
+        }
+
+        @media only screen and (min-width: 40.063em) {
+            margin: $vertical-spacing 0;
+        }
+    }
+}
+
+.footer-find-out-more {
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.footer-find-out-more-button {
+    background-color: $dark;
+    border-radius: 28px;
+    border: 1px solid $dark;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 76px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
 }

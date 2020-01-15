@@ -48,7 +48,7 @@
 				/* Optional button added through customizer */
 				$button = get_theme_mod( 'additional_navigation_button' );
 				if ( ! empty( $button ) ) : ?>
-                    <div class="grid-x tablets-additional-button medium-6 show-for-medium-only align-right">
+                    <div class="grid-x tablets-additional-button-container medium-6 show-for-medium-only align-right">
                       <div class="wp-block-button">
                         <a title="<?php echo esc_attr( $button ); ?>" class="wp-block-button__link">
 							<?php echo esc_html( $button ); ?>
@@ -146,7 +146,7 @@
                         $is_show_adjust_fontsize = get_theme_mod( 'additional_navigation_addjust_fontsize' );
                         if ( $is_show_adjust_fontsize) {
                             ?>
-                            <div class="adjust-fontsize large-1 align-self-middle">
+                            <div class="adjust-fontsize large-1 medium-12 small-12 align-self-middle ">
                                 <div class="adjust">
                                     <div class="normal-text-size-container">
                                         <span class="normal-text-size" tabindex="0" role="button" aria-label="Normal font size">A</span>

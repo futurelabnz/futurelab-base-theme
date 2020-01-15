@@ -1,3 +1,4 @@
+@import "mixins";
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -23,52 +24,6 @@ h5,
 h6 {
   clear: both;
   font-family: $body-font;
-}
-h1 {
-  font-size: 3rem;
-  @include mobiles-all {
-    font-size: 2rem;
-  }
-}
-h2 {
-  font-size: 2rem;
-  @include mobiles-all {
-    font-size: 1.5rem;
-  }
-}
-h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  @include mobiles-all {
-    font-size: 1.25rem;
-  }
-}
-h4 {
-  font-size: 1.375rem;
-  @include mobiles-all {
-    font-size: 1.125rem;
-  }
-}
-h5 {
-  font-size: 0.875rem;
-  font-family: $body-font;
-  @include mobiles-all {
-    font-size: 0.875rem;
-  }
-}
-h6 {
-  font-size: 0.75rem;
-  font-family: $body-font;
-  @include mobiles-all {
-    font-size: 0.75rem;
-  }
-}
-
-p {
-  font-size: 1rem;
-  @include mobiles-all {
-    font-size: 1.25rem;
-  }
 }
 
 p {
@@ -123,59 +78,6 @@ ins {
 
 big {
   font-size: 125%;
-}
-
-.tiny-text {
-  font-size: 0.75rem;
-  font-weight: 300;
-  line-height: 28px;
-  color: #222222;
-}
-
-// base theme specific heading style
-h1 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 1.625rem;
-  letter-spacing: 0.46px;
-  line-height: 35px;
-}
-
-h2 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 1.75rem;
-  letter-spacing: 0.5px;
-  line-height: 36px;
-}
-
-h3 {
-  color: $dark;
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 1px;
-  line-height: 35px;
-}
-
-h4 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 35px;
-  letter-spacing: 1px;
-}
-
-h1,
-h2 {
-  font-size: 1.75rem;
-  line-height: 36px;
-  letter-spacing: -0.5px;
-  font-weight: 500;
-  margin-bottom: $vertical-spacing;
-}
-
-h3 {
-  font-size: 0.875rem;
 }
 
 /*--------------------------------------------------------------
@@ -262,4 +164,107 @@ select {
 
 textarea {
   width: 100%;
+}
+
+/* futurelab code start */
+
+// typography
+h1 {
+  font-size: 3rem;
+  @include mobiles-all {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-size: 2rem;
+  @include mobiles-all {
+    font-size: 1.5rem;
+  }
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  @include mobiles-all {
+    font-size: 1.25rem;
+  }
+}
+h4 {
+  font-size: 1.375rem;
+  @include mobiles-all {
+    font-size: 1.125rem;
+  }
+}
+h5 {
+  font-size: 0.875rem;
+  font-family: $body-font;
+  @include mobiles-all {
+    font-size: 0.875rem;
+  }
+}
+h6 {
+  font-size: 0.75rem;
+  font-family: $body-font;
+  @include mobiles-all {
+    font-size: 0.75rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  @include mobiles-all {
+    font-size: 1.25rem;
+  }
+}
+
+.tiny-text {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 28px;
+  color: #222222;
+}
+
+// base theme specific heading style
+h1 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 1.625rem;
+  letter-spacing: 0.46px;
+  line-height: 35px;
+}
+
+h2 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+  line-height: 36px;
+}
+
+h3 {
+  color: $dark;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  line-height: 35px;
+}
+
+h4 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 35px;
+  letter-spacing: 1px;
+}
+
+h1,
+h2 {
+  font-size: 1.75rem;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  margin-bottom: $vertical-spacing;
+}
+
+h3 {
+  font-size: 0.875rem;
 }
