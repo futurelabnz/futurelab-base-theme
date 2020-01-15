@@ -30,7 +30,7 @@
                 <div class="grid-x site-footer-widget-container large-12 alignwide">
                     <?php
                     foreach ($widget_areas as $widget_area) :
-                        $width = ($widget_area == 'footer-col-1') ? 'large-6 medium-12' : 'large-3 medium-6'
+                        $width = ($widget_area == 'footer-col-1') ? 'site-footer-widget large-6 medium-12' : 'site-footer-widget large-3 medium-6'
                         ?>
 
                         <div class="<?php echo $width; ?> small-12">
@@ -78,10 +78,10 @@
     </div>
 
     <div class="grid-x site-copyright alignwide">
-        <div class="large-6 medium-6 small-12 cell align-self-bottom tiny-text">
+        <div class="site-copyright-left large-6 medium-6 small-12 cell align-self-bottom tiny-text">
             &copy; <?php echo esc_html(get_theme_mod('business_name')); ?> <?php echo date('Y', strtotime('now')); ?>
         </div>
-        <div class="large-6 medium-6 small-12 cell align-self-bottom text-right tiny-text">
+        <div class="site-copyright-right large-6 medium-6 small-12 cell align-self-bottom text-right tiny-text">
             Built by FutureLab
         </div>
     </div>

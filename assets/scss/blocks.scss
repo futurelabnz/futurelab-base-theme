@@ -132,11 +132,23 @@
     text-decoration: none;
     overflow-wrap: break-word;
     box-shadow: $box-shadow;
+    color: #ffffff;
+    width: 300px;
 }
 
 .wp-block-button {
-    margin-top: $vertical-spacing ;
-    margin-bottom: $vertical-spacing ;
+    margin-top: $vertical-spacing;
+    margin-bottom: $vertical-spacing;
+    display: inline;
+    @include mobiles-all {
+        margin-top: 0;
+        margin-bottom: $vertical-spacing;
+        width: 100%;
+        text-align: center;
+        .wp-block-button__link {
+  
+        }
+    }
 }
 
 // block image styling
@@ -299,6 +311,9 @@
                         line-height: 56px;
                         font-weight: 600;
                         letter-spacing: -1px;
+                        @include mobiles-all {
+                            font-size: 24px;
+                        }
                     }
                     .slide-content {
                         font-size: 1rem;

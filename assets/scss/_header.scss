@@ -301,6 +301,9 @@ header#masthead {
                                 .wp-block-button {
                                     margin-top: 0em;
                                     margin-bottom: 0.875em;
+                                    a:visited {
+                                        color: white;
+                                    }
                                 }
                             }
                         }

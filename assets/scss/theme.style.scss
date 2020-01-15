@@ -56,11 +56,6 @@ SECONDARY MENU
 /* Blocks */
 @import "blocks";
 
-/* Styling for Gutenberg default buttons */
-.wp-block-button__link {
-    color: #ffffff;
-}
-
 // styles for mailchimp subscribe
 .mc4wp-form-fields {
     .subscribe-form {
@@ -146,18 +141,6 @@ This is a hack for mobile and we will need to build our own block with our own s
 /*
 End of MailChimp subscribe hack
  */
-
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 24px !important;
-    }
-    h2 {
-        font-size: 18px !important;
-    }
-    h3 {
-        font-size: 14px !important;
-    }
-}
 
 /*
 Banner header for pages, services and teams
@@ -461,6 +444,9 @@ Sidebar menu styling
 // make a margin right custom class, to avoid style apply to every image on website
 .col-margin-right {
     margin-right: 48px;
+    @include mobiles-all {
+        margin-right: initial;
+    }
 }
 
 // remove line-height
