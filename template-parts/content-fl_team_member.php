@@ -14,7 +14,7 @@
 	<?php // get_template_part('template-parts/partial', 'banner-header'); ?>
 	<div class="entry-content">
 
-		<div class="grid-container-x fluid">
+		<div class="grid-container-x">
 			<div class="grid-x grid-margin-x">
 				<div class="cell large-3 team-member-sidebar">
 					<?php $thumbnail_url = get_the_post_thumbnail_url( $post->ID, 'large' ); ?>
@@ -77,7 +77,7 @@
 			$widget_area = 'bottom-of-posts-page';
 			if ( is_active_sidebar( $widget_area ) ) :
 				?>
-				<div class="grid-container-x fluid">
+				<div class="grid-container-x">
 					<hr class="wp-block-separator is-style-fl-customized-separator-shadow-above alignfull" />
 					<div class="grid-x align-self-middle">
 						<div class="large-12 text-center">

@@ -344,25 +344,36 @@
 // styles for latest news
 // news width when user choose to display 3 columns
 .wp-block-latest-posts {
-    .columns-3 li {
-        width: calc(33.33333% - 48px);
+    &.is-grid.columns-3 li {
+        width: calc(33.33333% - 16px);
+        &:nth-child(3) {
+            margin-right: 0px;
+        }
+        @include mobiles-all {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
     }
     // news width when user choose to display 2 columns
-    .columns-2 li {
-        width: calc(50% - 48px);
+    &.is-grid.columns-2 li {
+        width: calc(50% - 16px);
+        &:nth-child(2) {
+            margin-right: 0px;
+        }
+        @include mobiles-all {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
     }
     // overwrite general margin according to design
-    .is-grid li {
-        margin: 0 24px 48px 24px;
+    &.is-grid li {
+        margin: 0 8px 16px 8px;
+        &:first-child {
+            margin-left: 0;
+        }
     }
-    @include mobiles-all {
-        margin: 0 16px 16px 16px;
-        width: 100%;
-    }
-}
-
-.fl-vertical-space {
-    padding: 3em 0;
 }
 
 // style for my team block

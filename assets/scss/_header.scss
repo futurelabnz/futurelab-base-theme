@@ -159,6 +159,16 @@ header#masthead {
 
     // inner container
     .header-inner-container {
+        // padding on tablets
+        @include tablets-all {
+            padding-right: 0.9375rem;
+            padding-left: 0.9375rem;
+        }
+        // padding on mobiles phones
+        @include mobiles-all {
+            padding-right: 0.375rem;
+            padding-left: 0.375rem;
+        }
         // left part of header
         .site-branding.header-inner-left {
             margin: 1rem 0;

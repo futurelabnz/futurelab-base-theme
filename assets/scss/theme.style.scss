@@ -36,6 +36,66 @@
 @import "content";
 /* woocommerce style */
 @import "woocommerce";
+/* Blocks */
+@import "blocks";
+
+/*
+ * Utilities to help styling
+ */
+.alignwide {
+    max-width: $max-wide-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignfull {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// make a margin right custom class, to avoid style apply to every image on website
+.col-margin-right {
+    margin-right: 48px;
+    @include mobiles-all {
+        margin-right: initial;
+    }
+}
+
+// remove line-height
+.line-height-0 {
+    line-height: 0;
+}
+
+.has-small-font-size {
+    color: $dark;
+}
+
+.has-large-font-size {
+    color: $dark;
+}
+
+.has-huge-font-size {
+    color: $dark;
+}
+
+.shadow-box {
+    @include shadow-around;
+}
+
+.fl-vertical-space {
+    padding: 3em 0;
+}
+
+// to remove margin-left when tablets
+.has-2-columns.wp-block-columns {
+    // overwrite gutenberg columns style
+    @include tablets-all {
+        .wp-block-column:nth-child(2n) {
+            margin-left: 0px;
+        }
+    }
+}
 
 /*
 SECONDARY MENU
@@ -52,9 +112,6 @@ SECONDARY MENU
 .menu-secondary-container li {
     padding: 12px;
 }
-
-/* Blocks */
-@import "blocks";
 
 // styles for mailchimp subscribe
 .mc4wp-form-fields {
@@ -103,18 +160,6 @@ SECONDARY MENU
             border: none;
         }
     }
-}
-
-.has-small-font-size {
-    color: $dark;
-}
-
-.has-large-font-size {
-    color: $dark;
-}
-
-.has-huge-font-size {
-    color: $dark;
 }
 
 /*
@@ -405,10 +450,7 @@ Sidebar menu styling
     }
 }
 
-.shadow-box {
-    @include shadow-around;
-}
-
+/* general page styling */
 // content spacing
 .entry-content {
     // make everything not alignfull same width and centered.
@@ -441,19 +483,6 @@ Sidebar menu styling
     }
 }
 
-// make a margin right custom class, to avoid style apply to every image on website
-.col-margin-right {
-    margin-right: 48px;
-    @include mobiles-all {
-        margin-right: initial;
-    }
-}
-
-// remove line-height
-.line-height-0 {
-    line-height: 0;
-}
-
 // add margin on post and standard pages
 .page-content,
 .entry-content,
@@ -461,8 +490,9 @@ Sidebar menu styling
     margin: 4em 0 0;
 }
 
-// remove margin on home page
+/* home page styling */
 .home {
+    // remove margin on home page
     .page-content,
     .entry-content,
     .entry-summary {
@@ -470,14 +500,30 @@ Sidebar menu styling
     }
 }
 
-.alignwide {
-    max-width: $max-wide-width;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.alignfull {
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+/* team member page styling */
+.fl_team_member-template-default {
+    .team-member-sidebar,
+    .team-member-content {
+        // make padding left and right on mobile devices
+        > .alignfull,
+        > .alignwide,
+        > p,
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6 {
+            // padding on tablets
+            @include tablets-all {
+                padding-right: 0.9375rem;
+                padding-left: 0.9375rem;
+            }
+            // padding on mobiles phones
+            @include mobiles-all {
+                padding-right: 0.9375rem;
+                padding-left: 0.9375rem;
+            }
+        }
+    }
 }
