@@ -1,3 +1,4 @@
+@import "mixins";
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -9,7 +10,7 @@ optgroup,
 textarea {
   color: #222222;
   font-family: $body-font;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 28px;
   letter-spacing: 0.53px;
@@ -23,52 +24,6 @@ h5,
 h6 {
   clear: both;
   font-family: $body-font;
-}
-h1 {
-  font-size: 48px;
-  @include mobiles-all {
-    font-size: 32px;
-  }
-}
-h2 {
-  font-size: 32px;
-  @include mobiles-all {
-    font-size: 24px;
-  }
-}
-h3 {
-  font-size: 24px;
-  font-weight: 500;
-  @include mobiles-all {
-    font-size: 20px;
-  }
-}
-h4 {
-  font-size: 22px;
-  @include mobiles-all {
-    font-size: 18px;
-  }
-}
-h5 {
-  font-size: 14px;
-  font-family: $body-font;
-  @include mobiles-all {
-    font-size: 14px;
-  }
-}
-h6 {
-  font-size: 12px;
-  font-family: $body-font;
-  @include mobiles-all {
-    font-size: 12px;
-  }
-}
-
-p {
-  font-size: 18px;
-  @include mobiles-all {
-    font-size: 16px;
-  }
 }
 
 p {
@@ -93,7 +48,7 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 28px;
   margin-bottom: $vertical-spacing;
   max-width: 100%;
@@ -106,7 +61,7 @@ kbd,
 tt,
 var {
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 abbr,
@@ -123,59 +78,6 @@ ins {
 
 big {
   font-size: 125%;
-}
-
-.tiny-text {
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 28px;
-  color: #222222;
-}
-
-// base theme specific heading style
-h1 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 26px;
-  letter-spacing: 0.46px;
-  line-height: 35px;
-}
-
-h2 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 28px;
-  letter-spacing: 0.5px;
-  line-height: 36px;
-}
-
-h3 {
-  color: $dark;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1px;
-  line-height: 35px;
-}
-
-h4 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 35px;
-  letter-spacing: 1px;
-}
-
-h1,
-h2 {
-  font-size: 28px;
-  line-height: 36px;
-  letter-spacing: -0.5px;
-  font-weight: 500;
-  margin-bottom: $vertical-spacing;
-}
-
-h3 {
-  font-size: 14px;
 }
 
 /*--------------------------------------------------------------
@@ -262,4 +164,107 @@ select {
 
 textarea {
   width: 100%;
+}
+
+/* futurelab code start */
+
+// typography
+h1 {
+  font-size: 3rem;
+  @include mobiles-all {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-size: 2rem;
+  @include mobiles-all {
+    font-size: 1.5rem;
+  }
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  @include mobiles-all {
+    font-size: 1.25rem;
+  }
+}
+h4 {
+  font-size: 1.375rem;
+  @include mobiles-all {
+    font-size: 1.125rem;
+  }
+}
+h5 {
+  font-size: 0.875rem;
+  font-family: $body-font;
+  @include mobiles-all {
+    font-size: 0.875rem;
+  }
+}
+h6 {
+  font-size: 0.75rem;
+  font-family: $body-font;
+  @include mobiles-all {
+    font-size: 0.75rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  @include mobiles-all {
+    font-size: 1.25rem;
+  }
+}
+
+.tiny-text {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 28px;
+  color: #222222;
+}
+
+// base theme specific heading style
+h1 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 1.625rem;
+  letter-spacing: 0.46px;
+  line-height: 35px;
+}
+
+h2 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+  line-height: 36px;
+}
+
+h3 {
+  color: $dark;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  line-height: 35px;
+}
+
+h4 {
+  color: $text-black;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 35px;
+  letter-spacing: 1px;
+}
+
+h1,
+h2 {
+  font-size: 1.75rem;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  margin-bottom: $vertical-spacing;
+}
+
+h3 {
+  font-size: 0.875rem;
 }

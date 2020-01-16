@@ -4,7 +4,6 @@
  */
 
 ?>
-
 <div class="wp-block-columns alignwide has-2-columns">
     <div class="wp-block-column post-list-thumbnail">
 
@@ -12,7 +11,7 @@
             <a href="<?php echo get_the_permalink( $post->ID ); ?>"
                title="Go to <?php echo get_the_title( $post->ID ); ?>">
                 <figure class="wp-block-image">
-					<?php echo get_the_post_thumbnail( $post->ID ); ?>
+					<?php echo get_the_post_thumbnail( $post->ID, '' , array( 'alt' => get_the_title( $post->ID ) ) ); ?>
                 </figure>
             </a>
 		<?php else:
@@ -40,4 +39,4 @@
     </div>
 </div>
 
-<hr class="wp-block-separator is-style-wide">
+<hr class="wp-block-separator is-style-wide" aria-hidden="true">

@@ -18,7 +18,8 @@ if ( $services->have_posts() ) : ?>
     <div id="primary" class="content-area grid-container full">
         <main id="main" class="site-main post-list">
 
-
+			<!-- add div to fix narrator doesn't read first image -->
+			<div class="clearfix"></div>
 			<?php
 			while ( $services->have_posts() ) :
 

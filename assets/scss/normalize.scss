@@ -1,4 +1,4 @@
-@import 'mixins';
+@import "mixins";
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -16,7 +16,6 @@ html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
 }
-
 
 /* Sections
 	 ========================================================================== */
@@ -38,7 +37,7 @@ h1 {
     font-size: 26px;
     margin: 0.67em 0;
     letter-spacing: -0.46px;
-    font-weight:500;
+    font-weight: 500;
     line-height: 35px;
 }
 
@@ -369,77 +368,85 @@ p,
 pre,
 td,
 th,
-ul {
-  :focus {
-    outline: none;
-  }
+ul,
+li,
+a {
+    :focus {
+        outline-width: 1px !important;
+        outline-style: dashed !important;
+        outline-color: rgb(77, 144, 254) !important;
+        // TODO: remove out line
+        // outline: none;
+    }
 }
 
 // base theme specific nomarlize
 html {
     box-sizing: border-box;
-  }
-  
-  *,
-  *:before,
-  *:after {
+}
+
+*,
+*:before,
+*:after {
     /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
     box-sizing: inherit;
-  }
-  
-  body {
+}
+
+body {
     background: #fff;
     color: #222222;
     /* Fallback for when there is no custom background color defined. */
-  }
-  
-  hr {
+}
+
+hr {
     background-color: #ccc;
     border: 0;
     height: 1px;
     margin-bottom: $vertical-spacing;
-  }
-  
-  ul,
-  ol {
+}
+
+ul,
+ol {
     margin: 0 0 1.5em 3em;
-  }
-  
-  ul {
+}
+
+ul {
     list-style: disc;
-  }
-  
-  ol {
+}
+
+ol {
     list-style: decimal;
-  }
-  
-  li > ul,
-  li > ol {
+}
+
+li > ul,
+li > ol {
     margin-bottom: 0;
     margin-left: 1.5em;
-  }
-  
-  dt {
+}
+
+dt {
     font-weight: 600;
-  }
-  
-  dd {
+}
+
+dd {
     margin: 0 1.5em $vertical-spacing;
-  }
-  
-  img {
+}
+
+img {
     height: auto;
     /* Make sure images are scaled correctly. */
     max-width: 100%;
     /* Adhere to container width. */
-  }
-  
-  figure {
+}
+
+figure {
     // margin: 1em 0;
     /* Extra wide images within figure tags don't overflow the content area. */
-  }
-  
-  table {
+}
+
+table {
     margin: 0 0 $vertical-spacing;
     width: 100%;
-  }
+}
+
+/* futurelab code start */
