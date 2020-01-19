@@ -79,7 +79,7 @@ module.exports = {
       canPrint: true
     }),
     new BrowserSyncPlugin({
-      proxy: 'http://vagrant.headless.local/', // edit here for your own base theme local domain name
+      proxy: 'http://vagrant.headless.local:8000/', // edit here for your own base theme local domain name
       files: ["dist/assets/*.css", "dist/assets/*.js", "./**/*.php"],
     },
     {
