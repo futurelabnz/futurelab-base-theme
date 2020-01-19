@@ -77,17 +77,17 @@ module.exports = {
         preset: ["default", { discardComments: { removeAll: true } }]
       },
       canPrint: true
+    }),
+    new BrowserSyncPlugin({
+      proxy: 'http://vagrant.headless.local/', // edit here for your own base theme local domain name
+      files: ["dist/assets/*.css", "dist/assets/*.js", "./**/*.php"],
+    },
+    {
+      reload: true
     })
-    // new BrowserSyncPlugin({
-    //         proxy: 'http://wp.local',
-    //         files: ["dist/assets/*.css", "dist/assets/*.js", "dist/*.php", "dist//.php"],
-    //     },
-    //     {
-    //         reload: true
-    //     }),
-    //new PurgecssPlugin({
-    // content: [ '*.js', '*.html', '*.php'],
-    // paths: () => glob.sync(`${PATHS.dist}/*`, {nodir: true}),
-    //})
+    // new PurgecssPlugin({
+    //   content: ['*.js', '*.html', '*.php'],
+    //   paths: () => glob.sync(`${PATHS.dist}/*`, { nodir: true }),
+    // })
   ]
 };
