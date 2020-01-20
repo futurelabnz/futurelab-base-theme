@@ -31,20 +31,20 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-    display: block !important; // add important to make sure menu works
+header#masthead .header-inner-container .header-inner-right .main-navigation.menu-toggle,
+header#masthead .header-inner-container .header-inner-right .main-navigation.toggled ul {
+    display: block; // add important to make sure menu works
     overflow: scroll;
     max-height: 85vh;
 }
 
 @media screen and (min-width: 40em) {
-    .menu-toggle {
-        display: none !important; // add important to make sure menu works
+    header#masthead .header-inner-container .header-inner-right .main-navigation .menu-toggle {
+        display: none; // add important to make sure menu works
     }
 
-    .main-navigation ul {
-        display: block !important; // add important to make sure menu works
+    header#masthead .header-inner-container .header-inner-right .main-navigation ul {
+        display: block; // add important to make sure menu works
     }
 }
 
@@ -194,10 +194,12 @@ header#masthead {
                 }
                 // underscore css to scss
                 ul {
-                    display: none;
                     list-style: none;
                     margin: 0;
                     padding-left: 0;
+                    @include mobiles-all {
+                        display: none;
+                    }
                     ul {
                         background-color: white;
                         float: left;
