@@ -16,7 +16,7 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="<?php the_permalink() ?>" hreflang='en-nz' rel='alternate'/>
+        <link href="<?php the_permalink() ?>" hreflang='<?php language_attributes(); ?>' rel='alternate'/>
         <link href="<?php the_permalink() ?>" hreflang='x-default' rel='alternate'/>
         <link rel="profile" href="https://gmpg.org/xfn/11">
 
