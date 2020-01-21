@@ -33,18 +33,20 @@ a:active {
 /* Small menu. */
 header#masthead .header-inner-container .header-inner-right .main-navigation.menu-toggle,
 header#masthead .header-inner-container .header-inner-right .main-navigation.toggled ul {
-    display: block; // add important to make sure menu works
+    display: block; // add header#masthead... to make sure menu works
     overflow: scroll;
     max-height: 85vh;
 }
 
 @media screen and (min-width: 40em) {
     header#masthead .header-inner-container .header-inner-right .main-navigation .menu-toggle {
-        display: none; // add important to make sure menu works
+        display: none; // add header#masthead... to make sure menu works
     }
 
-    header#masthead .header-inner-container .header-inner-right .main-navigation ul {
-        display: block; // add important to make sure menu works
+    header#masthead .header-inner-container .header-inner-right .main-navigation {
+        > ul {
+            display: flex; // add header#masthead... to make sure menu works
+        }
     }
 }
 

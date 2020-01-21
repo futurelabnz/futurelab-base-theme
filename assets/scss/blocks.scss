@@ -138,7 +138,7 @@
 .wp-block-button {
     margin-top: $vertical-spacing;
     margin-bottom: $vertical-spacing;
-    display: block;
+    display: flex;
     @include mobiles-all {
         margin-top: 0;
         margin-bottom: $vertical-spacing;
