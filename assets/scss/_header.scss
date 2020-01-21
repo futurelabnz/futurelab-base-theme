@@ -206,7 +206,7 @@ header#masthead {
                         background-color: white;
                         float: left;
                         position: absolute;
-                        top: 100%;
+                        top: 102%; // change to 102% to show outline properly
                         left: -999em;
                         z-index: 99999;
                         box-shadow: $box-shadow-bottom;
@@ -215,6 +215,7 @@ header#masthead {
                             top: 0;
                         }
                         li {
+                            margin: 1px; // add margin 1px to show outline properly
                             &:hover {
                                 > ul {
                                     left: 100%;
