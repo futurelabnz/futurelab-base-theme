@@ -77,8 +77,7 @@
                             <!-- hamburger button -->
                             <div class="mobile-inner-right small-2 align-middle">
                                 <button id="mobile-menu" class="toggle-menu hamburger-button" aria-controls="mobile-menu"
-                                        aria-expanded="false"
-                                        style="border:0;background: none;font-size:24px;padding: 20px 10px;">
+                                        aria-expanded="false">
                                     <i class="fa fa-bars">&nbsp;</i>
                                 </button>
                             </div>
@@ -106,7 +105,7 @@
 								$cleaned_number = $phone_number;
 								if ( ! empty( $phone_number ) ):
 									$number_button = '<div class="wp-block-button mobile-phone-link aligncenter">';
-									$number_button .= '<a title="' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link" style="color:#ffffff;">';
+									$number_button .= '<a title="' . esc_attr( $button ) . '" target="_blank" href="tel:' . $cleaned_number . '" class="wp-block-button__link">';
 									$number_button .= 'CALL ' . $phone_number . ' NOW</a></div>';
                                 endif;
                                 
