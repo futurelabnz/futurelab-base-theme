@@ -21,14 +21,7 @@
         <link rel="profile" href="https://gmpg.org/xfn/11">
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script>
-            WebFont.load({
-                google: {
-                    families: ['Montserrat:300,400,500,600']
-                }
-            });
-        </script>
-
+        <script>WebFont.load({google: {amilies: ['Montserrat:300,400,500,600']}});</script>
 		<?php wp_head(); ?>
 
     </head>
