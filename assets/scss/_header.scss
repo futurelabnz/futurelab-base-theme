@@ -339,7 +339,11 @@ header#masthead {
                     .normal-text-size-container {
                         display: inline;
                         .normal-text-size {
-                            font-size: 16px; // use px for show correct font size
+                            font-size: 16px; // use px to show correct font size
+                            width: 25px;
+                            height: 25px;
+                            display: inline-block;
+                            text-align: center;
                         }
                         .normal-text-size-discription {
                             position: absolute;
@@ -365,7 +369,11 @@ header#masthead {
                     .larger-text-size-container {
                         display: inline;
                         .larger-text-size {
-                            font-size: 24px; // use px for show correct font size
+                            font-size: 24px; // use px to show correct font size
+                            width: 25px;
+                            height: 25px;
+                            display: inline-block;
+                            text-align: center;
                         }
                         .larger-text-size-discription {
                             position: absolute;
