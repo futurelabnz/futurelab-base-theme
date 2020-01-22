@@ -183,7 +183,6 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
-  font-weight: 500;
   @include mobiles-all {
     font-size: 1.25rem;
   }
@@ -223,48 +222,48 @@ p {
   color: #222222;
 }
 
-// base theme specific heading style
-h1 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 1.625rem;
-  letter-spacing: 0.46px;
-  line-height: 35px;
-}
+// botanyGP base theme specific heading style
+// h1 {
+//   color: $text-black;
+//   font-weight: 500;
+//   font-size: 1.625rem;
+//   letter-spacing: 0.46px;
+//   line-height: 35px;
+// }
 
-h2 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 1.75rem;
-  letter-spacing: 0.5px;
-  line-height: 36px;
-}
+// h2 {
+//   color: $text-black;
+//   font-weight: 500;
+//   font-size: 1.75rem;
+//   letter-spacing: 0.5px;
+//   line-height: 36px;
+// }
 
-h3 {
-  color: $dark;
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 1px;
-  line-height: 35px;
-}
+// h3 {
+//   color: $dark;
+//   font-weight: 600;
+//   font-size: 0.875rem;
+//   letter-spacing: 1px;
+//   line-height: 35px;
+// }
 
-h4 {
-  color: $text-black;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 35px;
-  letter-spacing: 1px;
-}
+// h4 {
+//   color: $text-black;
+//   font-weight: 500;
+//   font-size: 0.875rem;
+//   line-height: 35px;
+//   letter-spacing: 1px;
+// }
 
-h1,
-h2 {
-  font-size: 1.75rem;
-  line-height: 36px;
-  letter-spacing: -0.5px;
-  font-weight: 500;
-  margin-bottom: $vertical-spacing;
-}
+// h1,
+// h2 {
+//   font-size: 1.75rem;
+//   line-height: 36px;
+//   letter-spacing: -0.5px;
+//   font-weight: 500;
+//   margin-bottom: $vertical-spacing;
+// }
 
-h3 {
-  font-size: 0.875rem;
-}
+// h3 {
+//   font-size: 0.875rem;
+// }

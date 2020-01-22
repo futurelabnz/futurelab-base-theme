@@ -34,58 +34,12 @@
 @import "footer";
 /* Accessibility, Alignments, Clearings, Widgets, Content */
 @import "content";
+/* utils to help styling */
+@import "utils";
 /* woocommerce style */
 @import "woocommerce";
 /* Blocks */
 @import "blocks";
-
-/*
- * Utilities to help styling
- */
-.alignwide {
-    max-width: $max-wide-width;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.alignfull {
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-// make a margin right custom class, to avoid style apply to every image on website
-.col-margin-right {
-    margin-right: 48px;
-    @include mobiles-all {
-        margin-right: initial;
-    }
-}
-
-// remove line-height
-.line-height-0 {
-    line-height: 0;
-}
-
-.has-small-font-size {
-    color: $dark;
-}
-
-.has-large-font-size {
-    color: $dark;
-}
-
-.has-huge-font-size {
-    color: $dark;
-}
-
-.shadow-box {
-    @include shadow-around;
-}
-
-.fl-vertical-space {
-    padding: 3em 0;
-}
 
 // to remove margin-left when tablets
 .has-2-columns.wp-block-columns {
@@ -218,6 +172,87 @@ Banner header for pages, services and teams
             position: relative;
             height: 100%;
         }
+
+        .banner-header-titles-container {
+            .banner-header-titles {
+                position: relative;
+                top: 80px;
+                width: 50%;
+                margin-bottom: $vertical-spacing;
+                overflow-wrap: break-word;
+
+                @include mobiles-all {
+                    position: relative;
+                    display: block;
+                    float: left;
+                    height: 100%;
+                    top: 0;
+                    padding: 1rem;
+                }
+
+                .title-meta {
+                    color: $dark;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    line-height: 35px;
+                    text-transform: uppercase;
+                }
+                h1.title {
+                    margin: 0.67em 0;
+                    font-size: 2.5rem;
+                    letter-spacing: -0.68px;
+                    line-height: 50px;
+                    margin-bottom: 0.5em;
+                }
+                h3.subtitle {
+                    margin: 0.67em 0;
+                }
+
+                .banner-header-menu-container {
+                    overflow: hidden;
+                    @include mobiles-all {
+                        display: block;
+                        float: left;
+                        height: 100%;
+                    }
+
+                    ul {
+                        color: $dark;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 30px;
+                        list-style: none;
+                        text-transform: none;
+                        margin: 0;
+                        float: left;
+                        height: 100%;
+                        width: 80%;
+                        border-bottom: 1px solid #ffffff;
+
+                        @include mobiles-all {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    li {
+                        border-top: 1px solid #ffffff;
+                        display: block;
+                        vertical-align: center;
+                        max-width: 100%;
+                        padding: 5px 0;
+
+                        a {
+                            color: $dark;
+                            text-transform: none;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .down-arrow-container {
@@ -234,90 +269,12 @@ Banner header for pages, services and teams
     }
 }
 
-.banner-header-titles {
-    position: absolute;
-    top: 80px;
-    max-width: 450px;
-    margin-bottom: $vertical-spacing;
-    overflow-wrap: break-word;
-
-    @include mobiles-all {
-        position: relative;
-        display: block;
-        float: left;
-        height: 100%;
-        top: 0;
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 38px;
-        font-weight: 600;
-        letter-spacing: -0.68px;
-        line-height: 50px;
-        margin-bottom: 0.5em;
-    }
-
-    .title-meta {
-        color: $dark;
-        font-weight: 600;
-        font-size: 14px;
-        letter-spacing: 1px;
-        line-height: 35px;
-        text-transform: uppercase;
-    }
-}
-
 .banner-header-title {
     height: 35px;
     color: $dark;
     font-size: 14px;
     font-weight: bold;
     line-height: 35px;
-}
-
-.banner-header-menu-container {
-    @include mobiles-all {
-        display: block;
-        float: left;
-        height: 100%;
-    }
-
-    ul {
-        color: $dark;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 30px;
-        list-style: none;
-        text-transform: none;
-        margin: 0;
-        float: left;
-        height: 100%;
-        width: fit-content;
-        max-width: 50%;
-        min-width: 420px;
-        border-bottom: 1px solid #ffffff;
-
-        @include mobiles-all {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    li {
-        border-top: 1px solid #ffffff;
-        display: block;
-        vertical-align: center;
-        max-width: 100%;
-        padding: 5px 0;
-
-        a {
-            color: $dark;
-            text-transform: none;
-            text-decoration: none;
-        }
-    }
 }
 
 /*
@@ -461,8 +418,10 @@ Sidebar menu styling
     }
 
     // make padding left and right on mobile devices
+    // not using :not because banner header and slider dont need padding
     > .alignfull,
     > .alignwide,
+    > .gform_wrapper,
     > p,
     > h1,
     > h2,
