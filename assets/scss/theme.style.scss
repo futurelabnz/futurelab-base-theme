@@ -150,6 +150,7 @@ Banner header for pages, services and teams
     width: 100%;
     background-repeat: no-repeat;
     background-position: right center;
+    background-size: auto 100%;
     margin: 0px auto 4em;
 
     @include mobiles-all {
