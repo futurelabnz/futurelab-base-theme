@@ -30,8 +30,7 @@ $thumbnail_url = '';
             </div>
         </div>
         <div class="down-arrow-container hide-for-small-only"
-             style="background-image: url( '<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_arrow_scroll_down.svg'; ?>' );">
-            <a href="#primary">&nbsp;</a>
+             style="background-image: url( '<?php echo get_template_directory_uri() . '/assets/images/icon_arrow_scroll_down.svg'; ?>' );">
         </div>
     </div>
 
