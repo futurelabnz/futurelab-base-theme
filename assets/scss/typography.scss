@@ -203,18 +203,14 @@ h4 {
 }
 h5 {
     font-size: 0.875rem;
-    line-height: 0.875rem;
     @include mobiles-all {
         font-size: 0.875rem;
-        line-height: 0.875rem;
     }
 }
 h6 {
     font-size: 0.75rem;
-    line-height: 0.75rem;
     @include mobiles-all {
         font-size: 0.75rem;
-        line-height: 0.75rem;
     }
 }
 
