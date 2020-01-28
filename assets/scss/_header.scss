@@ -206,7 +206,7 @@ header#masthead {
                         background-color: white;
                         float: left;
                         position: absolute;
-                        top: 102%; // change to 102% to show outline properly
+                        top: 100%;
                         left: -999em;
                         z-index: 99999;
                         box-shadow: $box-shadow-bottom;
@@ -233,6 +233,9 @@ header#masthead {
                         }
                     }
                     li {
+                        a {
+                            outline-offset: -1px;  // add to show outline properly
+                        }
                         &:hover {
                             > ul {
                                 left: auto;
