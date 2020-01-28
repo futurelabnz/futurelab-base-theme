@@ -8,12 +8,12 @@ input,
 select,
 optgroup,
 textarea {
-  color: #222222;
-  font-family: $body-font;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 28px;
-  letter-spacing: 0.53px;
+    color: #222222;
+    font-family: $body-font;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.53px;
 }
 
 h1,
@@ -22,62 +22,62 @@ h3,
 h4,
 h5,
 h6 {
-  clear: both;
-  font-family: $body-font;
+    clear: both;
+    font-family: $body-font;
 }
 
 p {
-  margin-bottom: $vertical-spacing;
+    margin-bottom: $vertical-spacing;
 }
 
 dfn,
 cite,
 em,
 i {
-  font-style: italic;
+    font-style: italic;
 }
 
 blockquote {
-  margin: 0 1.5em;
+    margin: 0 1.5em;
 }
 
 address {
-  margin: 0 0 $vertical-spacing;
+    margin: 0 0 $vertical-spacing;
 }
 
 pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 1rem;
-  line-height: 28px;
-  margin-bottom: $vertical-spacing;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 1rem;
+    line-height: 28px;
+    margin-bottom: $vertical-spacing;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 1rem;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 1rem;
 }
 
 abbr,
 acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
+    border-bottom: 1px dotted #666;
+    cursor: help;
 }
 
 mark,
 ins {
-  background: #fff9c0;
-  text-decoration: none;
+    background: #fff9c0;
+    text-decoration: none;
 }
 
 big {
-  font-size: 125%;
+    font-size: 125%;
 }
 
 /*--------------------------------------------------------------
@@ -87,23 +87,23 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 0.6em 1em 0.4em;
+    border: 1px solid;
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.6em 1em 0.4em;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
+    border-color: #ccc #bbb #aaa;
 }
 
 button:active,
@@ -114,7 +114,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
+    border-color: #aaa #bbb #bbb;
 }
 
 input[type="text"],
@@ -133,10 +133,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
 }
 
 input[type="text"]:focus,
@@ -155,71 +155,81 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-  color: #111;
+    color: #111;
 }
 
 select {
-  border: 1px solid #ccc;
+    border: 1px solid #ccc;
 }
 
 textarea {
-  width: 100%;
+    width: 100%;
 }
 
 /* futurelab code start */
 
 // typography
 h1 {
-  font-size: 3rem;
-  @include mobiles-all {
-    font-size: 2rem;
-  }
+    font-size: 3rem;
+    line-height: 3rem;
+    @include mobiles-all {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
 }
 h2 {
-  font-size: 2rem;
-  @include mobiles-all {
-    font-size: 1.5rem;
-  }
+    font-size: 2rem;
+    line-height: 2rem;
+    @include mobiles-all {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
 }
 h3 {
-  font-size: 1.5rem;
-  @include mobiles-all {
-    font-size: 1.25rem;
-  }
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    @include mobiles-all {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
 }
 h4 {
-  font-size: 1.375rem;
-  @include mobiles-all {
-    font-size: 1.125rem;
-  }
+    font-size: 1.375rem;
+    line-height: 1.375rem;
+    @include mobiles-all {
+        font-size: 1.125rem;
+        line-height: 1.125rem;
+    }
 }
 h5 {
-  font-size: 0.875rem;
-  font-family: $body-font;
-  @include mobiles-all {
     font-size: 0.875rem;
-  }
+    line-height: 0.875rem;
+    @include mobiles-all {
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+    }
 }
 h6 {
-  font-size: 0.75rem;
-  font-family: $body-font;
-  @include mobiles-all {
     font-size: 0.75rem;
-  }
+    line-height: 0.75rem;
+    @include mobiles-all {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+    }
 }
 
 p {
-  font-size: 1rem;
-  @include mobiles-all {
-    font-size: 1.25rem;
-  }
+    font-size: 1rem;
+    @include mobiles-all {
+        font-size: 1.25rem;
+    }
 }
 
 .tiny-text {
-  font-size: 0.75rem;
-  font-weight: 300;
-  line-height: 28px;
-  color: #222222;
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 28px;
+    color: #222222;
 }
 
 /* futurelab code start */
@@ -227,29 +237,29 @@ p {
 /* COMMON RADIO AND CHECKBOX STYLES  */
 input[type="radio"],
 input[type="checkbox"] {
-  /* Hide original inputs */
-  visibility: hidden;
-  position: absolute;
+    /* Hide original inputs */
+    visibility: hidden;
+    position: absolute;
 }
 input[type="radio"] + label:before,
 input[type="checkbox"] + label:before {
-  height: 12px;
-  width: 12px;
-  margin-right: 2px;
-  content: " ";
-  display: inline-block;
-  vertical-align: baseline;
-  border: 1px solid #777;
+    height: 12px;
+    width: 12px;
+    margin-right: 2px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    border: 1px solid #777;
 }
 input[type="radio"]:checked + label:before,
 input[type="checkbox"]:checked + label:before {
-  background: $dark;
+    background: $dark;
 }
 
 /* CUSTOM RADIO AND CHECKBOX STYLES */
 input[type="radio"] + label:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 input[type="checkbox"] + label:before {
-  border-radius: 2px;
+    border-radius: 2px;
 }
