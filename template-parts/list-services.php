@@ -17,28 +17,28 @@ if ( $services->have_posts() ) : ?>
 
     <div id="primary" class="content-area grid-container full">
         <main id="main" class="site-main post-list">
+			<div class="entry-content">
+				<!-- add div to fix narrator doesn't read first image -->
+				<div class="clearfix"></div>
+				<?php
+				while ( $services->have_posts() ) :
 
-			<!-- add div to fix narrator doesn't read first image -->
-			<div class="clearfix"></div>
-			<?php
-			while ( $services->have_posts() ) :
+					$services->the_post();
 
-				$services->the_post();
+					/*
+					* Content list displays a list of posts, in single column format, image left,
+					* title and excerpt right and clicks through to the relevant detail page
+					*/
 
-				/*
-				 * Content list displays a list of posts, in single column format, image left,
-				 * title and excerpt right and clicks through to the relevant detail page
-				*/
+				get_template_part( 'template-parts/list', 'inside-loop' );
 
-               get_template_part( 'template-parts/list', 'inside-loop' );
+				endwhile;
 
-			endwhile;
+				wp_reset_postdata();
+				wp_reset_query();
 
-			wp_reset_postdata();
-			wp_reset_query();
-
-			?>
-
+				?>
+			</div>
         </main><!-- #main -->
     </div><!-- #primary -->
 
