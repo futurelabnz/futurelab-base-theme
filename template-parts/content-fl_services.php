@@ -19,7 +19,7 @@
 
             <div class="grid-x grid-padding-x">
 
-                <div class="large-3 medium-3 hide-for-small-only">
+                <div class="large-3 medium-3 hide-for-small-only fl-service-sidebar">
 					<?php
 					$menu = get_futurelab_menu( $post->ID, 'fl_sidebar_menu', 'sidebar-menu' );
 					if ( ! empty( $menu ) ) {
@@ -39,7 +39,7 @@
 					?>
 
                 </div>
-                <div class="large-9 medium-9 small-12">
+                <div class="large-9 medium-9 small-12 fl-service-content">
 
 					<?php
 
@@ -61,7 +61,7 @@
 		<?php
 		$widget_area = 'bottom-of-services-page';
 		if ( is_active_sidebar( 'bottom-of-services-page' ) ): ?>
-            <div class="grid-container-x fluid">
+            <div class="grid-container-x alignfull">
                 <?php if( is_single()) : ?>
                 <hr class="wp-block-separator is-style-fl-customized-separator-shadow-above alignfull"/>
                 <?php endif; ?>

@@ -19,7 +19,7 @@
 
             <div class="grid-x grid-padding-x">
 
-                <div class="large-3 medium-3 hide-for-small-only">
+                <div class="large-3 medium-3 hide-for-small-only post-sidebar">
 
 					<?php
 					$widget_area = 'left-of-posts-page';
@@ -28,7 +28,7 @@
 					<?php endif; ?>
 
                 </div>
-                <div class="large-9 medium-9 small-12">
+                <div class="large-9 medium-9 small-12 post-content">
 
 					<?php
 
@@ -48,7 +48,7 @@
 		<?php
 		$widget_area = 'bottom-of-posts-page';
 		if ( is_active_sidebar( $widget_area ) ): ?>
-            <div class="grid-container-x fluid">
+            <div class="grid-container-x alignfull">
                 <hr class="wp-block-separator is-style-fl-customized-separator-shadow-above alignfull" />
                 <div class="grid-x align-self-middle">
                     <div class="large-12 text-center">

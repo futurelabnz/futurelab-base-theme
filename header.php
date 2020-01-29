@@ -36,7 +36,16 @@
         <div class="grid-x header-inner-container alignwide">
             <!-- desktop tablet site logo -->
             <div class="site-branding header-inner-left large-3 medium-6 hide-for-small-only">
-				<?php the_custom_logo(); ?>
+                <?php if ( display_header_text() ) : ?>
+                <h1 class="mobile-logo-text">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <?php bloginfo( 'name' ); ?>
+                    </a>
+                </h1>
+                <?php else : ?>
+                    <?php ?>
+                    <?php the_custom_logo(); ?>
+                <?php endif; ?>
             </div>
 
             <!-- Additional navigation button for tablets -->

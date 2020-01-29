@@ -150,7 +150,9 @@ Banner header for pages, services and teams
     width: 100%;
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: auto 100%;
+    // background-size: auto 100%;
+    // background-size: 100% auto;
+    background-size: auto;
     margin: 0px auto 4em;
 
     @include mobiles-all {
@@ -177,7 +179,7 @@ Banner header for pages, services and teams
         .banner-header-titles-container {
             .banner-header-titles {
                 position: relative;
-                top: 80px;
+                margin-top: 80px;
                 width: 50%;
                 margin-bottom: $vertical-spacing;
                 overflow-wrap: break-word;
@@ -187,7 +189,7 @@ Banner header for pages, services and teams
                     display: block;
                     float: left;
                     height: 100%;
-                    top: 0;
+                    margin-top: 0;
                     padding: 1rem;
                 }
 

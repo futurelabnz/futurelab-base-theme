@@ -16,7 +16,7 @@ get_header();
 
 ?>
 
-    <div id="primary" class="content-area grid-container fluid">
+    <div id="primary" class="content-area grid-container full">
         <main id="main" class="site-main">
 
 			<?php

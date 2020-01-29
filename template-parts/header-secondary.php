@@ -23,7 +23,7 @@ else{
 if ( ! empty( $secondary_menu ) || $secondary_menu !== false ) :
 	?>
 
-    <nav class="secondary-menu grid-container fluid">
+    <nav class="secondary-menu grid-container full">
         <div class="grid-x align-self-middle">
             <div class="large-4"></div>
             <div class="large-4 flex-child-grow text-center">
@@ -54,7 +54,7 @@ if ( is_singular() ):
 
 	if ( ! empty( $siblings_menu ) && $siblings_menu !== false ): ?>
 
-        <nav class="secondary-menu grid-container fluid">
+        <nav class="secondary-menu grid-container full">
             <div class="grid-x align-self-middle">
                 <div class="large-4"></div>
                 <div class="large-4 flex-child-grow text-center">
@@ -80,7 +80,7 @@ if ( is_front_page() ):
 
 	if ( is_active_sidebar( 'home-secondary-header' ) ): ?>
 
-        <nav class="secondary-menu grid-container fluid">
+        <nav class="secondary-menu grid-container full">
             <div class="grid-x align-self-middle">
                 <div class="large-4"></div>
                 <div class="large-4 flex-child-grow text-center">
@@ -95,7 +95,7 @@ else:
 	$widget_area = 'pages-secondary-header';
 	if ( is_active_sidebar( 'pages-secondary-header' ) ): ?>
 
-        <nav class="secondary-menu grid-container fluid">
+        <nav class="secondary-menu grid-container full">
             <div class="grid-x align-self-middle">
                 <div class="large-4"></div>
                 <div class="large-4 flex-child-grow text-center">
