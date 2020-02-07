@@ -131,17 +131,38 @@
 									$book_button .= esc_html( $button ) . '</a></div>';
                                 endif;
                                  ?>
-                                <!-- inner container of mobile menu -->
-                                <div class="mobile-menu-container">
-                                    <!-- render primary menu with additional buttons if exist -->
-                                    <?php
-                                        wp_nav_menu( array(
-                                            'theme_location' => 'menu-1',
-                                            'menu_id'        => 'primary-menu-mobile',
-                                            'items_wrap'     => '<ul id="%1$s" class="%2$s"><li class="mobile-menu-button">' . $number_button . '</li><li class="mobile-menu-button">' . $book_button . '</li>%3$s</ul>'
-                                        ) );
-                                    ?>
+
+								<!-- inner container of mobile menu -->
+								<div class="mobile-menu-container">
+									<!-- render primary menu with additional buttons if exist -->
+                                    <?php if ( ! empty( $number_button ) ) : ?>
+                                        
+                                        <?php 
+                                            // menu with buttons
+                                            wp_nav_menu(
+                                                array(
+                                                    'theme_location' => 'menu-1',
+                                                    'menu_id' => 'primary-menu-mobile',
+                                                    'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="mobile-menu-button">' . $number_button . '</li><li class="mobile-menu-button">' . $book_button . '</li>%3$s</ul>',
+                                                )
+                                            );
+                                        ?>
+
+                                    <?php else : ?>
+
+                                        <?php 
+                                            // menu with buttons
+                                            wp_nav_menu(
+                                                array(
+                                                    'theme_location' => 'menu-1',
+                                                    'menu_id' => 'primary-menu-mobile',
+                                                )
+                                            );
+                                        ?>
+
+                                    <?php endif;?>
                                 </div>
+                                
                         </div>
                     </nav>
                      
