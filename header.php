@@ -191,22 +191,22 @@
                     ?>
 
                     <!-- Additional navigation button for desktops-->
-                    <div class="grid-x normal-addi-nav-btn-container large-3 show-for-large align-right">
-						<?php
-						/* Optional button added through customizer */
-						$button        = get_theme_mod( 'additional_navigation_button' );
-						$button_url    = get_theme_mod( 'additional_navigation_button_url' );
-						$button_target = get_theme_mod( 'additional_navigation_button_target' );
-						if ( ! empty( $button ) ) : ?>
+                    <?php
+                    /* Optional button added through customizer */
+                    $button        = get_theme_mod( 'additional_navigation_button' );
+                    $button_url    = get_theme_mod( 'additional_navigation_button_url' );
+                    $button_target = get_theme_mod( 'additional_navigation_button_target' );
+                    if ( ! empty( $button ) ) : ?>
+                        <div class="grid-x normal-addi-nav-btn-container large-3 show-for-large align-right">
                             <div class="wp-block-button additional-navigation-button">
                                 <a title="<?php echo esc_attr( $button ); ?>"
-                                   target="<?php echo esc_attr( $button_target ); ?>"
-                                   href="<?php echo $button_url; ?>" class="wp-block-button__link">
-									<?php echo esc_html( $button ); ?>
+                                target="<?php echo esc_attr( $button_target ); ?>"
+                                href="<?php echo $button_url; ?>" class="wp-block-button__link">
+                                    <?php echo esc_html( $button ); ?>
                                 </a>
                             </div>
-						<?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
             </div>
         </div>
     </header><!-- #masthead -->
