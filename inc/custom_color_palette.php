@@ -147,7 +147,9 @@ class custom_color_palette {
 		$palette = get_theme_mod( 'fl_color_palette' );
 		if ( isset( $palette ) && ! empty( $palette ) ) {
 			$palette_colors = $this->color_palettes[ $palette ];
-		}
+		} else {
+            return null;
+        }
 
 
 		$background_palette = get_theme_mod( 'fl_background_colour_palette' );
