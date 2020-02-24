@@ -22,7 +22,7 @@ get_header();
 			<div class="entry-content">
 				<?php 
 					$args = array(
-						'posts_per_page'   => 'blogs',
+						'posts_per_page'   => '12',
 						'post_status'      => 'publish',
 						// 'order'            => $attributes['order'],
 						// 'orderby'          => $attributes['orderBy'],
