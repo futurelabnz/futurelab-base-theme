@@ -32,15 +32,20 @@ get_header();
 				?>
 				<div class="entry-content">
 					<?php
+
+						$posts_per_page = 6;
+
 						$args = array(
-							'posts_per_page'   => '12',
+							'posts_per_page'   => $posts_per_page,
 							'post_status'      => 'publish',
 							'suppress_filters' => false,
+							'paged' => $paged,
 						);
 
 						$recent_posts = get_posts( $args );
 
 						$list_items_markup = '';
+
 
 						foreach ( $recent_posts as $post ) {
 
@@ -97,6 +102,16 @@ get_header();
 
 						echo $block_content;
 						?>
+
+						<div class="grid-x alignwide align-spaced">
+						
+							<?php 
+
+								next_posts_link( 'Older Entries', $posts_per_page );
+								previous_posts_link( 'Next Entries &raquo;' ); 
+							
+							?>
+						</div>
 
 					</div>
 					<?php 
