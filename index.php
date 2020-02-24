@@ -73,13 +73,12 @@ get_header();
 								'<div class="post-text-content" style="top: 0px; position: relative;">'
 							);
 
-							if ( isset( $attributes['displayPostDate'] ) && $attributes['displayPostDate'] ) {
-								$list_items_markup .= sprintf(
-									'<time datetime="%1$s" class="wp-block-latest-posts__post-date">%2$s</time>',
-									esc_attr( get_the_date( 'c', $post ) ),
-									esc_html( get_the_date( 'M j, Y', $post ) )
-								);
-							}
+
+							$list_items_markup .= sprintf(
+								'<time datetime="%1$s" class="wp-block-latest-posts__post-date">%2$s</time>',
+								esc_attr( get_the_date( 'c', $post ) ),
+								esc_html( get_the_date( 'M j, Y', $post ) )
+							);
 
 							$list_items_markup .= sprintf(
 								'<div class="post-title"><a href="%1$s">%2$s</a></div>',
