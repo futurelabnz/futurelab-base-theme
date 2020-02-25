@@ -103,7 +103,7 @@ get_header();
 						echo $block_content;
 						?>
 
-						<div class="grid-x alignwide align-spaced">
+						<div class="grid-x alignwide align-spaced pagination">
 						
 							<?php 
 
