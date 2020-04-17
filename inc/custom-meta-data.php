@@ -423,7 +423,7 @@ class custom_meta_data {
                     <option value="no-menu">No menu</option>
 					<?php foreach ( $options as $option_key => $option_value ): ?>
                         <option value="<?php echo $option_key; ?>"
-							<?php echo ( get_post_meta( $post->ID, $option_key, true ) == '1' ) ? ' selected ' : ''; ?>><?php echo $option_value; ?></option>
+							<?php echo ( get_post_meta( $post->ID, $key, true ) === $option_key ) ? ' selected ' : ''; ?>><?php echo $option_value; ?></option>
 					<?php endforeach; ?>
                 </select>
             </div>
