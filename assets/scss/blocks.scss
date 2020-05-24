@@ -8,7 +8,7 @@
 
 --------------------------------------------------------------*/
 /* Theme variables */
-@import "mixins";
+@import 'mixins';
 
 /* Carousel */
 .wp-block-futurelab-block-fl-content-carousel {
@@ -358,6 +358,18 @@
     @include mobiles-all {
         margin: 0 16px 16px 16px;
         width: 100%;
+    }
+    // post item image fix height and text content height
+    .post-item {
+        .post-image {
+            img {
+                height: 220px;
+                object-fit: cover;
+            }
+        }
+        .post-text-content {
+            min-height: 180px;
+        }
     }
 }
 
