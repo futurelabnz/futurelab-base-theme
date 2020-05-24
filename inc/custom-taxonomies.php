@@ -29,6 +29,7 @@ function fl_add_futurelab_teams() {
 		'labels'            => $labels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
+		'show_in_rest'      => true,
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'teams' )
 	);
@@ -59,6 +60,7 @@ function fl_add_futurelab_service_category() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
+		'show_in_rest'      => true,
 		'rewrite'           => array( 'slug' => 'services' )
 	);
 
