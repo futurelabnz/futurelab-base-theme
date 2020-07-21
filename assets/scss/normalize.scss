@@ -450,3 +450,23 @@ table {
 }
 
 /* futurelab code start */
+
+// content list bullet point padding
+.entry-content {
+    ol,
+    ul {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+        @include desktops-large {
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+    }
+}
+
+ol,
+ul {
+    li {
+        list-style-position: inside;
+    }
+}
