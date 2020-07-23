@@ -172,6 +172,10 @@ Banner header for pages, services and teams
             float: left;
             position: relative;
             height: 100%;
+            background: linear-gradient(to right, $light 50%, rgba(255, 255, 255, 0) 100%);
+        }
+        @include tablets-all {
+            background: linear-gradient(to right, $light 50%, rgba(255, 255, 255, 0) 100%);
         }
     }
 
