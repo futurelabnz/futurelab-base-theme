@@ -51,7 +51,9 @@
           pagination: {
             el: isshowpagination ? ".swiper-pagination" : "",
             clickable: true
-          }
+          },
+          observer: true,
+          observeParents: true,
         });
       }
     );
@@ -118,6 +120,8 @@
             prevSlideMessage: 'Previous slide',
             nextSlideMessage: 'Next slide',
           },
+          observer: true,
+          observeParents: true,
         });
       }
     );
@@ -151,6 +155,8 @@
         prevSlideMessage: 'Previous slide',
         nextSlideMessage: 'Next slide',
       },
+      observer: true,
+      observeParents: true,
     });
   }
 
