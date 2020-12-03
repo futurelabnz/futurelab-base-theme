@@ -297,6 +297,19 @@ function load_futurelab_frontend_assets()
 	);
 }
 
+// enqueue admin style sheet
+function load_custom_base_wp_admin_style()
+{
+	// define admin_style_path
+	$admin_style_path = "/assets/css/style-editor.css";
+	// loading css
+	if (file_exists(get_template_directory() . $admin_style_path)) {
+		wp_register_style('admin-base-style', get_template_directory_uri() . $admin_style_path, false, filemtime(get_template_directory() . $admin_style_path));
+		wp_enqueue_style('admin-base-style');
+	}
+}
+add_action('admin_enqueue_scripts', 'load_custom_base_wp_admin_style');
+
 /**
  * Enqueue scripts and styles for the admin area
  * 1. Swiper is loaded separately from /assets/swiper/js/swiper.min.js
