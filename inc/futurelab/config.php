@@ -1,0 +1,4 @@
+<?php
+
+$futurelab_elements = [];
+
