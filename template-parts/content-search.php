@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package futurelab_base
+ * @package futurelab-base-theme2
  */
 
 ?>
@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			futurelab_base_posted_on();
-			futurelab_base_posted_by();
+			futurelab_base_theme2_posted_on();
+			futurelab_base_theme2_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php futurelab_base_post_thumbnail(); ?>
+	<?php futurelab_base_theme2_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php futurelab_base_entry_footer(); ?>
+		<?php futurelab_base_theme2_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

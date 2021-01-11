@@ -4,37 +4,57 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package futurelab_base
+ * @package futurelab-base-theme2
  */
 
 get_header();
-
-get_template_part( 'partial-banner-header');
 ?>
 
-	<div id="primary" class="content-area alignwide">
-		<main id="main" class="site-main">
+	<main id="primary" class="site-main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'futurelab-base' ); ?></h1>
-				</header><!-- .page-header -->
+		<section class="error-404 not-found">
+			<header class="page-header">
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'futurelab-base-theme2' ); ?></h1>
+			</header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'futurelab-base' ); ?></p>
+			<div class="page-content">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'futurelab-base-theme2' ); ?></p>
 
-                    <p>
 					<?php
 					get_search_form();
 
+					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
-                    </p>
-                    
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					<div class="widget widget_categories">
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'futurelab-base-theme2' ); ?></h2>
+						<ul>
+							<?php
+							wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							);
+							?>
+						</ul>
+					</div><!-- .widget -->
+
+					<?php
+					/* translators: %1$s: smiley */
+					$futurelab_base_theme2_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'futurelab-base-theme2' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$futurelab_base_theme2_archive_content" );
+
+					the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
+
+			</div><!-- .page-content -->
+		</section><!-- .error-404 -->
+
+	</main><!-- #main -->
 
 <?php
 get_footer();

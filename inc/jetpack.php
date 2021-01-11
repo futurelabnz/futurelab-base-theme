@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package futurelab_base
+ * @package futurelab-base-theme2
  */
 
 /**
@@ -14,40 +14,46 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function futurelab_base_jetpack_setup() {
+function futurelab_base_theme2_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'futurelab_base_infinite_scroll_render',
-		'footer'    => 'page',
-	) );
+	add_theme_support(
+		'infinite-scroll',
+		array(
+			'container' => 'main',
+			'render'    => 'futurelab_base_theme2_infinite_scroll_render',
+			'footer'    => 'page',
+		)
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support( 'jetpack-content-options', array(
-		'post-details'    => array(
-			'stylesheet' => 'futurelab-base-style',
-			'date'       => '.posted-on',
-			'categories' => '.cat-links',
-			'tags'       => '.tags-links',
-			'author'     => '.byline',
-			'comment'    => '.comments-link',
-		),
-		'featured-images' => array(
-			'archive'    => true,
-			'post'       => true,
-			'page'       => true,
-		),
-	) );
+	add_theme_support(
+		'jetpack-content-options',
+		array(
+			'post-details' => array(
+				'stylesheet' => 'futurelab-base-theme2-style',
+				'date'       => '.posted-on',
+				'categories' => '.cat-links',
+				'tags'       => '.tags-links',
+				'author'     => '.byline',
+				'comment'    => '.comments-link',
+			),
+			'featured-images' => array(
+				'archive' => true,
+				'post'    => true,
+				'page'    => true,
+			),
+		)
+	);
 }
-add_action( 'after_setup_theme', 'futurelab_base_jetpack_setup' );
+add_action( 'after_setup_theme', 'futurelab_base_theme2_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function futurelab_base_infinite_scroll_render() {
+function futurelab_base_theme2_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
