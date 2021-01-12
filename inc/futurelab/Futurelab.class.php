@@ -1,20 +1,55 @@
 <?php
 
-class FutureLab
-{
-    // class property declaration
-    public $var = 'a default value';
+namespace FutureLab;
 
-    // constructor?
+class FutureLab {
 
-    // public method declarations
+    protected $_config; 
 
-    // GETTERS
-    public function displayVar() {
-        echo $this->var;
+    public function __construct(){
+
+        $this->load_styles();
+        $this->load_javascript();
+
     }
 
-    // SETTERS
+    public function load_styles(){
+        $suffix = $config['environment'] == 'production' ? '.min' : '';
 
-    // Private Method Declarations?
+        foreach($this->config['elements'] as $k=>&$value){
+            //load element
+        }
+    }
+
+    public function load_javascript(){
+
+    }
+
+    public function get_element_html( $element ) {
+        include ( $config['template_path'] ).$element.'php';
+    }
+
+    public function get_element( char $element ){
+        return $_config['element'][$element];
+    }
+    
+    
+    protected function load_config(){
+        //include config file
+        include_once('./config.php');
+        //load config to variable maybe?
+    }
+
+
+
 }
+
+
+$config['environment'] = 'production';
+
+#(in fuctions include this file)
+$futurelab = new FutureLab();
+
+// /inc/futurelab/templates/menu.php
+
+$futurelab->get_element_html('menu');
