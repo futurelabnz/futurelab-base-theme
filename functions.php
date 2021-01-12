@@ -151,11 +151,6 @@ function futurelab_base_theme2_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'futurelab_base_theme2_scripts' );
 
-/***
- * Add custom element files
- */
-require (__DIR__.'/inc/futurelab/futurelab.class.php');
-
 /**
  * Implement the Custom Header feature.
  */
@@ -183,3 +178,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/***
+ * Add custom element files
+ */
+require (__DIR__.'/inc/futurelab/futurelab.class.php');
+
+require (__DIR__.'/inc/futurelab/styleloader.php');

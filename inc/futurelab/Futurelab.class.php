@@ -8,8 +8,8 @@ class FutureLab {
 
     public function __construct(){
         $this->load_config();
-        $this->load_styles();
-       //  $this->load_javascript();
+        // $this->load_styles();
+        // $this->load_javascript();
 
     }
 
@@ -18,7 +18,7 @@ class FutureLab {
 
         foreach($this->_config['elements'] as $k=>&$value){
             //load element style
-           echo('<link rel=stylesheet href="' . $value['style_path'] . '"/>');
+           echo('<link rel=stylesheet href="' .$value['style_path'] . '"/>');
         }
     }
 
@@ -39,7 +39,6 @@ class FutureLab {
         //include config file
         $this->_config = include_once(__DIR__.'/config.php');
     }
-
 
 
 }
