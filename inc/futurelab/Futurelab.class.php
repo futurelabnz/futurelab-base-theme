@@ -17,8 +17,8 @@ class FutureLab {
         $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
 
         foreach($this->_config['elements'] as $k=>&$value){
-            //load element
-            include ($value['style_path']);
+            //load element style
+           echo('<link rel=stylesheet href="' . $value['style_path'] . '"/>');
         }
     }
 
@@ -53,3 +53,5 @@ $futurelab = new FutureLab();
 // /inc/futurelab/templates/menu.php
 
 $futurelab->get_element_html('body');
+$futurelab->get_element_html('header');
+$futurelab->get_element_html('footer');
