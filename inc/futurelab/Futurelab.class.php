@@ -8,7 +8,7 @@ class FutureLab {
 
     public function __construct(){
         $this->load_config();
-        // $this->load_styles();
+        add_action( 'wp_enqueue_scripts', [$this, 'load_styles'] );
         // $this->load_javascript();
 
     }
@@ -16,10 +16,7 @@ class FutureLab {
     public function load_styles(){
         $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
 
-        foreach($this->_config['elements'] as $k=>&$value){
-            //load element style
-           echo('<link rel=stylesheet href="' .$value['style_path'] . '"/>');
-        }
+        wp_enqueue_style( 'fl-body-style', get_template_directory_uri().'/inc/futurelab/components/body/body.css' );
     }
 
     public function load_javascript(){

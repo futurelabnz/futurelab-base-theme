@@ -182,5 +182,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Add custom element files
  */
 require (__DIR__.'/inc/futurelab/futurelab.class.php');
-
-require (__DIR__.'/inc/futurelab/styleloader.php');
