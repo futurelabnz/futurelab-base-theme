@@ -7,16 +7,16 @@ class FutureLab {
     protected $_config; 
 
     public function __construct(){
-
+        $this->load_config();
         $this->load_styles();
-        $this->load_javascript();
+       //  $this->load_javascript();
 
     }
 
     public function load_styles(){
-        $suffix = $config['environment'] == 'production' ? '.min' : '';
+        $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
 
-        foreach($this->config['elements'] as $k=>&$value){
+        foreach($this->_config['elements'] as $k=>&$value){
             //load element
             include ($value['style_path']);
         }
@@ -27,7 +27,7 @@ class FutureLab {
     }
 
     public function get_element_html( $element ) {
-        include ( $config['elements'][$element]['view_template'] );
+        include ( $this->_config['elements'][$element]['view_template'] );
     }
 
     public function get_element( char $element ){
@@ -37,7 +37,7 @@ class FutureLab {
     
     protected function load_config(){
         //include config file
-        $this->_config = include_once('./config.php');
+        $this->_config = include_once(__DIR__.'/config.php');
     }
 
 
@@ -52,4 +52,4 @@ $futurelab = new FutureLab();
 
 // /inc/futurelab/templates/menu.php
 
-$futurelab->get_element_html('menu');
+$futurelab->get_element_html('body');
