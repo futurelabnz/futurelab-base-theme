@@ -18,6 +18,7 @@ class FutureLab {
 
         foreach($this->config['elements'] as $k=>&$value){
             //load element
+            include ($value['style_path']);
         }
     }
 
@@ -26,18 +27,17 @@ class FutureLab {
     }
 
     public function get_element_html( $element ) {
-        include ( $config['template_path'] ).$element.'php';
+        include ( $config['elements'][$element]['view_template'] );
     }
 
     public function get_element( char $element ){
-        return $_config['element'][$element];
+        return $_config['elements'][$element];
     }
     
     
     protected function load_config(){
         //include config file
-        include_once('./config.php');
-        //load config to variable maybe?
+        $this->_config = include_once('./config.php');
     }
 
 
