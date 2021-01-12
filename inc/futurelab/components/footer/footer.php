@@ -1,3 +1,2 @@
-<?php
-
-echo '<footer>FL_Footer</footer>';
+<footer>FL_Footer</footer>
+</html>

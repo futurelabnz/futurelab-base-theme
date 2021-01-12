@@ -1,3 +1,4 @@
-<?php
+<body>
+    FL_body
+</body>
 
-echo '<body>FL_BODY</body>';
