@@ -16,8 +16,9 @@ class FutureLab {
     // Hopefully can move this to an iterator
     public function load_styles(){
         $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
-        wp_enqueue_style( 'fl-body-style', get_template_directory_uri().'/inc/futurelab/components/body/body.css' );
-        wp_enqueue_style( 'fl-header-style', get_template_directory_uri().'/inc/futurelab/components/body/header.css' );
+        wp_enqueue_style( 'fl-header-style', get_template_directory_uri().'/inc/futurelab/components/header/header.css' );
+        wp_enqueue_style( 'fl-header-style', get_template_directory_uri().'/inc/futurelab/components/top_desktop_menu/top_desktop_menu.css' );
+        wp_enqueue_style( 'fl-header-style', get_template_directory_uri().'/inc/futurelab/components/footer/footer.css' );
     }
 
     public function load_javascript(){
