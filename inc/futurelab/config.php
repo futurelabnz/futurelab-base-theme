@@ -17,6 +17,16 @@
             ],
             'js' => []
         ],
+        'menu' => [
+            'controller' => 'Menu',
+            'templates' => [
+                'view'
+            ],
+            'styles' => [
+                'menu.css'
+            ],
+            'js' => []
+        ],
         'footer' => [
             'controller' => 'Footer',
             'templates' => [
