@@ -12,9 +12,8 @@
  * @package futurelab-base-theme2
  */
 
-get_header();
+echo $futurelab->get_element_content('header');
 ?>
-
 	<main id="primary" class="site-main">
 
 		<?php
@@ -34,5 +33,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
-get_footer();
+echo $futurelab->get_element_content('footer');
