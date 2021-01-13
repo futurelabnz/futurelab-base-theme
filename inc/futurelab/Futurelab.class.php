@@ -1,6 +1,6 @@
 <?php
 
-namespace FutureLab;
+//namespace FutureLab;
 
 class FutureLab {
 
@@ -28,8 +28,8 @@ class FutureLab {
         include ( $this->_config['elements'][$element]['view_template'] );
     }
 
-    public function get_element( char $element ){
-        return $_config['elements'][$element];
+    public function get_element( string $element ){
+        return $this->_config['elements'][$element];
     }
     
     
@@ -45,10 +45,10 @@ class FutureLab {
 $config['environment'] = 'production';
 
 #(in fuctions include this file)
-$futurelab = new FutureLab();
+//$futurelab = new FutureLab();
 
 // /inc/futurelab/templates/menu.php
-$futurelab->get_element_html('head');
-$futurelab->get_element_html('header');
-$futurelab->get_element_html('body');
-$futurelab->get_element_html('footer');
+//$futurelab->get_element_html('head');
+//$futurelab->get_element_html('header');
+//$futurelab->get_element_html('body');
+//$futurelab->get_element_html('footer');
