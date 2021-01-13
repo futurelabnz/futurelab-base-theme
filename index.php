@@ -21,13 +21,24 @@ include 'inc/futurelab/Futurelab.class.php';
 // use FutureLab as futurelab;
 $k = new FutureLab();
 $k->get_element_html('header');
-$k->get_element_html('top_desktop_menu');
-$k->get_element_html('footer');
+
+
 ?>
 
-	<!-- <main id="primary" class="site-main">
+	<main id="primary" class="site-main">
+	 <?php 
+	 $k->get_element_html('top_desktop_menu'); 
+	 ?>
+	
 
-		<?php
+	</main> <!-- #main -->
+
+<?php 
+$k->get_element_html('footer');
+//get_sidebar();
+//get_footer();
+?>
+	<?php
 		
 		/*if ( have_posts() ) :
 
@@ -60,10 +71,3 @@ $k->get_element_html('footer');
 
 		endif;*/
 		?>
-
-	</main> <!-- #main -->
-
-<?php 
-//get_sidebar();
-//get_footer();
-?>
