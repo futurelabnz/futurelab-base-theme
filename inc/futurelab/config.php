@@ -5,52 +5,27 @@
 
  return array (
     'environment' => 'development',
+    'components_path' => 'components',
     'elements' => [
         'header' => [
-            'view_template' => __DIR__.'/components/header/header.php',
-            'style_path' => __DIR__.'/components/header/header.css'
+            'controller' => 'Header',
+            'templates' => [
+                'view', 'somethingnew'
+            ],
+            'styles' => [
+                'header.css'
+            ],
+            'js' => []
         ],
-        'top_desktop_menu'=> [
-            'view_template' => __DIR__.'/components/top_desktop_menu/top_desktop_menu.php',
-            'style_path' => __DIR__.'/components/top_desktop_menu/top_desktop_menu.css'
-        ],
-        'top_mobile_menu'=> [
-            'view_template' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.php',
-            'style_path' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.css'
-        ],
-        'hero_banner'=> [
-            'view_template' => __DIR__.'/components/hero_banner/hero_banner.php',
-            'style_path' => __DIR__.'/components/hero_banner/hero_banner.css'
-        ],
-       /* 
-       'slider'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        'news'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        'tile'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        'team_member'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        'accordion'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        'footer_menu'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
-        ],
-        */
-        'footer'=> [
-            'view_template' => __DIR__.'/components/footer/footer.php',
-            'style_path' => __DIR__.'/components/footer/footer.css'
+        'footer' => [
+            'controller' => 'Footer',
+            'templates' => [
+                'view'
+            ],
+            'styles' => [
+                'footer.css'
+            ],
+            'js' => []
         ],
     ],
  );

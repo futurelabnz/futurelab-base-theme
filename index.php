@@ -20,22 +20,22 @@
 //include 'inc/futurelab/Futurelab.class.php';
 // use FutureLab as futurelab;
 
-$futurelab->get_element_html('header');
+echo $futurelab->get_element_content('header');
 
-$futurelab->get_element_html('top_desktop_menu'); 
+
 ?>
 
 	<main id="primary" class="site-main">
 	 <?php 
 	 
-	 $futurelab->get_element_html('hero_banner'); 
+	//  $futurelab->get_element_content('hero_banner'); 
 	 ?>
 	
 
 	</main> <!-- #main -->
 
 <?php 
-$futurelab->get_element_html('footer');
+echo $futurelab->get_element_content('footer');
 //get_sidebar();
 //get_footer();
 ?>

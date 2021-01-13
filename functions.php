@@ -10,8 +10,8 @@
 /***
  * Add custom element files
  */
-require (__DIR__.'/inc/futurelab/Futurelab.class.php');
-$futurelab = new FutureLab();
+require (__DIR__.'/inc/futurelab/futurelab.class.php');
+$futurelab = new \FutureLab\FutureLabCore();
 
 
 if ( ! defined( '_S_VERSION' ) ) {
