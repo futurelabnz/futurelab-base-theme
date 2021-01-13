@@ -22,12 +22,12 @@
 
 $futurelab->get_element_html('header');
 
-
+$futurelab->get_element_html('top_desktop_menu'); 
 ?>
 
 	<main id="primary" class="site-main">
 	 <?php 
-	 $futurelab->get_element_html('top_desktop_menu'); 
+	 
 	 $futurelab->get_element_html('hero_banner'); 
 	 ?>
 	
