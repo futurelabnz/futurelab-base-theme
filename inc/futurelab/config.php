@@ -6,18 +6,44 @@
  return array (
     'environment' => 'development',
     'elements' => [
-        'head' => [
-            'view_template' => __DIR__.'/components/head/head.php',
-            'style_path' => __DIR__.'/components/head/head.css'
-        ],
         'header' => [
             'view_template' => __DIR__.'/components/header/header.php',
             'style_path' => __DIR__.'/components/header/header.css'
         ],
-        'body'=> [
+        'top_desktop_menu'=> [
             'view_template' => __DIR__.'/components/body/body.php',
             'style_path' => __DIR__.'/components/body/body.css'
         ],
+        'top_mobile_menu'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+       /* 
+       'slider'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        'news'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        'tile'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        'team_member'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        'accordion'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        'footer_menu'=> [
+            'view_template' => __DIR__.'/components/body/body.php',
+            'style_path' => __DIR__.'/components/body/body.css'
+        ],
+        */
         'footer'=> [
             'view_template' => __DIR__.'/components/footer/footer.php',
             'style_path' => __DIR__.'/components/footer/footer.css'

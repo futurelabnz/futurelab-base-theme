@@ -12,10 +12,20 @@
  * @package futurelab-base-theme2
  */
 
- get_header();
+ // get_header();
+
+/***
+ * Add custom element files
+ */
+include 'inc/futurelab/Futurelab.class.php';
+// use FutureLab as futurelab;
+$k = new FutureLab();
+$k->get_element_html('header');
+$k->get_element_html('top_desktop_menu');
+$k->get_element_html('footer');
 ?>
 
-	<main id="primary" class="site-main">
+	<!-- <main id="primary" class="site-main">
 
 		<?php
 		
@@ -51,8 +61,9 @@
 		endif;*/
 		?>
 
-	</main><!-- #main -->
+	</main> <!-- #main -->
 
-<?php
+<?php 
 //get_sidebar();
 //get_footer();
+?>

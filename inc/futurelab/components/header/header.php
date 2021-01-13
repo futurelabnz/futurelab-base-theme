@@ -12,5 +12,15 @@ function themename_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 ?>
+<!doctype html>
 
-<header class=fl-header> FL_Header </header>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>FutureLab</title>
+  <meta name="description" content="FutureLab Master Website">
+  <meta name="author" content="FutureLab">
+    <?php wp_head();?>
+</head>
+<body>
