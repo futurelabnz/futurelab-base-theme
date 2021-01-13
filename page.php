@@ -13,6 +13,8 @@
  */
 
 echo $futurelab->get_element_content('header');
+
+echo $futurelab->get_element_content('menu'); 
 ?>
 	<main id="primary" class="site-main">
 
