@@ -19,6 +19,7 @@ class FutureLab {
         wp_enqueue_style( 'fl-header-style', get_template_directory_uri().'/inc/futurelab/components/header/header.css' );
         wp_enqueue_style( 'fl-top-menu-style', get_template_directory_uri().'/inc/futurelab/components/top_desktop_menu/top_desktop_menu.css' );
         wp_enqueue_style( 'fl-footer-style', get_template_directory_uri().'/inc/futurelab/components/footer/footer.css' );
+        wp_enqueue_style( 'fl-base-style', get_template_directory_uri().'/build/bundle.css' );
     }
 
     public function load_javascript(){
