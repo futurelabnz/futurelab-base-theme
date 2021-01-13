@@ -7,6 +7,13 @@
  * @package futurelab-base-theme2
  */
 
+/***
+ * Add custom element files
+ */
+require (__DIR__.'/inc/futurelab/Futurelab.class.php');
+$futurelab = new FutureLab();
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -178,7 +185,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/***
- * Add custom element files
- */
-//require (__DIR__.'/inc/futurelab/Futurelab.class.php');
+

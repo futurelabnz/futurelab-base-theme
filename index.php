@@ -17,25 +17,25 @@
 /***
  * Add custom element files
  */
-include 'inc/futurelab/Futurelab.class.php';
+//include 'inc/futurelab/Futurelab.class.php';
 // use FutureLab as futurelab;
-$k = new FutureLab();
-$k->get_element_html('header');
+
+$futurelab->get_element_html('header');
 
 
 ?>
 
 	<main id="primary" class="site-main">
 	 <?php 
-	 $k->get_element_html('top_desktop_menu'); 
-	 $k->get_element_html('hero_banner'); 
+	 $futurelab->get_element_html('top_desktop_menu'); 
+	 $futurelab->get_element_html('hero_banner'); 
 	 ?>
 	
 
 	</main> <!-- #main -->
 
 <?php 
-$k->get_element_html('footer');
+$futurelab->get_element_html('footer');
 //get_sidebar();
 //get_footer();
 ?>
