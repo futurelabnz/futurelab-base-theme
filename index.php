@@ -28,6 +28,7 @@ $k->get_element_html('header');
 	<main id="primary" class="site-main">
 	 <?php 
 	 $k->get_element_html('top_desktop_menu'); 
+	 $k->get_element_html('hero_banner'); 
 	 ?>
 	
 

@@ -18,6 +18,10 @@
             'view_template' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.php',
             'style_path' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.css'
         ],
+        'hero_banner'=> [
+            'view_template' => __DIR__.'/components/hero_banner/hero_banner.php',
+            'style_path' => __DIR__.'/components/hero_banner/hero_banner.css'
+        ],
        /* 
        'slider'=> [
             'view_template' => __DIR__.'/components/body/body.php',
