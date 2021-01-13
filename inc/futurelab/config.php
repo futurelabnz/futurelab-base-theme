@@ -11,12 +11,12 @@
             'style_path' => __DIR__.'/components/header/header.css'
         ],
         'top_desktop_menu'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
+            'view_template' => __DIR__.'/components/top_desktop_menu/top_desktop_menu.php',
+            'style_path' => __DIR__.'/components/top_desktop_menu/top_desktop_menu.css'
         ],
         'top_mobile_menu'=> [
-            'view_template' => __DIR__.'/components/body/body.php',
-            'style_path' => __DIR__.'/components/body/body.css'
+            'view_template' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.php',
+            'style_path' => __DIR__.'/components/top_mobile_menu/top_mobile_menu.css'
         ],
        /* 
        'slider'=> [
