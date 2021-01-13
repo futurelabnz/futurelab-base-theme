@@ -12,8 +12,8 @@
  * @package futurelab-base-theme2
  */
 
- // get_header();
-
+  get_header();
+  wp_nav_menu();
 /***
  * Add custom element files
  */
