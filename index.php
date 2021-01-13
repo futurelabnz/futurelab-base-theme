@@ -13,7 +13,6 @@
  */
 
   get_header();
-  wp_nav_menu();
 /***
  * Add custom element files
  */
@@ -22,6 +21,8 @@
 
 echo $futurelab->get_element_content('header');
 
+echo $futurelab->get_element_content('menu');    
+                            
 
 ?>
 
