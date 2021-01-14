@@ -12,9 +12,12 @@
  * @package futurelab-base-theme2
  */
 
-echo $futurelab->get_element_content('header');
+get_header();
 
-echo $futurelab->get_element_content('menu'); 
+
+// echo $futurelab->get_element_content('header');
+
+// echo $futurelab->get_element_content('menu'); 
 ?>
 	<main id="primary" class="site-main">
 

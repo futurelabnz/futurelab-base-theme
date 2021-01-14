@@ -9,40 +9,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package futurelab-base-theme2
+ * @package futurelab_base
  */
 
-  get_header();
-/***
- * Add custom element files
- */
-//include 'inc/futurelab/Futurelab.class.php';
-// use FutureLab as futurelab;
-
-echo $futurelab->get_element_content('header');
-
-echo $futurelab->get_element_content('menu');    
-                            
-
+get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	 <?php 
-	 
-	//  $futurelab->get_element_content('hero_banner'); 
-	 ?>
-	
 
-	</main> <!-- #main -->
-
-<?php 
-echo $futurelab->get_element_content('footer');
-//get_sidebar();
-//get_footer();
-?>
-	<?php
-		
-		/*if ( have_posts() ) :
+		<?php
+		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
@@ -52,7 +28,7 @@ echo $futurelab->get_element_content('footer');
 				<?php
 			endif;
 
-			/* Start the Loop 
+			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
@@ -60,7 +36,7 @@ echo $futurelab->get_element_content('footer');
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 
+				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
@@ -71,5 +47,11 @@ echo $futurelab->get_element_content('footer');
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;*/
+		endif;
 		?>
+
+	</main><!-- #main -->
+
+<?php
+get_sidebar();
+get_footer();
