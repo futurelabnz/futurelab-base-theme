@@ -19,7 +19,7 @@ get_header();
 
 // echo $futurelab->get_element_content('menu'); 
 ?>
-	<main id="primary" class="site-main">
+	<main id="primary" class="container site-main">
 
 		<?php
 		while ( have_posts() ) :
