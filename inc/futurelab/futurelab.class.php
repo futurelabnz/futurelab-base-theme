@@ -17,32 +17,31 @@ class FutureLabCore {
     public function load_styles(){
         $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
 
-        foreach($this->_config['elements'] as $element_name=>$element){
-            if( isset( $element['styles'] ) && !empty( $element['styles'] ) ){
-                if( is_array( $element['styles'] )){
-                    foreach( $element['styles'] as $stylesheet){
-                        wp_enqueue_style(   'fl-style-'.$stylesheet,
-                                            get_template_directory_uri().
-                                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
-                                                DIRECTORY_SEPARATOR.$element_name.
-                                                DIRECTORY_SEPARATOR.$stylesheet,
-                                            '',
-                                            filemtime( __DIR__.
-                                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
-                                                DIRECTORY_SEPARATOR.$element_name.
-                                                DIRECTORY_SEPARATOR.$stylesheet )
+        /**  commented out because I think we should bundle the styles together in to one css file???  */
+        // foreach($this->_config['elements'] as $element_name=>$element){
+        //     if( isset( $element['styles'] ) && !empty( $element['styles'] ) ){
+        //         if( is_array( $element['styles'] )){
+        //             foreach( $element['styles'] as $stylesheet){
+        //                 wp_enqueue_style(   'fl-style-'.$stylesheet,
+        //                                     get_template_directory_uri().
+        //                                         DIRECTORY_SEPARATOR.$this->_config['components_path'].
+        //                                         DIRECTORY_SEPARATOR.$element_name.
+        //                                         DIRECTORY_SEPARATOR.$stylesheet,
+        //                                     '',
+        //                                     filemtime( __DIR__.
+        //                                         DIRECTORY_SEPARATOR.$this->_config['components_path'].
+        //                                         DIRECTORY_SEPARATOR.$element_name.
+        //                                         DIRECTORY_SEPARATOR.$stylesheet )
 
-                        );
-                    }
-                } else {
-                    wp_enqueue_style( 'fl-style-'.$k, get_template_directory_uri().'components/header/header.css' );
-                }
-            }
-        }
+        //                 );
+        //             }
+        //         } else {
+        //             wp_enqueue_style( 'fl-style-'.$k, get_template_directory_uri().'components/header/header.css' );
+        //         }
+        //     }
+        // }
 
         wp_enqueue_style( 'fl-bootstrap-css', get_template_directory_uri().'/vendor/bootstrap/css/bootstrap.min.css' );
-        wp_enqueue_style( 'fl-top-menu-style', get_template_directory_uri().'/inc/futurelab/components/top_desktop_menu/top_desktop_menu.css' );
-        wp_enqueue_style( 'fl-footer-style', get_template_directory_uri().'/inc/futurelab/components/footer/footer.css' );
         wp_enqueue_style( 'fl-base-style', get_template_directory_uri().'/build/bundle.css' );
     }
 
