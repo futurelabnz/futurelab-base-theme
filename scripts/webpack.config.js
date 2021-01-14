@@ -127,7 +127,7 @@ module.exports = {
         host: 'localhost',
         port: 3000,
         logLevel: 'silent',
-        files: ['./template/*.php'],
+        files: ['./**/*.php'],
         proxy: 'http://futurelabmasterbase.local/',
       }),
   ].filter(Boolean),
