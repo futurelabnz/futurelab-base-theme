@@ -51,7 +51,7 @@ class FutureLabCore {
             }
         }
 
-        wp_enqueue_style( 'fl-bootstrap-css', get_template_directory_uri().'/vendor/bootstrap/css/bootstrap.min.css' );
+        wp_enqueue_style( 'fl-bootstrap-css', get_template_directory_uri().'/vendor/twbs/bootstrap/dist/css/bootstrap.min.css' );
         wp_enqueue_style( 'fl-base-style', get_template_directory_uri().'/build/bundle.css' );
     }
 

@@ -33,7 +33,7 @@
         'js' => [
             [
                 'name' => 'bootstrap',
-                'path' => '/vendor/bootstrap/js/bootstrap.min.js',
+                'path' => '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js',
                 'dependent_on' => ['jquery'],
             ],
             [
@@ -45,7 +45,7 @@
         'css' => [
             [
                 'name' => 'bootstrap',
-                'path' => '/vendor/bootstrap/css/bootstrap.min.css',
+                'path' => '/vendor//twbs/bootstrap/dist/css/bootstrap.min.css',
                 'dependent_on' => null,
             ]
         ]
