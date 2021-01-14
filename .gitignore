@@ -1,3 +1,16 @@
 node_modules/
 yarn.lock
 yarn-error.log
+vendor/bin/
+composer.lock
+vendor/composer/
+vendor/gettext/
+vendor/mck89/
+vendor/mustache/
+vendor/phpcompatibility/
+vendor/rmccue/
+vendor/squizlabs/
+vendor/symfony/
+vendor/wp-cli/
+vendor/wptrt/
+vendor/wp-coding-standards/
