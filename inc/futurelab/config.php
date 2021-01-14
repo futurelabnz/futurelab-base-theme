@@ -9,19 +9,13 @@
     'elements' => [
         'header' => [
             'controller' => 'Header',
-            'templates' => [
-                'view', 'somethingnew'
-            ],
             'styles' => [
-                'header.css'
+                ''
             ],
             'js' => []
         ],
         'menu' => [
             'controller' => 'Menu',
-            'templates' => [
-                'view'
-            ],
             'styles' => [
                 'menu.css'
             ],
@@ -29,14 +23,32 @@
         ],
         'footer' => [
             'controller' => 'Footer',
-            'templates' => [
-                'view'
-            ],
             'styles' => [
-                'footer.css'
+                ''
             ],
             'js' => []
         ],
     ],
+    'global' => [
+        'js' => [
+            [
+                'name' => 'bootstrap',
+                'path' => '/vendor/bootstrap/js/bootstrap.min.js',
+                'dependent_on' => ['jquery'],
+            ],
+            [
+                'name' => 'jquery',
+                'path' => '/vendor/components/jquery/jquery.min.js',
+                'dependent_on' => null,
+            ]
+        ],
+        'css' => [
+            [
+                'name' => 'bootstrap',
+                'path' => '/vendor/bootstrap/css/bootstrap.min.css',
+                'dependent_on' => null,
+            ]
+        ]
+    ]
  );
 
