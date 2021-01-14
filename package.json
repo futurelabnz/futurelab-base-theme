@@ -9,9 +9,7 @@
   },
   "author": "futurelab",
   "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^4.5.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",

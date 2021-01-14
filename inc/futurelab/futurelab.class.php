@@ -4,7 +4,7 @@ namespace FutureLab;
 
 class FutureLabCore {
 
-    protected $_config; 
+    protected $_config;
 
     public function __construct(){
         $this->load_config();
@@ -21,13 +21,13 @@ class FutureLabCore {
             if( isset( $element['styles'] ) && !empty( $element['styles'] ) ){
                 if( is_array( $element['styles'] )){
                     foreach( $element['styles'] as $stylesheet){
-                        wp_enqueue_style(   'fl-style-'.$stylesheet, 
+                        wp_enqueue_style(   'fl-style-'.$stylesheet,
                                             get_template_directory_uri().
                                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                                 DIRECTORY_SEPARATOR.$element_name.
-                                                DIRECTORY_SEPARATOR.$stylesheet, 
+                                                DIRECTORY_SEPARATOR.$stylesheet,
                                             '',
-                                            filemtime( __DIR__. 
+                                            filemtime( __DIR__.
                                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                                 DIRECTORY_SEPARATOR.$element_name.
                                                 DIRECTORY_SEPARATOR.$stylesheet )
@@ -39,7 +39,8 @@ class FutureLabCore {
                 }
             }
         }
-        
+
+        wp_enqueue_style( 'fl-bootstrap-css', get_template_directory_uri().'/vendor/bootstrap/css/bootstrap.min.css' );
         wp_enqueue_style( 'fl-top-menu-style', get_template_directory_uri().'/inc/futurelab/components/top_desktop_menu/top_desktop_menu.css' );
         wp_enqueue_style( 'fl-footer-style', get_template_directory_uri().'/inc/futurelab/components/footer/footer.css' );
         wp_enqueue_style( 'fl-base-style', get_template_directory_uri().'/build/bundle.css' );
@@ -77,12 +78,12 @@ class FutureLabCore {
         return __DIR__ . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element;
     }
 
-    
+
     protected function load_config(){
         //include config file
         $this->_config = include(__DIR__.'/config.php');
     }
-    
+
     /**
      * Gets content of specific component
      *
@@ -93,23 +94,23 @@ class FutureLabCore {
 
         if( ! $this->validate_element( $element ) ){
             return false;
-        } 
+        }
 
         ob_start();
 
         $views_array = $this->get_element_config( $element )['templates'];
 
         foreach( $views_array as $view_name){
-            get_template_part( 
+            get_template_part(
                 'inc' . DIRECTORY_SEPARATOR . 'futurelab' .
                     DIRECTORY_SEPARATOR . $this->_config['components_path'] .
                     DIRECTORY_SEPARATOR . $element .
                     DIRECTORY_SEPARATOR . 'views' .
-                    DIRECTORY_SEPARATOR . $element, 
+                    DIRECTORY_SEPARATOR . $element,
                 $view_name
             );
         }
-		
+
 
         $html = ob_get_clean();
 
