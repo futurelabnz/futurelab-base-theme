@@ -5,7 +5,7 @@
 
 
 <header id="masthead" class="site-header">
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="navbar navbar-dark shadow-sm">
     <div class="container d-flex justify-content-between">
 		<div class="site-branding my-0 mr-md-auto font-weight-normal">
       <?php
