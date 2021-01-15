@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./scripts/start.js",
     "build": "cross-env NODE_ENV=production node ./scripts/build.js",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "watch:components": "node-sass inc/futurelab/components/ -o ./inc/futurelab/components/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w"
   },
   "author": "futurelab",
   "license": "MIT",
