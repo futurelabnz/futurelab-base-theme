@@ -5,7 +5,7 @@
 
  return array (
     'environment' => 'development',
-    'components_path' => 'components',
+    'components_path' => 'inc' . DIRECTORY_SEPARATOR . 'futurelab' . DIRECTORY_SEPARATOR . 'components',
     'elements' => [
         'header' => [
             'controller' => 'Header',

@@ -77,7 +77,7 @@ class FutureLabCore {
                                                 DIRECTORY_SEPARATOR.$element_name.
                                                 DIRECTORY_SEPARATOR.$stylesheet,
                                             '',
-                                            filemtime( __DIR__.
+                                            filemtime( get_template_directory() .
                                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                                 DIRECTORY_SEPARATOR.$element_name.
                                                 DIRECTORY_SEPARATOR.$stylesheet )
@@ -133,7 +133,7 @@ class FutureLabCore {
             return false;
         }
 
-        require_once ( __DIR__ . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
+        require_once ( get_template_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
 
         $element_string = 'FutureLab\\'.$this->_config['elements'][$element]['controller'];
 
@@ -152,7 +152,7 @@ class FutureLabCore {
     }
 
     public function get_element_path( $element ){
-        return __DIR__ . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element;
+        return get_template_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element;
     }
 
 
@@ -176,8 +176,7 @@ class FutureLabCore {
         ob_start();
 
         get_template_part(
-            'inc' . DIRECTORY_SEPARATOR . 'futurelab' .
-                DIRECTORY_SEPARATOR . $this->_config['components_path'] .
+                $this->_config['components_path'] .
                 DIRECTORY_SEPARATOR . $element .
                 DIRECTORY_SEPARATOR . 'views' .
                 DIRECTORY_SEPARATOR . $element,

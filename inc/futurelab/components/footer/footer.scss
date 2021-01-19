@@ -1,3 +1,8 @@
 footer {
-    background-color:yellow;
+    .widget  {
+        ul.menu {
+            padding-left: 0;
+            list-style: none;
+        }
+    }
 }

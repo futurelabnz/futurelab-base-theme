@@ -5,5 +5,5 @@
 		"footer.scss"
 	],
 	"names": [],
-	"mappings": "AAAA,AAAA,MAAM,CAAC;CACH,gBAAgB,EAAC,MAAM;CAC1B"
+	"mappings": "AAAA,AAEQ,MAFF,CACF,OAAO,CACH,EAAE,AAAA,KAAK,CAAC;CACJ,YAAY,EAAE,CAAC;CACf,UAAU,EAAE,IAAI;CACnB"
 }

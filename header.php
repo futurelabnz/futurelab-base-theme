@@ -12,7 +12,7 @@
 ?>
 
 <?php
-	require_once __DIR__ . '/inc/futurelab/futurelab.class.php';
+	require_once get_template_directory() . '/inc/futurelab/futurelab.class.php';
 
 	$futurelab = new \FutureLab\FutureLabCore();
 

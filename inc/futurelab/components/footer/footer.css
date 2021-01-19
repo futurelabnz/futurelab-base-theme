@@ -1,5 +1,6 @@
-footer {
-	background-color: yellow;
+footer .widget ul.menu {
+	padding-left: 0;
+	list-style: none;
 }
 
 /*# sourceMappingURL=footer.css.map */
