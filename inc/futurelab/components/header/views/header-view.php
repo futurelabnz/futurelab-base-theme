@@ -5,9 +5,6 @@
 
 
 <header id="masthead" class="site-header">
-	<?php 
-		// echo $futurelab->get_element_content( 'menu', 'top' );
-	?>
 	
 	<nav class="navbar navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation">
 		<div class="container">

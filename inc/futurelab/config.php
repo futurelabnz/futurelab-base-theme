@@ -24,7 +24,7 @@
         'footer' => [
             'controller' => 'Footer',
             'styles' => [
-                ''
+                'footer.css'
             ],
             'js' => []
         ],

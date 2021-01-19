@@ -10,18 +10,57 @@ class FutureLabCore {
         $this->load_config();
         add_action( 'wp_enqueue_scripts', [$this, 'load_styles'] );
         add_action( 'wp_enqueue_scripts', [$this, 'load_javascript'] );
-        add_action( 'after_setup_theme', [$this, 'theme_setup'] );
+        add_action( 'after_setup_theme', [$this, 'fl_after_setup_theme'] );
+        add_action( 'widgets_init', [$this, 'fl_widgets_init'] );
 
     }
 
-    public function theme_setup(){
+    public function fl_after_setup_theme(){
         register_nav_menus(
 			array(
                 'primary' => esc_html__( 'Primary', 'futurelab-base-theme2' ),
-                'top_menu' => esc_html__( 'Top menu', 'futurelab-base-theme2' ),
-                'footer' => esc_html__( 'Footer menu', 'futurelab-base-theme2' ),
 			)
 		);
+    }
+
+    public function fl_widgets_init() {
+        $sidebars = array(
+            array(
+                'name'        => 'Footer widgets area 1',
+                'id'          => 'footer_widgets_area_1',
+                'description' => 'Content for "Footer widgets area 1"',
+            ),
+            array(
+                'name'        => 'Footer widgets area 2',
+                'id'          => 'footer_widgets_area_2',
+                'description' => 'Content for "Footer widgets area 2"',
+            ),
+            array(
+                'name'        => 'Footer widgets area 3',
+                'id'          => 'footer_widgets_area_3',
+                'description' => 'Content for "Footer widgets area 3"',
+            ),
+            array(
+                'name'        => 'Footer widgets area 4',
+                'id'          => 'footer_widgets_area_4',
+                'description' => 'Content for "Footer widgets area 4"',
+            ),
+        );
+    
+        foreach ( $sidebars as $sidebar ) {
+    
+            register_sidebar(
+                array(
+                    'name'          => esc_html__( $sidebar['name'], 'futurelab-base-theme2' ),
+                    'id'            => $sidebar['id'],
+                    'description'   => esc_html__( $sidebar['description'], 'futurelab-base-theme2' ),
+                    'before_widget' => '<section id = "%1$s" class="widget %2$s" > ',
+                    'after_widget'  => '</section >',
+                    'before_title'  => '<h5 class="title">',
+                    'after_title'   => '</h5>',
+                )
+            );
+        }
     }
 
     // Hopefully can move this to an iterator
