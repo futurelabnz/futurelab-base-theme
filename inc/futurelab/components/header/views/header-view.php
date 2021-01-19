@@ -6,12 +6,16 @@
 
 <header id="masthead" class="site-header">
 	<?php 
-		echo $futurelab->get_element_content( 'menu', 'top' );
+		// echo $futurelab->get_element_content( 'menu', 'top' );
 	?>
 	
-	<div class="navbar navbar-light shadow-sm">
-		<div class="container d-flex justify-content-between">
-			<div class="site-branding my-0 mr-md-auto font-weight-normal">
+	<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="site-branding navbar-brand my-0 mr-md-auto font-weight-normal">
 				<?php
 				if ( has_custom_logo() ):
 					the_custom_logo();
@@ -33,5 +37,5 @@
 				echo $futurelab->get_element_content( 'menu' );
 			?>
 		</div>
-	</div>
+	</nav>
 </header>
