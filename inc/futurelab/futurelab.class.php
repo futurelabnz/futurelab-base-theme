@@ -176,11 +176,14 @@ class FutureLabCore {
         ob_start();
 
         get_template_part(
-                $this->_config['components_path'] .
+            $this->_config['components_path'] .
                 DIRECTORY_SEPARATOR . $element .
                 DIRECTORY_SEPARATOR . 'views' .
                 DIRECTORY_SEPARATOR . $element,
-            $template
+            $template,
+            array(
+                'futurelab' => $this
+            ),
         );
 
 

@@ -1,9 +1,3 @@
-<?php 
-	require_once (get_stylesheet_directory() . '/inc/futurelab/futurelab.class.php');
-	$futurelab = new \FutureLab\FutureLabCore();
-?>
-
-
 <header id="masthead" class="site-header">
 	
 	<nav class="navbar navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation">
@@ -31,7 +25,7 @@
 
 			</div><!-- .site-branding -->
 			<?php 
-				echo $futurelab->get_element_content( 'menu' );
+				echo $args['futurelab']->get_element_content( 'menu' );
 			?>
 		</div>
 	</nav>
