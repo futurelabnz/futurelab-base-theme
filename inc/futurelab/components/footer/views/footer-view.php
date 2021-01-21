@@ -1,5 +1,5 @@
-<footer class="pt-4 my-md-5 pt-md-5 border-top">
-  <div class="container">
+<footer id="colophon" class="site-footer pt-4 my-md-5 pt-md-5 border-top">
+  <div class="site-info container">
       <div class="row">
         <div class="col-12 col-lg-6 col-md">
           <?php 
@@ -34,5 +34,5 @@
           ?>
         </div>
       </div>
-  </div>
-</footer>
+  </div><!-- .site-info -->
+</footer><!-- #colophon -->

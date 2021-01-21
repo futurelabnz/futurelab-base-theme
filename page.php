@@ -38,4 +38,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-echo $futurelab->get_element_content('footer');
+// get_sidebar();
+get_footer();
