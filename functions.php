@@ -101,6 +101,11 @@ if ( ! function_exists( 'futurelab_base_theme2_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		/**
+		 * Add support for full width
+		 */
+		add_theme_support('align-wide');
 	}
 endif;
 add_action( 'after_setup_theme', 'futurelab_base_theme2_setup' );
