@@ -22,6 +22,10 @@ class FutureLabCore {
     }
 
     public function fl_widgets_init() {
+        if ( ! isset ( $this->_config['widgets'] ) || empty ( $this->_config['widgets'] ) ) {
+            return false;
+        }
+
         foreach ( $this->_config['widgets'] as $sidebar ) {
             register_sidebar(
                 array(
@@ -80,7 +84,11 @@ class FutureLabCore {
     }
 
     function create_custom_post_types() {
-    
+        
+        if( !isset( $this->_config['custom_post_types'] ) || empty( $this->_config['custom_post_types'] ) ) {
+            return false;
+        }
+
         foreach( $this->_config['custom_post_types'] as $cpt ) {
             $labels = array(
                 'name'                => _x( $cpt['name']['singular'], 'Post Type General Name', 'futurelab-base-theme2' ),
@@ -103,12 +111,7 @@ class FutureLabCore {
                 'description'         => __( $cpt['description'], 'futurelab-base-theme2' ),
                 'labels'              => $labels,
                 'supports'            => $cpt['supports'],
-                // You can associate this CPT with a taxonomy or custom taxonomy. 
                 'taxonomies'          => array( 'genres' ),
-                /* A hierarchical CPT is like Pages and can have
-                * Parent and child items. A non-hierarchical CPT
-                * is like Posts.
-                */ 
                 'hierarchical'        => false,
                 'public'              => true,
                 'show_ui'             => true,
