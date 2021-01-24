@@ -1,6 +1,6 @@
         <?php
         wp_nav_menu( array(
-            'theme_location'    => 'primary',
+            'theme_location'    => 'primary_menu',
             'depth'             => 2,
             'container'         => 'div',
             'container_class'   => 'collapse navbar-collapse',

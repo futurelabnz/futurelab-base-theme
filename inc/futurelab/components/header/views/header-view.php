@@ -1,4 +1,11 @@
 <header id="masthead" class="site-header">
+	<nav class="navbar navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation">
+		<div class="container">
+			<?php 
+				echo $args['futurelab']->get_element_content( 'menu', 'top' );
+			?>
+		</div>
+	</nav>
 	
 	<nav class="navbar navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation">
 		<div class="container">
