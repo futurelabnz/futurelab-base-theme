@@ -42,7 +42,7 @@
             'js' => []
         ],
         'header2' => [
-            'controller' => 'Header',
+            'controller' => 'Header2',
             'styles' => [
                 ''
             ],

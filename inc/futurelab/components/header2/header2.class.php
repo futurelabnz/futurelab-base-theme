@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Header extends FutureLabCore {
+class Header2 extends FutureLabCore {
 
     public function __construct(){
         parent::__construct();
