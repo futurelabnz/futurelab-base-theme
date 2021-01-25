@@ -41,6 +41,13 @@
             ],
             'js' => []
         ],
+        'header2' => [
+            'controller' => 'Header',
+            'styles' => [
+                ''
+            ],
+            'js' => []
+        ],
         'menu' => [
             'controller' => 'Menu',
             'styles' => [
