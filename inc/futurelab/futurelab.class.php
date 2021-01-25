@@ -49,18 +49,38 @@ class FutureLabCore {
             if( isset( $element['styles'] ) && !empty( $element['styles'] ) ){
                 if( is_array( $element['styles'] )){
                     foreach( $element['styles'] as $stylesheet){
-                        wp_enqueue_style(   'fl-style-'.$stylesheet,
-                                            get_template_directory_uri().
-                                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
-                                                DIRECTORY_SEPARATOR.$element_name.
-                                                DIRECTORY_SEPARATOR.$stylesheet,
-                                            '',
-                                            filemtime( get_template_directory() .
-                                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
-                                                DIRECTORY_SEPARATOR.$element_name.
-                                                DIRECTORY_SEPARATOR.$stylesheet )
-
-                        );
+                        // if css file is in base theme, load
+                        if ( file_exists( get_template_directory(). 
+                        DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                        DIRECTORY_SEPARATOR.$element_name.
+                        DIRECTORY_SEPARATOR.$stylesheet ) ) {
+                            wp_enqueue_style(   'fl-style-'.$stylesheet,
+                                                get_template_directory_uri().
+                                                    DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                                    DIRECTORY_SEPARATOR.$element_name.
+                                                    DIRECTORY_SEPARATOR.$stylesheet,
+                                                '',
+                                                filemtime( get_template_directory() .
+                                                    DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                                    DIRECTORY_SEPARATOR.$element_name.
+                                                    DIRECTORY_SEPARATOR.$stylesheet )
+    
+                            );
+                        } else {
+                                // if css file is in child theme, load
+                                wp_enqueue_style(   'fl-style-'.$stylesheet,
+                                                    get_stylesheet_directory_uri().
+                                                        DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                                        DIRECTORY_SEPARATOR.$element_name.
+                                                        DIRECTORY_SEPARATOR.$stylesheet,
+                                                    '',
+                                                    filemtime( get_stylesheet_directory() .
+                                                        DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                                        DIRECTORY_SEPARATOR.$element_name.
+                                                        DIRECTORY_SEPARATOR.$stylesheet )
+        
+                                );
+                        }
                     }
                 } else {
                     wp_enqueue_style( 'fl-style-'.$k, get_template_directory_uri().'components/header/header.css' );
@@ -137,8 +157,17 @@ class FutureLabCore {
         if( ! $this->validate_element( $element ) ){
             return false;
         }
+        // if file compenent element class in base, load
+        if ( file_exists( get_template_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' ) ) {
+            
+            require_once ( get_template_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
 
-        require_once ( get_template_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
+        } else {
+        // if file compenent element class in child, load
+        
+            require_once ( get_stylesheet_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
+
+        }
 
         $element_string = 'FutureLab\\'.$this->_config['elements'][$element]['controller'];
 
