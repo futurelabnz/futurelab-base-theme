@@ -93,14 +93,7 @@ class FutureLabCore {
     }
 
     public function load_javascript(){
-        foreach( $this->_config['global']['js'] as $javascript ){
-            wp_enqueue_script(
-                $javascript['name'],
-                get_template_directory_uri().$javascript['path'],
-                $javascript['dependent_on'],
-                filemtime( get_template_directory().$javascript['path'] )
-            );
-        }
+        
     }
 
     function create_custom_post_types() {
@@ -164,7 +157,7 @@ class FutureLabCore {
 
         } else {
         // if file compenent element class in child, load
-        
+
             require_once ( get_stylesheet_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
 
         }
