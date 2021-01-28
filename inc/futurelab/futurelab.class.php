@@ -96,7 +96,8 @@ class FutureLabCore {
     }
 
     public function load_javascript(){
-        
+        // bootstrap default navibar need js to make dropdown work.
+        wp_enqueue_script( 'fl-bootstrap-js', get_template_directory_uri().'/vendor/twbs/bootstrap/dist/js/bootstrap.min.js' );
     }
 
     function create_custom_post_types() {
