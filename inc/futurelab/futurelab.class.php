@@ -11,6 +11,7 @@ class FutureLabCore {
         add_action( 'init', [$this, 'create_custom_post_types'], 0 );
         add_action( 'wp_enqueue_scripts', [$this, 'load_styles'] );
         add_action( 'wp_enqueue_scripts', [$this, 'load_javascript'] );
+        add_action( 'admin_enqueue_scripts', [$this, 'load_admin_styles'] );
         add_action( 'after_setup_theme', [$this, 'fl_after_setup_theme'] );
         add_action( 'widgets_init', [$this, 'fl_widgets_init'] );
     }
@@ -93,6 +94,17 @@ class FutureLabCore {
         array( ),  
         filemtime( get_template_directory() . '/build/bundle.css' )
         );
+    }
+
+    
+    public function load_admin_styles(){
+        wp_enqueue_style(
+            'admin-styles',
+            get_template_directory_uri() . '/style-editor.css',
+            array( ),  
+            filemtime( get_template_directory() . '/style-editor.css' )
+        );
+    
     }
 
     public function load_javascript(){
