@@ -10,7 +10,7 @@
 	<nav class="navbar navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-primary-menu-navbar-collapse-1" aria-controls="bs-primary-menu-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="site-branding navbar-brand my-0 mr-md-auto font-weight-normal">
