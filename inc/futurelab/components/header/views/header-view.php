@@ -1,5 +1,5 @@
 <header id="masthead" class="site-header">
-	<nav class="navbar navbar-top navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation-top">
+	<nav class="navbar navbar-top navbar-expand-lg navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation-top">
 		<div class="container">
 			<?php 
 				echo $args['futurelab']->get_element_content( 'menu', 'top' );
@@ -7,7 +7,7 @@
 		</div>
 	</nav>
 	
-	<nav class="navbar navbar-bottom navbar-expand-md navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation-bottom">
+	<nav class="navbar navbar-bottom navbar-expand-lg navbar-light mb-3 bg-white border-bottom shadow-sm" role="navigation-bottom">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-primary-menu-navbar-collapse-1" aria-controls="bs-primary-menu-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'futurelab-base-theme2' ); ?>">
