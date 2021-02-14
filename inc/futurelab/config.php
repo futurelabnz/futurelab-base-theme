@@ -37,7 +37,7 @@
         'header' => [
             'controller' => 'Header',
             'styles' => [
-                ''
+                'header.css'
             ],
             'js' => []
         ],
