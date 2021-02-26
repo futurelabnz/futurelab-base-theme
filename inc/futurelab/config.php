@@ -66,6 +66,7 @@
     'custom_post_types' => [
         [
             'id' => 'portfolio',
+            'taxonomies' =>  [ 'category'  ],  
             'name' => [
                 'singular' => 'Portfolio',
                 'plural' => 'Portfolios'
@@ -78,3 +79,4 @@
     ]
  );
 
+ 

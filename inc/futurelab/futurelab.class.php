@@ -51,7 +51,7 @@ class FutureLabCore {
                 if( is_array( $element['styles'] )){
                     foreach( $element['styles'] as $stylesheet){
                         // if css file is in child theme, load
-                        if ( file_exists( get_stylesheet_directory(). 
+                        if ( file_exists( get_stylesheet_directory().
                         DIRECTORY_SEPARATOR.$this->_config['components_path'].
                         DIRECTORY_SEPARATOR.$element_name.
                         DIRECTORY_SEPARATOR.$stylesheet ) ) {
@@ -99,15 +99,15 @@ class FutureLabCore {
         );
     }
 
-    
+
     public function load_admin_styles(){
         wp_enqueue_style(
             'admin-styles',
             get_template_directory_uri() . '/style-editor.css',
-            array( ),  
+            array( ),
             filemtime( get_template_directory() . '/style-editor.css' )
         );
-    
+
     }
 
     public function load_javascript(){
@@ -121,7 +121,7 @@ class FutureLabCore {
     }
 
     function create_custom_post_types() {
-        
+
         if( !isset( $this->_config['custom_post_types'] ) || empty( $this->_config['custom_post_types'] ) ) {
             return false;
         }
@@ -142,13 +142,13 @@ class FutureLabCore {
                 'not_found'           => __( 'Not Found', 'futurelab-base-theme2' ),
                 'not_found_in_trash'  => __( 'Not found in Trash', 'futurelab-base-theme2' ),
             );
-            
+
             $args = array(
                 'label'               => __( $cpt['id'], 'futurelab-base-theme2' ),
                 'description'         => __( $cpt['description'], 'futurelab-base-theme2' ),
                 'labels'              => $labels,
                 'supports'            => $cpt['supports'],
-                'taxonomies'          => array( 'genres' ),
+                'taxonomies'          => $cpt[ 'taxonomies'  ],
                 'hierarchical'        => false,
                 'public'              => true,
                 'show_ui'             => true,
@@ -163,11 +163,11 @@ class FutureLabCore {
                 'capability_type'     => 'post',
                 'show_in_rest' => true,
             );
-            
+
             // Registering your Custom Post Type
             register_post_type( $cpt['id'], $args );
         }
-    
+
     }
 
     public function get_element_content( $element, $template = 'view' ) {
@@ -176,7 +176,7 @@ class FutureLabCore {
         }
         // if file compenent element class in child, load
         if ( file_exists( get_stylesheet_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' ) ) {
-            
+
             require_once ( get_stylesheet_directory() . DIRECTORY_SEPARATOR . $this->_config['components_path'] . DIRECTORY_SEPARATOR . $element . DIRECTORY_SEPARATOR . $element.'.class.php' );
 
         } else {
@@ -197,8 +197,8 @@ class FutureLabCore {
         }
         if ( ! file_exists( $this->get_element_path( $element ) . DIRECTORY_SEPARATOR . $element.'.class.php') ) {
             return new \WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'FutureLab Component Error: Missing Controller file for '.$element, 'wp-bootstrap-navwalker' ) );
-        } 
-        
+        }
+
         return true;
     }
 
