@@ -85,8 +85,6 @@ class FutureLabCore {
 
                         }
                     }
-                } else {
-                    wp_enqueue_style( 'fl-style-'.$k, get_template_directory_uri().'components/header/header.css' );
                 }
             }
         }
@@ -111,6 +109,51 @@ class FutureLabCore {
     }
 
     public function load_javascript(){
+        $suffix = $this->_config['environment'] == 'production' ? '.min' : '';
+
+        foreach($this->_config['elements'] as $element_name=>$element){
+            if( isset( $element['js'] ) && !empty( $element['js'] ) ){
+                if( is_array( $element['js'] )){
+                    foreach( $element['js'] as $js){
+                        // if css file is in child theme, load
+                        if ( file_exists( get_stylesheet_directory().
+                        DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                        DIRECTORY_SEPARATOR.$element_name.
+                        DIRECTORY_SEPARATOR.$js ) ) {
+
+                            wp_enqueue_script(   'fl-js-'.$js,
+                            get_stylesheet_directory_uri().
+                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                DIRECTORY_SEPARATOR.$element_name.
+                                DIRECTORY_SEPARATOR.$js,
+                            'jquery',
+                            filemtime( get_stylesheet_directory() .
+                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                DIRECTORY_SEPARATOR.$element_name.
+                                DIRECTORY_SEPARATOR.$js )
+                            );
+
+                        } else {
+                            // if css file is in base theme, load
+                            wp_enqueue_script(   'fl-js-'.$js,
+                            get_template_directory_uri().
+                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                DIRECTORY_SEPARATOR.$element_name.
+                                DIRECTORY_SEPARATOR.$js,
+                            'jquery',
+                            filemtime( get_template_directory() .
+                                DIRECTORY_SEPARATOR.$this->_config['components_path'].
+                                DIRECTORY_SEPARATOR.$element_name.
+                                DIRECTORY_SEPARATOR.$js )
+
+                            );
+
+                        }
+                    }
+                }
+            }
+        }
+
         // bootstrap default navibar need js to make dropdown work.
         wp_enqueue_script( 
             'fl-bootstrap-js', 
