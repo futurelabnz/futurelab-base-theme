@@ -205,6 +205,10 @@ class FutureLabCore {
                 'publicly_queryable'  => true,
                 'capability_type'     => 'post',
                 'show_in_rest' => true,
+                'rewrite' => array(
+                    'with_front' => false,
+                    'slug'       => $cpt['id']
+                )
             );
 
             // Registering your Custom Post Type
