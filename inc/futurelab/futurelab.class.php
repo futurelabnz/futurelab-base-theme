@@ -126,8 +126,8 @@ class FutureLabCore {
                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                 DIRECTORY_SEPARATOR.$element_name.
                                 DIRECTORY_SEPARATOR.$js,
-                            'jquery',
-                            filemtime( get_stylesheet_directory() .
+                                array( 'jquery' ),
+                                filemtime( get_stylesheet_directory() .
                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                 DIRECTORY_SEPARATOR.$element_name.
                                 DIRECTORY_SEPARATOR.$js )
@@ -140,8 +140,8 @@ class FutureLabCore {
                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                 DIRECTORY_SEPARATOR.$element_name.
                                 DIRECTORY_SEPARATOR.$js,
-                            'jquery',
-                            filemtime( get_template_directory() .
+                                array( 'jquery' ),
+                                filemtime( get_template_directory() .
                                 DIRECTORY_SEPARATOR.$this->_config['components_path'].
                                 DIRECTORY_SEPARATOR.$element_name.
                                 DIRECTORY_SEPARATOR.$js )
