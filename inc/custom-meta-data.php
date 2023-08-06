@@ -19,6 +19,7 @@ class custom_meta_data {
 	 */
 	private $fl_team_fields = array(
 		'fl_team_position'  => 'Position in the company',
+		'fl_team_licensed'  => 'License information',
 		'fl_team_email'     => 'Email address',
 		'fl_team_linkedin'  => 'URL of LinkedIn profile',
 		'fl_team_facebook'  => 'URL of Facebook profile',
