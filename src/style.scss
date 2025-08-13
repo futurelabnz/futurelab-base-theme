@@ -1,6 +1,6 @@
-@import "styles/variables";
-@import "styles/utils";
-@import "styles/common";
+@forward "styles/variables";
+@forward "styles/utils";
+@forward "styles/common";
 
 
 // /* Component style
