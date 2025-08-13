@@ -13,9 +13,13 @@
  */
 
 get_header();
-?>
 
-	<main id="primary" class="site-main">
+
+// echo $futurelab->get_element_content('header');
+
+// echo $futurelab->get_element_content('menu'); 
+?>
+	<main id="primary" class="container site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -34,5 +38,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

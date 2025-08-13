@@ -1,3 +1,6 @@
-.fl-header {
-    background-color: whitesmoke !important;
-    }
+header.site-header .site-branding img {
+	max-height: 75px;
+	width: auto;
+}
+
+/*# sourceMappingURL=header.css.map */

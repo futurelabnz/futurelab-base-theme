@@ -7,6 +7,13 @@
  * @package futurelab-base-theme2
  */
 
+/***
+ * Add custom element files
+ */
+require_once (get_template_directory().'/inc/futurelab/futurelab.class.php');
+$futurelab = new \FutureLab\FutureLabCore();
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -47,12 +54,6 @@ if ( ! function_exists( 'futurelab_base_theme2_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'futurelab-base-theme2' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -100,6 +101,11 @@ if ( ! function_exists( 'futurelab_base_theme2_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		/**
+		 * Add support for full width
+		 */
+		add_theme_support('align-wide');
 	}
 endif;
 add_action( 'after_setup_theme', 'futurelab_base_theme2_setup' );
@@ -178,7 +184,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/***
- * Add custom element files
- */
-require (__DIR__.'/inc/futurelab/futurelab.class.php');
+
