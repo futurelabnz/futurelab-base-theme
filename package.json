@@ -1,35 +1,44 @@
 {
   "name": "futurelab-base",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "futurelab base",
+  "author": "futurelab",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18",
+    "npm": ">=9"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./scripts/start.js",
     "build": "cross-env NODE_ENV=production node ./scripts/build.js",
     "postinstall": "npm run build",
-    "watch:components": "node-sass inc/futurelab/components/ -o ./inc/futurelab/components/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w"
+    "watch:components": "sass inc/futurelab/components:inc/futurelab/components --source-map --style=expanded --watch"
   },
-  "author": "futurelab",
-  "license": "MIT",
-  "dependencies": {},
+  "browserslist": [
+    ">0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "assets-webpack-plugin": "^3.9.7",
-    "autoprefixer": "^9.4.9",
-    "babel-loader": "^8.0.4",
-    "browser-sync": "^2.26.3",
-    "browser-sync-webpack-plugin": "^2.2.0",
-    "clean-webpack-plugin": "^1.0.0",
-    "cross-env": "^5.2.0",
-    "css-loader": "^2.0.0",
-    "friendly-errors-webpack-plugin": "^1.7.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.10.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.0.0",
-    "style-loader": "^0.23.1",
-    "terser-webpack-plugin": "^1.2.2",
-    "webpack": "^4.4.0"
+    "@babel/core": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
+    "assets-webpack-plugin": "^7.1.1",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "browser-sync": "^3.0.4",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.4.41",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
