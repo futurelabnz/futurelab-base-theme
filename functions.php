@@ -149,7 +149,7 @@ function futurelab_base_theme2_scripts() {
 	wp_enqueue_style( 'futurelab-base-theme2-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'futurelab-base-theme2-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'futurelab-base-theme2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'futurelab-base-theme2-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
